@@ -1,0 +1,24 @@
+<form data-bind="submit: getWeather" method="GET" id="getWeatherId" role="form" name="search" enctype="multipart/form-data" data-mage-init='{"validation":{"rules": {"field-2": {"required":true}}}}'>
+    <div class="align-box">
+        <div class="form-group">
+            <label class="control-label"><span>Get weather</span></label>
+            <input id="value" name="value" type="text" class="form-control" data-validate='{"required":true}'>
+        </div>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" title="Submit" id="submitBtn" class="action submit primary">
+                        <span>Submit</span>
+                    </button>
+                </div>
+            </div>
+            <div class="actions-toolbar">
+                <div class="primary" id="clearButton">
+                    <button type="button" disabled="disabled" data-bind="click: clearData" title="button" id="removeButton" class="action submit primary">
+                        <span>Remove item</span>
+                    </button>
+                </div>
+            </div>
+    </div>
+    <ul id="weatherData"></ul>
+    <span id="error"></span>
+</form>
