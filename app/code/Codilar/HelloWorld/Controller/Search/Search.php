@@ -80,9 +80,10 @@ class Search implements HttpGetActionInterface
         $sku = $this->request->getParam("sku");
         $product = $this->productRepository->get($sku);
 
-//        $this->catalogSession->setData("product", $product);
+        $this->catalogSession->setData("productId", $product->getId());
 
-        return $this->redirectFactory->create()->setPath('smartautobrand');
+//        return $this->redirectFactory->create()->setPath('smartautobrand');
+        return $this->redirectFactory->create()->setUrl('http://testtask.loc/smartautobrand');
 //        return $this->redirectFactory->create()->setUrl('https://devdocs.magento.com/guides/v2.4/extension-dev-guide/routing.html');
     }
 }
