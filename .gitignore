@@ -32,3 +32,4 @@
 !/dev/tools/frontools/
 !/dev/tools/frontools/*
 !/redeploy
+.DS_Store
