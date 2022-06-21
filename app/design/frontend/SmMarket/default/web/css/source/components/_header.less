@@ -1,16 +1,97 @@
 @import './_variables.less';
 
+.page-header .header.panel {
+    padding: 4px;
+}
+
+select {
+    -moz-appearance: none; 
+    -webkit-appearance: none; 
+    appearance: none;
+    border: 0px;
+    outline: 0px;
+}
+
 .panel.header {
     background-color: @topBgColor;
 }
 
-.header-top {
+.panel.wrapper {
+    background-color: @topBgColor;
+}
 
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
     &__left {
+        display: flex;
+        align-items: center;
+
         span {
             color: @whiteColor;
             font-size: 16px;
             margin-left: 10px;
+        }
+
+        .language {
+            width: 110px;
+            padding-right: 10px;
+            border-right: 1px solid @greyColor;
+        }
+
+        &-language, &-currency {
+            background: @topBgColor;
+            color: @whiteColor;
+            background-repeat: no-repeat;
+            background-position-x: 65%;
+            background-position-y: 12px;
+            border: 0px;
+            outline: 0px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAABmJLR0QA/wD/AP+gvaeTAAAARklEQVQYlb3PTQ3AIBQDYAhGQBBG8DEjmJsABHy77PCy7Aq9NOlPmqZ0HuioH62iR2FiYaC8vDBjKAfjDoX8N9twoe059gBpd0gH1GAYQQAAAABJRU5ErkJggg==')
+        }
+
+        .currency {
+            width: 110px;
+            padding-left: 10px;
+            border-right: 1px solid @greyColor;
+            padding-right: 10px;
+        }
+
+        .login-or-register {
+            padding-left: 10px;
+            
+            a {
+                color: @whiteColor;
+            }
+
+            span {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        .phone-number {
+            padding-right: 10px;
+            border-right: 1px solid @greyColor;
+
+            a {
+                color: @whiteColor;
+            }
+        }
+
+        .store-location {
+            padding-left: 10px;
+            cursor: pointer;
+
+            span {
+                color: @whiteColor;
+            }
         }
     }
 }

@@ -1,0 +1,19 @@
+<div id="header" data-bind="scope: 'header'">
+
+    <!-- ko template: getTemplate() --><!-- /ko -->
+
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "header": {
+                            "component": "SmMarketModule_Header/js/view/header",
+                            "template":  "SmMarketModule_Header/header"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</div>  
