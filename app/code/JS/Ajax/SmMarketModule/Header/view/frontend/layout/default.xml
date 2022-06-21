@@ -4,6 +4,5 @@
         <referenceContainer name="page.wrapper">
             <block  class="Magento\Framework\View\Element\Template" name="top.header" template="SmMarketModule_Header::header.phtml"/>
         </referenceContainer>      
-        <move element="minicart" destination="top.header" />
     </body>
 </page>
