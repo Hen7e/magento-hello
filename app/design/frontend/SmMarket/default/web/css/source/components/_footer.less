@@ -1,0 +1,34 @@
+@import './_variables.less';
+
+.page-footer {
+    background-color: @topBgColor;
+}
+
+.footer.content {
+    background-color: @topBgColor;
+    border-top: 0 solid transparent;
+}
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &-item {
+        display: flex;
+
+        img {
+            margin-right: 10px;
+        }
+
+        &-right {
+            span {
+                color: @whiteColor;
+            }
+
+            p {
+                color: @greyColor;
+            }
+        }
+    }
+}
