@@ -1,4 +1,5 @@
 @import './_variables.less';
+@import '../_fonts.less';
 
 .page-wrapper {
     overflow: hidden;
@@ -60,7 +61,11 @@ select {
             background-position-y: 12px;
             border: 0px;
             outline: 0px;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAABmJLR0QA/wD/AP+gvaeTAAAARklEQVQYlb3PTQ3AIBQDYAhGQBBG8DEjmJsABHy77PCy7Aq9NOlPmqZ0HuioH62iR2FiYaC8vDBjKAfjDoX8N9twoe059gBpd0gH1GAYQQAAAABJRU5ErkJggg==')
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAABmJLR0QA/wD/AP+gvaeTAAAARklEQVQYlb3PTQ3AIBQDYAhGQBBG8DEjmJsABHy77PCy7Aq9NOlPmqZ0HuioH62iR2FiYaC8vDBjKAfjDoX8N9twoe059gBpd0gH1GAYQQAAAABJRU5ErkJggg==');
+            font-size: 13px;
+            line-height: 24px;
+            color: @whiteColor;
+            font: 400 13px @font_medium;  
         }
 
         .currency {
@@ -75,10 +80,15 @@ select {
             
             a {
                 color: @whiteColor;
+                font: 600 13px @font_bold;
+                line-height: 24px;
             }
 
             span {
                 margin-left: 0;
+                color: @whiteColor;
+                font: 600 13px @font_bold;
+                line-height: 24px;
             }
         }
     }
@@ -101,6 +111,8 @@ select {
 
             a {
                 color: @whiteColor;
+                font: 500 16px @font_medium;
+                line-height: 18px;
             }
         }
 
@@ -118,6 +130,8 @@ select {
 
             span {
                 color: @whiteColor;
+                font: 500 16px @font_medium;
+                line-height: 18px;
             }
         }
     }
