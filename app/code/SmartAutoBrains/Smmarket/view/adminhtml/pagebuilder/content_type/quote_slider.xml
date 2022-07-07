@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Andrey Bugaev <abugaev@helenoftroy.com>
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="quote_slider"
+          label="Quote slider"
+          menu_section="enhance-plp-items"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="Astound_ContentTypes/js/content-type/quote-slider/preview"
+          master_component="Magento_PageBuilder/js/content-type/master-collection"
+          form="pagebuilder_quote_slider_form"
+          icon="icon-pagebuilder-heading"
+          sortOrder="21"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="root-container" policy="allow"/>
+        </parents>
+        <children default_policy="deny">
+            <child name="quote_slider_item" policy="allow"/>
+        </children>
+        <appearances>
+            <appearance default="true"
+                        name="default"
+                        preview_template="Astound_ContentTypes/content-type/quote_slider/default/preview"
+                        master_template="Astound_ContentTypes/content-type/quote_slider/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <style name="text_align" source="text_align"/>
+                        <style name="min_height" source="min_height" converter="Magento_PageBuilder/js/converter/style/remove-px"/>
+                        <style name="border" source="border_style" converter="Magento_PageBuilder/js/converter/style/border-style"/>
+                        <style name="border_color" source="border_color"/>
+                        <style name="border_width" source="border_width" converter="Magento_PageBuilder/js/converter/style/border-width"/>
+                        <style name="border_radius" source="border_radius" converter="Magento_PageBuilder/js/converter/style/remove-px"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <css name="css_classes"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

@@ -1,0 +1,76 @@
+<div data-bind="css: { 'pagebuilder-content-type-wrapper pagebuilder-tile-item-wrapper tile-item-wrapper tile-no-parent': !hasTilesWrapper() }">
+    <div class="pagebuilder-content-type pagebuilder-tile-item"
+         ko-style="data.main.style"
+         attr="data.main.attributes"
+         event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+         css="data.main.css">
+
+        <render args="getOptions().template" />
+
+        <if args="isCmsBlock()">
+            <div class="tiles-item-empty-placeholder"></div>
+        </if>
+
+        <ifnot args="isCmsBlock()">
+            <scope args="getUploader().getUiComponent()">
+                <render />
+            </scope>
+
+            <div if="(!data.title.html() && !data.title_html.html())" class="tiles-item-empty-placeholder" />
+
+            <div class="pagebuilder-tile-item-content">
+                <img if="data.tile_image.attributes().src"
+                     class="pagebuilder-tile-item-image"
+                     attr="data.tile_image.attributes"/>
+
+                <div class="pagebuilder-tile-item-tablet-image"
+                     data-bind='attr: {
+                    src: data.mobile_image.attributes().src,
+                    style: "background-image: url(" + data.mobile_image.attributes().src + ")"
+                 }'></div>
+
+                <h4 if="data.title.html()"
+                    class="pagebuilder-tile-item-title"
+                    attr="data.title.attributes"
+                    ko-style="data.title.style"
+                    html="data.title.html">
+                </h4>
+
+                <h4 if="data.title_html.html()"
+                    class="pagebuilder-tile-item-title"
+                    attr="data.title_html.attributes"
+                    ko-style="data.title_html.style"
+                    html="data.title_html.html">
+                </h4>
+
+                <div if="data.details.html()"
+                     class="pagebuilder-tile-item-details"
+                     attr="data.details.attributes"
+                     ko-style="data.details.style"
+                     html="data.details.html">
+                </div>
+
+                <div if="data.description.html()"
+                     class="pagebuilder-tile-item-description"
+                     attr="data.description.attributes"
+                     ko-style="data.description.style"
+                     html="data.description.html">
+                </div>
+
+                <div if="data.link_text.html()"
+                     class="pagebuilder-tile-item-link"
+                     attr="data.link_text.attributes"
+                     ko-style="data.link_text.style"
+                     html="data.link_text.html">
+                </div>
+
+                <div if="data.link_text_additional.html()"
+                     class="pagebuilder-tile-item-link pagebuilder-tile-item-link--additional"
+                     attr="data.link_text_additional.attributes"
+                     ko-style="data.link_text_additional.style"
+                     html="data.link_text_additional.html">
+                </div>
+            </div>
+        </ifnot>
+    </div>
+</div>

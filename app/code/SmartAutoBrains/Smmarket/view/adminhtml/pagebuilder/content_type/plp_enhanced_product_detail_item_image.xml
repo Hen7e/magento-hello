@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type
+        name="plp_enhanced_product_detail_item_image"
+        label="PLP image description"
+        menu_section="enhance-plp-items"
+        component="Magento_PageBuilder/js/content-type"
+        preview_component="Astound_ContentTypes/js/content-type/plp_enhanced_product_detail_item_image/preview"
+        master_component="Magento_PageBuilder/js/content-type/master"
+        form="pagebuilder_plp_enhanced_product_detail_item_image_form"
+        icon="icon-pagebuilder-products"
+        translate="label"
+    >
+        <parents default_policy="deny">
+            <parent name="plp_enhanced_product_details" policy="allow"/>
+        </parents>
+
+        <children default_policy="deny"/>
+
+        <appearances>
+            <appearance
+                name="default"
+                default="true"
+                preview_template="Astound_ContentTypes/content-type/plp_enhanced_product_detail_item_image/default/preview"
+                master_template="Astound_ContentTypes/content-type/plp_enhanced_product_detail_item_image/default/master"
+                reader="Magento_PageBuilder/js/master-format/read/configurable">
+
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <html name="html"
+                              preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <attribute name="use_arrow" source="data-use-arrow"/>
+                        <style name="arrow_color" source="border_color"/>
+                    </element>
+
+                    <element name="description">
+                        <style name="justify_content" source="justify_content"/>
+                        <style name="align_items" source="align_items"/>
+                        <html name="description_content"
+                              preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+
+                    <element name="product_description_image_desktop">
+                        <attribute name="product_description_image_desktop" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="data_image_type" source="data-image-type"/>
+                        <attribute name="alt" source="alt"/>
+                    </element>
+
+                    <element name="product_description_image_mobile">
+                        <attribute name="product_description_image_mobile" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="data_image_type" source="data-image-type"/>
+                        <attribute name="alt" source="alt"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <is_system>false</is_system>
+
+        <additional_data>
+            <item name="wysiwygConfig" xsi:type="array">
+                <item name="wysiwygConfigData" xsi:type="object">
+                    Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\Wysiwyg\Config
+                </item>
+            </item>
+        </additional_data>
+    </type>
+</config>

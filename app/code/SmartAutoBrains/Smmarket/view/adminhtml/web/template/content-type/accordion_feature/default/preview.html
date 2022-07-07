@@ -1,0 +1,59 @@
+<div class="pagebuilder-content-type pagebuilder-accordion-feature js-pagebuilder-feature-accordion"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template" />
+
+    <div class="feature-accordion-header">
+        <div class="feature-accordion-header-wrapper">
+            <div class="feature-accordion-header-content"
+                 attr="data.background.attributes"
+                 ko-style="data.background.style">
+
+                <div  class="feature-accordion-header-title"
+                      attr="data.title.attributes"
+                      html="data.title.html"
+                      placeholder="Accordion title"></div>
+
+                <div class="feature-accordion-header-subtitle"
+                     attr="data.subtitle.attributes"
+                     html="data.subtitle.html"
+                     placeholder="Accordion subtitle"></div>
+
+                <div class="feature-accordion-header-html"
+                     attr="data.header_content.attributes"
+                     html="data.header_content.html"
+                     placeholder="Header Content"></div>
+
+                <button type="button"
+                        class="feature-accordion-header-button js-pagebuilder-feature-accordion-trigger"
+                        attr="data.button_label.attributes"
+                        data-bind="liveEdit: { field: 'button_label', placeholder: 'Button text', selectAll: true }"></button>
+            </div>
+        </div>
+        <div class="feature-accordion-header-image">
+            <img if="data.header_image.attributes().src"
+                 class="pagebuilder-tile-item-image"
+                 attr="data.header_image.attributes">
+        </div>
+    </div>
+
+    <div class="feature-accordion-details js-pagebuilder-feature-accordion-content">
+        <div class="feature-accordion-details-wrapper">
+            <div class="feature-accordion-details-content"
+                 attr="data.details_content.attributes"
+                 html="data.details_content.html"
+                 placeholder="Details Content"></div>
+
+            <div class="feature-accordion-details-subcontent"
+                 attr="data.details_subcontent.attributes"
+                 html="data.details_subcontent.html"
+                 placeholder="Details Second Content"></div>
+        </div>
+
+        <div class="feature-accordion-details-image">
+            <img if="data.details_image_desktop.attributes().src"
+                 class="feature-accordion-image"
+                 attr="data.details_image_desktop.attributes">
+        </div>
+    </div>
+</div>

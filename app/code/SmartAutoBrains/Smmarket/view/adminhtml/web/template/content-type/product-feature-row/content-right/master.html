@@ -1,0 +1,34 @@
+<div class="product-feature-row"
+     attr="data.main.attributes">
+
+    <div class="product-feature-image">
+        <!-- ko if: data.product_feature_image.attributes().src -->
+        <div class="pagebuilder-attributes-placeholder"
+             attr="data.product_feature_image.attributes"></div>
+
+        <img attr="{
+                'data-src': data.product_feature_image.attributes().src,
+                'title':  data.product_feature_image.attributes().title,
+                'alt':  data.product_feature_image.attributes().alt,
+             }"
+             class="feature-row-image"/>
+        <!-- /ko -->
+    </div>
+
+    <div class="product-feature-description">
+        <h2 if="data.product_feature_title.html()"
+            class="product-feature-row-title">
+            <span attr="data.product_feature_title.attributes"
+                  html="data.product_feature_title.html"></span>
+            <span if="data.product_feature_title_accent.html()"
+                  class="product-feature-row-title-accent"
+                  attr="data.product_feature_title_accent.attributes"
+                  html="data.product_feature_title_accent.html"></span>
+        </h2>
+
+        <p if="data.product_feature_description.html()"
+           class="feature-row-content-text"
+           attr="data.product_feature_description.attributes"
+           html="data.product_feature_description.html"></p>
+    </div>
+</div>

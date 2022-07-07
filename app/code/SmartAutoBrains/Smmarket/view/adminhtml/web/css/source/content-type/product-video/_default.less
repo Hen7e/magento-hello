@@ -1,0 +1,36 @@
+.pagebuilder-product-video-container {
+	display: flex;
+	position: relative;
+	max-width: 1280px;
+	height: 360px;
+	margin: 0 auto;
+	background: @color-main;
+}
+.pagebuilder-product-video-url-placeholder {
+	display: none;
+}
+.pagebuilder-product-video-player {
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	padding-top: 27.9%;
+	position: relative;
+	iframe {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		pointer-events: none;
+	}
+}
+.pagebuilder-modal-video-frame {
+	width: 100%;
+	height: 100%;
+}
+.pagebuilder-product-video-image {
+	width: 50%;
+	height: 100%;
+	@media (max-width: @mobile-point) { width: 100%; }
+}
+.pagebuilder-product-video-thumbnail-placeholder { width: 100%; }

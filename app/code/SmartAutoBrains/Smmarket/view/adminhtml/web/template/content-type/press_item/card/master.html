@@ -1,0 +1,32 @@
+<div if="data.title.html() && data.link.attributes().href"
+     class="pagebuilder-press-item"
+     attr="data.main.attributes">
+    <div class="pagebuilder-press-item-container">
+        <div class="pagebuilder-press-item-data">
+            <div class="pagebuilder-press-item-data-container">
+                <div>
+                    <p attr="data.title.attributes"
+                       class="pagebuilder-press-item-title"
+                       html="data.title.html"></p>
+
+                    <p if="data.description.html()"
+                       attr="data.description.attributes"
+                       class="pagebuilder-press-item-description"
+                       html="data.description.html"></p>
+                </div>
+
+                <p attr="data.date.attributes"
+                   class="pagebuilder-press-item-date"
+                   html="data.date.html"></p>
+            </div>
+        </div>
+        <a if="data.link.attributes().href"
+           attr="data.link.attributes"
+           class="pagebuilder-press-item-action">
+            <div class="pagebuilder-press-item-action-container">
+                <div attr="data.action.attributes"
+                     html="data.action.html"></div>
+            </div>
+        </a>
+    </div>
+</div>

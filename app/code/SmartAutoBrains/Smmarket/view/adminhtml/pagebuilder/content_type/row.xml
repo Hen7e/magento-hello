@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2022 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Pavel Kushnerevich <pkushnerevich@helenoftroy.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="row">
+        <appearances>
+            <appearance name="contained" default="true">
+                <converters>
+                    <converter name="background_type">
+                        <config>
+                            <item name="tablet_image_variable" value="tablet_image"/>
+                        </config>
+                    </converter>
+                    <converter name="background_images" component="Astound_ContentTypes/js/mass-converter/background-images">
+                        <config>
+                            <item name="tablet_image_variable" value="tablet_image"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+            <appearance name="full-width" default="true">
+                <converters>
+                    <converter name="background_type">
+                        <config>
+                            <item name="tablet_image_variable" value="tablet_image"/>
+                        </config>
+                    </converter>
+                    <converter name="background_images" component="Astound_ContentTypes/js/mass-converter/background-images">
+                        <config>
+                            <item name="tablet_image_variable" value="tablet_image"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+            <appearance name="full-bleed" default="true">
+                <converters>
+                    <converter name="background_type">
+                        <config>
+                            <item name="tablet_image_variable" value="tablet_image"/>
+                        </config>
+                    </converter>
+                    <converter name="background_images" component="Astound_ContentTypes/js/mass-converter/background-images">
+                        <config>
+                            <item name="tablet_image_variable" value="tablet_image"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+        </appearances>
+    </type>
+</config>

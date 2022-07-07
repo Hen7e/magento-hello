@@ -1,0 +1,22 @@
+<!-- 
+/**
+ * Copyright © 2021 Helen of Troy. (https://www.helenoftroy.com/)
+ */
+ -->
+
+<div class="pagebuilder-content-type my-hydro-swatch my-hydro-cta"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+     css="data.main.css">
+
+    <render args="getOptions().template" />
+
+     <div class="my-hydro-swatch-content my-hydro-cta">
+          <div if="data.link_text.html()"
+               class="pagebuilder-button-link"
+               attr="data.link_text.attributes"
+               html="data.link_text.html">
+          </div>
+     </div>
+</div>

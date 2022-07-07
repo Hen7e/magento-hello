@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type
+        name="plp_enhanced_product_details"
+        label="PLP products"
+        menu_section="enhance-plp-items"
+        component="Magento_PageBuilder/js/content-type-collection"
+        preview_component="Astound_ContentTypes/js/content-type/plp_enhanced_product_details/preview"
+        master_component="Magento_PageBuilder/js/content-type/master-collection"
+        form="pagebuilder_plp_enhanced_product_details_form"
+        icon="icon-pagebuilder-products"
+        translate="label"
+    >
+        <parents default_policy="deny">
+            <parent name="root-container" policy="allow"/>
+        </parents>
+
+        <children default_policy="deny">
+            <child name="plp_enhanced_product_detail_item" policy="allow"/>
+            <child name="plp_enhanced_product_detail_item_image" policy="allow"/>
+        </children>
+
+        <appearances>
+            <appearance
+                name="default"
+                default="true"
+                preview_template="Astound_ContentTypes/content-type/plp_enhanced_product_details/default/preview"
+                master_template="Astound_ContentTypes/content-type/plp_enhanced_product_details/default/master"
+                reader="Magento_PageBuilder/js/master-format/read/configurable">
+
+                <elements>
+                    <element name="main">
+                        <style name="margins" storage_key="margins_and_padding"
+                               reader="Magento_PageBuilder/js/property/margins"
+                               converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding"
+                               reader="Magento_PageBuilder/js/property/paddings"
+                               converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="reverse_product_content" source="data-reversed"/>
+                        <html name="html"
+                              preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                    </element>
+
+                    <element name="description">
+                        <style name="background_color" source="background_color"/>
+                        <style name="border" source="border_style"
+                               converter="Magento_PageBuilder/js/converter/style/border-style"/>
+                        <style name="border_color" source="border_color"/>
+                        <html name="description_content"
+                              preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+
+                    <element name="product_description_image_desktop">
+                        <attribute name="product_description_image_desktop" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="image_height_desktop" source="height"/>
+                        <attribute name="image_width_desktop" source="width"/>
+                    </element>
+
+                    <element name="product_description_image_mobile">
+                        <attribute name="product_description_image_mobile" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="image_height_mobile" source="height"/>
+                        <attribute name="image_width_mobile" source="width"/>
+                    </element>
+                </elements>
+            </appearance>
+            <appearance
+                name="image-dependant"
+                default="false"
+                preview_template="Astound_ContentTypes/content-type/plp_enhanced_product_details/image_dependant/preview"
+                master_template="Astound_ContentTypes/content-type/plp_enhanced_product_details/image_dependant/master"
+                reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <form>pagebuilder_plp_enhanced_product_details_image_dependant_form</form>
+
+                <elements>
+                    <element name="main">
+                        <style name="margins" storage_key="margins_and_padding"
+                               reader="Magento_PageBuilder/js/property/margins"
+                               converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding"
+                               reader="Magento_PageBuilder/js/property/paddings"
+                               converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <html name="html"
+                              preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <style name="background_color" source="background_color"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <additional_data>
+            <item name="wysiwygConfig" xsi:type="array">
+                <item name="wysiwygConfigData" xsi:type="object">
+                    Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\Wysiwyg\Config
+                </item>
+            </item>
+        </additional_data>
+    </type>
+</config>

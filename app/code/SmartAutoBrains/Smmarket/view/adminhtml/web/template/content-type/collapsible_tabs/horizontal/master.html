@@ -1,0 +1,40 @@
+<div class="iconed-tabs"
+     attr="Object.assign({}, data.main.attributes(), { 'data-id': contentType.id })"
+     css="data.main.css">
+    <div class="iconed-tabs-roster">
+        <ul role="tablist"
+            class="iconed-tabs-titles"
+            attr="data.navigation.attributes"
+            css="data.navigation.css">
+            <each args="contentType.getChildren()">
+                <with args="content">
+                    <li role="tab"
+                        tabindex="0"
+                        attr="Object.assign({}, contentType.parentContentType.content.data.headers.attributes(), {
+                            'data-element': 'main',
+                            'data-section': '#' + getData().tab_hash,
+                            'data-appearance': getData().appearance,
+                            'data-tab-name': getData().tab_name,
+                            active: getData().default_active_tab,
+                            class: 'iconed-tab-title js-ctab-title-' + contentType.parentContentType.id
+                        })">
+                        <img if="data.icon_inactive.attributes().src"
+                             class="inactive"
+                             attr="data.icon_inactive.attributes" />
+                        <img if="data.icon_active.attributes().src"
+                             class="active"
+                             attr="data.icon_active.attributes" />
+                        <text args="getData().tab_name"></text>
+                    </li>
+                </with>
+            </each>
+            <li attr="class: 'iconed-tab-pointer js-ctab-pointer-' + contentType.id"></li>
+        </ul>
+    </div>
+
+    <div class="iconed-tabs-container"
+         attr="data.content.attributes"
+         css="data.content.css">
+        <render args="masterTemplate" />
+    </div>
+</div>

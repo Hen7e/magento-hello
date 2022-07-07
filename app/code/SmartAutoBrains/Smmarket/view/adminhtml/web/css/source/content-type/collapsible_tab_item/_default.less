@@ -1,0 +1,33 @@
+//
+//  Default appearance styles
+//  _____________________________________________
+
+div[data-content-type='collapsible_tabs'],
+.pagebuilder-content-type.pagebuilder-collapsible-tabs {
+    .pagebuilder-tab-item {
+        min-height: inherit;
+        padding: 40px;
+
+        &:before {
+            background: @color-white;
+            content: '';
+            height: 1px;
+            left: -1px;
+            opacity: 1;
+            position: absolute;
+            top: -2px;
+            visibility: visible;
+            width: calc(~'100% + 2px');
+            z-index: auto;
+        }
+
+        &.empty-container {
+            min-height: 220px;
+        }
+
+        > .element-children {
+            min-height: inherit;
+            padding: 0;
+        }
+    }
+}

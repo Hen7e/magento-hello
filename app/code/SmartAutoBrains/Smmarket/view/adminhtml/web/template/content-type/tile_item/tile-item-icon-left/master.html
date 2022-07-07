@@ -1,0 +1,112 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css">
+
+    <div class="pagebuilder-tile-item-tablet-image"
+         data-bind='attr: {
+            src: data.mobile_image.attributes().src,
+            style: "background-image: url(" + data.mobile_image.attributes().src + ")"
+         }'></div>
+
+    <div class="tile-item-inner">
+        <div class="pagebuilder-tile-item-content tile-item-icon-left-appearance-content">
+            <div class="icon-container">
+                <img if="data.tile_image.attributes().src"
+                     class="pagebuilder-tile-item-image"
+                     attr="data.tile_image.attributes"/>
+            </div>
+            <div class="content-container">
+                <h4 if="data.title.html()"
+                    class="pagebuilder-tile-item-title"
+                    attr="data.title.attributes"
+                    ko-style="data.title.style"
+                    html="data.title.html">
+                </h4>
+                <h4 if="data.title_html.html()"
+                    class="pagebuilder-tile-item-title"
+                    attr="data.title_html.attributes"
+                    ko-style="data.title_html.style"
+                    html="data.title_html.html()">
+                </h4>
+                <div if="data.details.html()"
+                     class="pagebuilder-tile-item-details"
+                     attr="data.details.attributes"
+                     ko-style="data.details.style"
+                     html="data.details.html">
+                </div>
+                <div if="data.description.html()"
+                     class="pagebuilder-tile-item-description"
+                     attr="data.description.attributes"
+                     ko-style="data.description.style"
+                     html="data.description.html">
+                </div>
+                <a if="data.link.attributes().href" attr="data.link.attributes">
+                    <div if="data.link_text.html()"
+                         class="pagebuilder-tile-item-link"
+                         attr="data.link_text.attributes"
+                         ko-style="data.link_text.style"
+                         html="data.link_text.html"
+                         tabindex="1">
+                    </div>
+                </a>
+                <a if="data.additional_link.attributes().href" attr="data.additional_link.attributes">
+                    <div if="data.link_text_additional.html()"
+                         class="pagebuilder-tile-item-link pagebuilder-tile-item-link--additional"
+                         attr="data.link_text_additional.attributes"
+                         ko-style="data.link_text_additional.style"
+                         html="data.link_text_additional.html"
+                         tabindex="1">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <ifnot args="data.link.attributes().href">
+            <div class="pagebuilder-tile-item-content tile-item-icon-left-appearance-content">
+                <div class="icon-container">
+                    <img if="data.tile_image.attributes().src"
+                         class="pagebuilder-tile-item-image"
+                         attr="data.tile_image.attributes"/>
+                </div>
+                <div class="content-container">
+                    <h4 if="data.title.html()"
+                        class="pagebuilder-tile-item-title"
+                        attr="data.title.attributes"
+                        ko-style="data.title.style"
+                        html="data.title.html">
+                    </h4>
+                    <h4 if="data.title_html.html()"
+                        class="pagebuilder-tile-item-title"
+                        attr="data.title_html.attributes"
+                        ko-style="data.title_html.style"
+                        html="data.title_html.html">
+                    </h4>
+                    <div if="data.details.html()"
+                         class="pagebuilder-tile-item-details"
+                         attr="data.details.attributes"
+                         ko-style="data.details.style"
+                         html="data.details.html">
+                    </div>
+                    <div if="data.description.html()"
+                         class="pagebuilder-tile-item-description"
+                         attr="data.description.attributes"
+                         ko-style="data.description.style"
+                         html="data.description.html">
+                    </div>
+                    <div if="data.link_text.html()"
+                         class="pagebuilder-tile-item-link"
+                         attr="data.link_text.attributes"
+                         ko-style="data.link_text.style"
+                         html="data.link_text.html">
+                    </div>
+                    <div if="data.link_text_additional.html()"
+                         class="pagebuilder-tile-item-link pagebuilder-tile-item-link--additional"
+                         attr="data.link_text_additional.attributes"
+                         ko-style="data.link_text_additional.style"
+                         html="data.link_text_additional.html">
+                    </div>
+                </div>
+            </div>
+        </ifnot>
+    </div>
+</div>

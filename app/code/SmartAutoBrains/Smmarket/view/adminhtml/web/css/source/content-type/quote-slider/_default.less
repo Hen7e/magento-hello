@@ -1,0 +1,87 @@
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Andrey Bugaev <abugaev@helenoftroy.com>
+*/
+
+.pagebuilder-quote-slider-wrapper {
+    .lib-vendor-prefix-display(flex);
+    .lib-vendor-box-align(center);
+    .lib-vendor-prefix-justify-content(center);
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    max-width: @layout-width;
+    margin: 0 auto;
+    padding-top: 30px;
+
+    .pagebuilder-quote-slider {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-prefix-flex-direction(column);
+        .lib-vendor-prefix-justify-content(space-between);
+        .lib-css(box-shadow, 0 0 0 1px rgba(153, 153, 153, .3));
+        height: 350px;
+        min-height: 300px;
+
+        .action-default {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .pagebuilder-quote-slider-inner {
+            height: 150px;
+        }
+
+        .pagebuilder-quote-slider-item-wrapper {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 0 20%;
+            flex: 1 0 20%;
+            margin-top: 30px;
+
+            .quote-slider-image {
+                width: 50%;
+
+                @media (max-width: @mobile-point) {
+                    width: 100%;
+                }
+
+                .pagebuilder-quote-slider-mobile-image {
+                    display: none;
+
+                    @media (max-width: @mobile-point) {
+                        display: block;
+                    }
+                }
+
+                .pagebuilder-quote-slider-desktop-image {
+                    max-width: 100%;
+                    height: 100%;
+
+                    @media (max-width: @mobile-point) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .pagebuilder-quote-slider-item-wrapper {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 15%;
+        flex: 1 0 15%;
+    }
+}
+
+.pagebuilder-content-type .pagebuilder-empty-container.empty-placeholder-background.pagebuilder-empty-quote-slider {
+    .lib-css(transform, translateY(0));
+    background: url('@{baseDir}Astound_ContentTypes/css/images/empty-quote-slider.svg') no-repeat center center;
+    height: 250px;
+    background-size: 600px;
+    padding-top: 240px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

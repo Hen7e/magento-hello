@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"
+      extends="pagebuilder_base_form_with_background_attributes">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">
+                pagebuilder_plp_enhanced_feature_item_form.pagebuilder_plp_enhanced_feature_item_form_data_source
+            </item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">PLP Enhanced Feature Item</item>
+    </argument>
+    <settings>
+        <deps>
+            <dep>pagebuilder_plp_enhanced_feature_item_form.pagebuilder_plp_enhanced_feature_item_form_data_source</dep>
+        </deps>
+        <namespace>pagebuilder_plp_enhanced_feature_item_form</namespace>
+    </settings>
+    <dataSource name="pagebuilder_plp_enhanced_feature_item_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_PageBuilder/js/form/provider</item>
+            </item>
+        </argument>
+        <dataProvider name="pagebuilder_plp_enhanced_feature_item_form_data_source"
+                      class="Magento\PageBuilder\Model\ContentType\DataProvider">
+            <settings>
+                <requestFieldName/>
+                <primaryFieldName/>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="appearance_fieldset" sortOrder="10"
+              component="Magento_PageBuilder/js/form/element/dependent-fieldset">
+        <settings>
+            <label translate="true">Appearance</label>
+            <additionalClasses>
+                <class name="admin__fieldset-visual-select-large">true</class>
+            </additionalClasses>
+            <collapsible>false</collapsible>
+            <opened>true</opened>
+            <imports>
+                <link name="hideFieldset">${$.name}.appearance:options</link>
+                <link name="hideLabel">${$.name}.appearance:options</link>
+            </imports>
+        </settings>
+        <field name="appearance" formElement="select" sortOrder="10"
+               component="Magento_PageBuilder/js/form/element/dependent-visual-select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">default</item>
+                </item>
+            </argument>
+            <settings>
+                <additionalClasses>
+                    <class name="admin__field-wide">true</class>
+                    <class name="admin__field-visual-select-container">true</class>
+                </additionalClasses>
+                <dataType>text</dataType>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <elementTmpl>Magento_PageBuilder/form/element/visual-select</elementTmpl>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="AppearanceSourceDefaultOnly"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+    <fieldset name="feature_images" sortOrder="5">
+        <settings>
+            <label translate="true">Features Images</label>
+            <collapsible>true</collapsible>
+            <opened>true</opened>
+        </settings>
+        <field name="feature_image_desktop" sortOrder="5" formElement="imageUploader">
+            <settings>
+                <label translate="true">Image</label>
+                <notice>Desktop variant of description's image</notice>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">pagebuilder/contenttype/image_upload</param>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_PageBuilder/form/element/uploader/preview</previewTmpl>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <field name="feature_image_mobile" sortOrder="10" formElement="imageUploader">
+            <settings>
+                <label translate="true">Image</label>
+                <notice>Mobile variant of description's image</notice>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">pagebuilder/contenttype/image_upload</param>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_PageBuilder/form/element/uploader/preview</previewTmpl>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <field name="svg_image_code" sortOrder="15" formElement="textarea">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">SVG HTML</label>
+                <dataType>text</dataType>
+                <dataScope>svg_image_code</dataScope>
+                <notice translate="true">If you have the svg html code, you can put it here</notice>
+            </settings>
+        </field>
+        <field name="alt" sortOrder="20" formElement="input">
+            <settings>
+                <label translate="true">Alternative Text for image</label>
+                <validation>
+                    <rule name="validate-string" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
+    <fieldset name="feature_configuration" sortOrder="10">
+        <settings>
+            <label translate="true">Features Description</label>
+            <collapsible>true</collapsible>
+            <opened>true</opened>
+        </settings>
+        <field name="feature_title" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                </item>
+            </argument>
+            <settings>
+                <dataScope>feature_title</dataScope>
+                <dataType>text</dataType>
+                <label translate="true">Feature title</label>
+            </settings>
+        </field>
+        <field name="feature_color" sortOrder="25" formElement="colorPicker">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">#ffffff</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Font color</label>
+                <componentType>colorPicker</componentType>
+                <additionalClasses>
+                    <class name="admin__field-medium">true</class>
+                </additionalClasses>
+                <dataScope>feature_color</dataScope>
+                <dataType>text</dataType>
+            </settings>
+            <formElements>
+                <colorPicker>
+                    <settings>
+                        <colorPickerMode>full</colorPickerMode>
+                        <colorFormat>hex</colorFormat>
+                    </settings>
+                </colorPicker>
+            </formElements>
+        </field>
+        <field name="feature_description" sortOrder="30" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                </item>
+            </argument>
+            <settings>
+                <dataScope>feature_description</dataScope>
+                <dataType>text</dataType>
+                <label translate="true">Feature description</label>
+            </settings>
+        </field>
+        <field name="feature_color_description" sortOrder="35" formElement="colorPicker">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">#ffffff</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Font color</label>
+                <componentType>colorPicker</componentType>
+                <additionalClasses>
+                    <class name="admin__field-medium">true</class>
+                </additionalClasses>
+                <dataScope>feature_color_description</dataScope>
+                <dataType>text</dataType>
+            </settings>
+            <formElements>
+                <colorPicker>
+                    <settings>
+                        <colorPickerMode>full</colorPickerMode>
+                        <colorFormat>hex</colorFormat>
+                    </settings>
+                </colorPicker>
+            </formElements>
+        </field>
+    </fieldset>
+    <fieldset name="background">
+        <settings>
+            <visible>false</visible>
+        </settings>
+    </fieldset>
+    <fieldset name="advanced">
+        <settings>
+            <visible>false</visible>
+        </settings>
+    </fieldset>
+</form>

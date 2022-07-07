@@ -1,0 +1,241 @@
+@color-gray: #ccc;
+
+//
+//  General styles
+//  _____________________________________________
+
+div[data-content-type='collapsible_tabs'],
+.pagebuilder-content-type.pagebuilder-collapsible-tabs {
+    margin-bottom: 10px;
+
+    .tabs-navigation {
+        border-bottom: 1px solid rgba(153, 153, 153, .3);
+        display: block;
+        font-size: 0;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+
+        li:first-child {
+            margin-left: 0 !important;
+        }
+
+        li.tab-header {
+            background: @color-gray-light0;
+            border: 1px solid @color-gray80;
+            display: inline-block;
+            margin: 0;
+            margin-bottom: -1px;
+            max-width: 100%;
+            overflow-wrap: break-word;
+            position: relative;
+            word-wrap: break-word;
+            border-radius: 0px;
+
+            a.tab-title {
+                border-right: 0;
+                color: @color-black;
+                cursor: pointer !important;
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 1.4rem 2rem;
+                position: relative;
+                transition: all .3s;
+                vertical-align: middle;
+                white-space: normal;
+
+                span.tab-title {
+                    cursor: text;
+                    display: block;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+                .tab-drag-handle {
+                    height: 100%;
+                    left: 2px;
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    transition: all .3s;
+                    visibility: hidden;
+                    width: 14px;
+
+                    &.disabled:before {
+                        color: @color-light-gray;
+                        cursor: not-allowed;
+                    }
+
+                    &.disabled:active:before {
+                        cursor: not-allowed;
+                    }
+
+                    &:before {
+                        .abs-icon;
+                        color: @color-dark-gray0;
+                        content: @icon-gripper__content;
+                        cursor: move; /* fallback if grab cursor is unsupported */
+                        cursor: grab;
+                        cursor: -moz-grab;
+                        cursor: -webkit-grab;
+                        display: block;
+                        font-size: 16px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    &:active:before {
+                        cursor: grabbing;
+                        cursor: -moz-grabbing;
+                        cursor: -webkit-grabbing;
+                    }
+                }
+            }
+
+            &.sortable-placeholder {
+                opacity: .3;
+            }
+
+            &.ui-sortable-helper {
+                box-shadow: 0 1px 10px rgba(0, 0, 0, .3);
+                opacity: .7;
+                white-space: nowrap;
+
+                a.tab-title .tab-drag-handle:before {
+                    cursor: grabbing;
+                    cursor: -moz-grabbing;
+                    cursor: -webkit-grabbing;
+                }
+            }
+
+            &:last-child {
+                border-right: 1px solid @color-gray80;
+            }
+
+            &.ui-state-active {
+                background: @color-white;
+                z-index: 19;
+
+                &:after {
+                    border-bottom: 1px solid @color-white;
+                    bottom: -1px;
+                    content: '';
+                    left: 0;
+                    position: absolute;
+                    width: 100%;
+                }
+
+                a.tab-title {
+                    position: relative;
+                    transition: all .3s;
+                }
+            }
+
+            &.focused {
+                a.tab-title .tab-drag-handle {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .pagebuilder-options {
+                    .pagebuilder-options-visible;
+                }
+            }
+        }
+    }
+
+    .tabs-content {
+        border: 1px solid transparent;
+        position: relative;
+        min-height: 300px;
+
+        > .element-children {
+            min-height: inherit;
+            padding: 0;
+
+            > .pagebuilder-content-type-wrapper {
+                display: block;
+
+                ~ .pagebuilder-content-type-wrapper {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    //
+    //  Default appearance styles
+    //  _____________________________________________
+    &[data-appearance="default"] {
+        > .tabs-container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .tabs-navigation {
+            flex: 0 0 20%;
+            border: 1px solid rgba(153, 153, 153, .3);
+            margin-bottom: 0;
+
+            li.tab-header {
+                width: 100%;
+                display: block;
+                margin-bottom: 0;
+                &:last-child { border-bottom-width: 2px; }
+            }
+        }
+
+        .tabs-content {
+            flex: 0 0 80%;
+            border-top: 2px solid rgba(153, 153, 153, .3);
+        }
+    }
+
+    //
+    //  Horizontal appearance styles
+    //  _____________________________________________
+    &[data-appearance="horizontal"] {
+        .tabs-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            border: none;
+
+            li.tab-header {
+                flex: 0 0 25%;
+                text-align: center;
+                margin-bottom: -1px;
+
+                img {
+                    max-width: 52px;
+                    &.active { display: none; }
+                }
+
+                &.ui-state-active {
+                    img {
+                        &.inactive { display: none; }
+                        &.active { display: inline-block; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pagebuilder-content-type-wrapper.ui-tabs-panel {
+    margin-top: 0;
+    min-height: inherit;
+    padding: 0;
+}
+
+.pagebuilder-stage.focus-child .pagebuilder-content-type.pagebuilder-tabs .tabs-content {
+    z-index: auto;
+}
+
+.pagebuilder-content-type-hidden .pagebuilder-content-type.pagebuilder-tabs .tabs-navigation li.tab-header.ui-state-active {
+    z-index: 10;
+}

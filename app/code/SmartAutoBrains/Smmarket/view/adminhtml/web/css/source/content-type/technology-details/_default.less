@@ -1,0 +1,68 @@
+.pagebuilder-technology-details-item-wrapper {
+  float: left;
+  height: 0;
+  padding-bottom: 10px;
+  position: relative;
+  width: 25%;
+  padding-bottom: 40%;
+  &:nth-child(5n) { clear: left; }
+  @media (max-width: @mobile-point) {
+      width: 100%;
+      float: none;
+  }
+}
+
+.pagebuilder-technology-details {
+  max-width: @layout-width;
+  margin: 1px auto 15px;
+  box-shadow: 0 0 0 1px rgba(153, 153, 153, .3);
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.pagebuilder-technology-details-header {
+    padding: 15px;
+}
+
+.pagebuilder-technology-details-title {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #fff;
+}
+
+.pagebuilder-technology-details-wrapper {
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+.pagebuilder-technology-details-details {
+    font-size: 21px;
+    line-height: 1.35em;
+    text-align: center;
+    color: #fff;
+}
+
+.pagebuilder-technology-details-children {
+    min-height: 300px;
+    position: relative;
+}
+
+.pagebuilder-content-type .pagebuilder-empty-container.empty-placeholder-background.pagebuilder-empty-technology-details {
+  background: url('@{baseDir}Astound_ContentTypes/css/images/empty-technology-details.svg') no-repeat center center;
+  height: 250px;
+  padding-top: 240px;
+  position: absolute;
+  text-align: center;
+  transform: translateY(0);
+  top: 0;
+  width: 100%;
+  + .pagebuilder-technology-details-item-wrapper { padding-top: 0; }
+}

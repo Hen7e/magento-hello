@@ -1,0 +1,23 @@
+.pagebuilder-gallery-slide {
+	margin: 10px 5px;
+	.pagebuilder-image-uploader-container {
+		visibility: visible;
+	}
+	.pagebuilder-image-empty-preview {
+		align-items: center;
+		background: @color-white-fog;
+		border-radius: inherit;
+		display: flex;
+		height: 300px;
+		justify-content: center;
+		width: 100%;
+		span {
+			color: @color-gray65-lighten;
+		}
+	}
+	.pagebuilder-gallery-slide-image {
+		width: 100%;
+		height: auto;
+		&.mobile { display: none; }
+	}
+}

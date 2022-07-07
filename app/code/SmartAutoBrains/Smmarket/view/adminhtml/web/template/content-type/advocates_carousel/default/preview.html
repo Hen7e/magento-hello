@@ -1,0 +1,37 @@
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Andrey Bugaev <abugaev@helenoftroy.com>
+ */
+-->
+
+<div class="pagebuilder-content-type pagebuilder-advocates-carousel"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="pagebuilder-empty-container advocates_carousel-empty-placeholder"
+         css="placeholderCss()"/>
+
+    <div class="pagebuilder-advocates-carousel-title"
+        if="data.advocates_carousel_title.html()"
+        attr="data.advocates_carousel_title.attributes"
+        html="data.advocates_carousel_title.html">
+    </div>
+
+    <div class="element-children content-type-container"
+         each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+         data-bind="sortable: getSortableOptions()"
+         afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+      <div class="pagebuilder-content-type-wrapper pagebuilder-advocates-carousel-item-wrapper"
+           template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+           attr="{ id: id }"
+           css="{'pagebuilder-content-type-hidden': !preview.display()}">
+      </div>
+
+    </div>
+</div>

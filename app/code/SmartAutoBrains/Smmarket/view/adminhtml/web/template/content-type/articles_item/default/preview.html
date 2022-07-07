@@ -1,0 +1,39 @@
+<div class="pagebuilder-content-type pagebuilder-articles-item pagebuilder-content-type-wrapper"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"></render>
+
+    <div class="pagebuilder-articles-item-inner">
+        <div if="data.title.html() && data.description.html() && data.image.attributes().src"
+             attr="data.main.attributes"
+             class="pagebuilder-articles-item-content">
+            <p class="pagebuilder-articles-item-title"
+               attr="data.title.attributes"
+               ko-style="data.main.style"
+               html="data.title.html"
+            ></p>
+            <div class="pagebuilder-articles-item-description"
+                 attr="data.description.attributes"
+                 html="data.description.html"
+            ></div>
+            <div class="pagebuilder-articles-item-image">
+                <!-- ko if: data.image.attributes().alt && data.image.attributes().title -->
+                    <img attr="data.image.attributes"/>
+                <!-- /ko -->
+                <!-- ko if: data.image.attributes().alt && !data.image.attributes().title -->
+                    <img data-bind="attr: { src: data.image.attributes().src, alt: data.image.attributes().alt, title: data.title.html() }" />
+                <!-- /ko -->
+                <!-- ko if: !data.image.attributes().alt && data.image.attributes().title -->
+                    <img data-bind="attr: { src: data.image.attributes().src, alt: data.title.html(), title: data.image.attributes().title }" />
+                <!-- /ko -->
+                <!-- ko if: !data.image.attributes().alt && !data.image.attributes().title -->
+                    <img data-bind="attr: { src: data.image.attributes().src, alt: data.title.html(), title: data.title.html() }" />
+                <!-- /ko -->
+            </div>
+        </div>
+        <div if="!data.title.html() || !data.description.html() || !data.image.attributes().src"
+             class="pagebuilder-articles-item-empty">
+            EMPTY
+        </div>
+    </div>
+</div>

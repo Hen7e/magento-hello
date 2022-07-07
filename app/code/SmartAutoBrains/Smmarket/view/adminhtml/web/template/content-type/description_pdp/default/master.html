@@ -1,0 +1,40 @@
+<div attr="data.main.attributes"
+     class="description-pdp"
+     ko-style="data.main.style"
+     css="data.main.css">
+
+    <div class="row-fix">
+        <div class="row">
+            <div class="column large-6">
+                <div class="description-pdp-content-wrapper">
+                    <div class="description-pdp-content">
+                        <div attr="data.description.attributes"
+                             text="data.description.html"
+                             class="description-pdp-content-markup bypass-html-filter"></div>
+
+                        <div html="data.description.html"
+                             class="description-pdp-content-text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div if="data.description_image.attributes().src"
+         class="description-pdp-desktop-image"
+         attr="{'data-bg': data.description_image.attributes().src }">
+
+        <!-- ko if: data.description_mobile_image.attributes().src -->
+        <div class="pagebuilder-attributes-placeholder"
+             if="data.description_mobile_image.attributes().src"
+             attr="data.description_mobile_image.attributes"></div>
+        <img if="data.description_mobile_image.attributes().src"
+             attr="{
+                'data-src': data.description_mobile_image.attributes().src,
+                'title':  data.description_mobile_image.attributes().title,
+                'alt':  data.description_mobile_image.attributes().alt,
+             }"
+             class="description-pdp-mobile-image"/>
+        <!-- /ko -->
+    </div>
+</div>

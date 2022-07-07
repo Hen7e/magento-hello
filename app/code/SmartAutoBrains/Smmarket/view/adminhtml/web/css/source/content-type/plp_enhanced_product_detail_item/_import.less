@@ -1,0 +1,29 @@
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+.pagebuilder-products {
+    height: 100%;
+
+    .product-item {
+        width: 100%;
+        max-width: 255px;
+        margin-right: 0 !important; //override page builder styles
+    }
+    .products-listing-grid {
+        .lib-vendor-prefix-justify-content(space-around);
+        overflow-x: auto;
+    }
+
+    .pagebuilder-product-details-items {
+        height: 100%;
+    }
+
+    .pagebuilder-products-placeholder {
+        .lib-vendor-prefix-display();
+        .lib-vendor-box-align(center);
+        .lib-vendor-prefix-justify-content(center);
+        min-height: 100%;
+    }
+}

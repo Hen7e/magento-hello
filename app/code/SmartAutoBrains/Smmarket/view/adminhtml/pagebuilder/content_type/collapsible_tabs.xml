@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="collapsible_tabs"
+          label="Сollapsible Tabs"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="Astound_ContentTypes/js/content-type/collapsible_tabs/preview"
+          master_component="Magento_PageBuilder/js/content-type/master-collection"
+          form="pagebuilder_collapsible_tabs_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-tabs"
+          sortOrder="40"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="root-container" policy="allow"/>
+            <parent name="row" policy="allow"/>
+            <parent name="collapsible_tab_item" policy="allow"/>
+        </parents>
+        <children default_policy="deny">
+            <child name="collapsible_tabs_item" policy="allow"/>
+        </children>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/collapsible_tabs/default/preview"
+                        master_template="Astound_ContentTypes/content-type/collapsible_tabs/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="default_active" source="data-active-tab"/>
+                        <attribute name="use_hash_navigation" source="data-use-hash-navigation"/>
+                        <attribute name="show_tab_on_init" source="data-show-tab-on-init"/>
+                        <attribute name="scroll_to_tab" source="data-scroll-to-tab"/>
+                        <attribute name="scroll_to_tab_animated" source="data-scroll-to-tab-animated"/>
+                        <attribute name="animation_speed" source="data-animation-speed"/>
+                        <css name="css_classes" />
+                    </element>
+                    <element name="headers" />
+                    <element name="navigation" />
+                    <element name="content" />
+                </elements>
+            </appearance>
+            <appearance name="horizontal"
+                        default="false"
+                        preview_template="Astound_ContentTypes/content-type/collapsible_tabs/horizontal/preview"
+                        master_template="Astound_ContentTypes/content-type/collapsible_tabs/horizontal/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="default_active" source="data-active-tab"/>
+                        <attribute name="use_hash_navigation" source="data-use-hash-navigation"/>
+                        <attribute name="show_tab_on_init" source="data-show-tab-on-init"/>
+                        <attribute name="scroll_to_tab" source="data-scroll-to-tab"/>
+                        <attribute name="scroll_to_tab_animated" source="data-scroll-to-tab-animated"/>
+                        <attribute name="animation_speed" source="data-animation-speed"/>
+                        <css name="css_classes" />
+                    </element>
+                    <element name="headers" />
+                    <element name="navigation" />
+                    <element name="content" />
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

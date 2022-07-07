@@ -1,0 +1,32 @@
+.pagebuilder-ad-space-item-wrapper {
+  float: left;
+  height: 0;
+  padding-bottom: 40%;
+  position: relative;
+  width: 50%;
+  &:nth-child(3n) { clear: left; }
+}
+
+.pagebuilder-ad-space {
+  max-width: @layout-width;
+  margin: 1px auto 10px;
+  min-height: 300px;
+  box-shadow: 0 0 0 1px rgba(153, 153, 153, .3);
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.pagebuilder-content-type .pagebuilder-empty-container.empty-placeholder-background.pagebuilder-empty-ad-space {
+  background: url('@{baseDir}Astound_ContentTypes/css/images/empty-ad-space.svg') no-repeat center center;
+  background-size: auto 80%;
+  height: 250px;
+  padding-top: 240px;
+  position: absolute;
+  text-align: center;
+  transform: translateY(0);
+  top: 0;
+  width: 100%;
+}

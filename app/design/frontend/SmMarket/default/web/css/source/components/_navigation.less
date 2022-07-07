@@ -1,0 +1,32 @@
+@import './_variables.less';
+@import '../_fonts.less';
+
+.navigation {
+    background: @whiteColor;
+}
+
+.section-items.nav-sections-items {
+    background: @whiteColor;
+}
+
+.level0 {
+    font: 700 16px @font_medium;
+    line-height: 24px;
+
+    &:first-child {
+        border-right: 1px solid @lightGrayColor;
+    }
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    &:hover {
+        color: @greenColor;
+    }
+}
+
+.ui-menu.ui-widget.ui-widget-content.ui-corner-all {
+    border: 1px solid @lightGrayColor;
+}
+

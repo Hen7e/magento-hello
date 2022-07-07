@@ -1,0 +1,38 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     class="ad-space-item"
+     css="data.main.css">
+    <div class="ad-space-item-inner">
+        <a if="data.link.attributes().href" attr="data.link.attributes">
+            <div class="ad-space-item-content">
+                <div if="data.label.html()"
+                     class="ad-space-item-label"
+                     attr="data.label.attributes"
+                     html="data.label.html">
+                </div>
+
+                <h4 if="data.title.html()"
+                    class="ad-space-item-title"
+                    attr="data.title.attributes">
+                    <span html="data.title.html"></span>
+                </h4>
+            </div>
+        </a>
+
+        <ifnot args="data.link.attributes().href">
+            <div class="ad-space-item-content">
+                <div if="data.label.html()"
+                     class="ad-space-item-label"
+                     attr="data.label.attributes"
+                     html="data.label.html">
+                </div>
+
+                <h4 if="data.title.html()"
+                    class="ad-space-item-title"
+                    attr="data.title.attributes">
+                    <span html="data.title.html"></span>
+                </h4>
+            </div>
+        </ifnot>
+    </div>
+</div>

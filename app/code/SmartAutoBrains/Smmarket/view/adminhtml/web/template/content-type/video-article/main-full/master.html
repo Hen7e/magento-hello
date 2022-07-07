@@ -1,0 +1,133 @@
+<div class="video-article"
+     attr="data.main.attributes">
+    <div class="video-article-main video-article-media">
+        <div if="data.video_article_image.attributes().src"
+             class="video-article-image-wrapper-large"
+             attr="{'style': 'background-image: url(' + data.video_article_image.attributes().src + ')'}">
+                <img if="data.video_article_image_mobile.attributes().src"
+                     attr="data.video_article_image_mobile.attributes"
+                     class="video-article-image-mobile"/>
+
+                <img if="data.video_article_image.attributes().src"
+                     attr="data.video_article_image.attributes"
+                     class="video-article-image"/>
+        </div>
+        <div class="video-article-media-inner">
+            <div class="row">
+                <div class="column">
+                    <h4 if="data.video_article_title.html()"
+                        class="video-article-title">
+                        <span attr="data.video_article_title.attributes"
+                          html="data.video_article_title.html"></span>
+                    </h4>
+                    <h4 if="data.video_article_title_second.html()"
+                        class="video-article-title">
+                        <span attr="data.video_article_title_second.attributes"
+                          html="data.video_article_title_second.html"></span>
+                    </h4>
+
+                    <p if="data.video_article_description.html()"
+                       attr="data.video_article_description.attributes"
+                       html="data.video_article_description.html"
+                       class="video-article-description"></p>
+
+                    <button type="button" class="video-article-button js-popup-video-trigger">Watch Now</button>
+
+                    <div class="video-article-frame-wrapper js-video-frame-wrapper">
+                        <span class="video-article-frame-placeholder"
+                              attr="data.video_element.attributes"
+                              html="data.video_element.html"></span>
+                        <iframe title="video-player"
+                                class="modal-video-frame js-popup-video-frame"
+                                data-bind="attr: { src: data.video_element.html() }">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video-article-content-wrapper">
+        <div class="row">
+            <div class="column">
+                <button type="button" class="video-article-toggle-trigger video-article-toggle-trigger-top js-video-article-toggle-trigger">
+                    <span class="video-article-toggle-trigger-open">
+                        <span class="icon-arrow-down-gray"></span>
+                        <span>Expand For More</span>
+                    </span>
+                    <span class="video-article-toggle-trigger-close">
+                        <span class="icon-close-gray"></span>
+                        <span>Collapse</span>
+                    </span>
+                </button>
+                <div class="video-article-content-expandable">
+                    <div class="video-article-content"
+                         attr="data.video_article_content.attributes"
+                         html="data.video_article_content.html"></div>
+
+                    <!-- ko if: data.socials.attributes().social_share == "true" -->
+                    <div class="video-article-share-container"
+                         attr="data.socials.attributes">
+                        <h5 class="video-article-share-title">Share</h5>
+                        <ul class="video-article-share-list">
+                            <li>
+                                <a href="#"
+                                   target="_blank"
+                                   class="video-article-share-link js-social-share"
+                                   data-sshare="facebook"
+                                   attr="
+                                   {
+                                    'data-url-custom': data.facebook_url.html
+                                   }">
+                                    <span class="icon-share-facebook"></span>
+                                    <span class="pagebuilder-attributes-placeholder"
+                                          attr="data.facebook_url.attributes"
+                                          html="data.facebook_url.html"
+                                    ></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   target="_blank"
+                                   class="video-article-share-link js-social-share"
+                                   data-sshare="twitter"
+                                   attr="{
+                                        'data-url-custom': data.twitter_url.html
+                                   }">
+                                    <span class="icon-share-twitter"></span>
+                                    <span class="pagebuilder-attributes-placeholder"
+                                          attr="data.twitter_message.attributes"
+                                          html="data.twitter_message.html"
+                                    ></span>
+                                    <span class="pagebuilder-attributes-placeholder"
+                                          attr="data.twitter_url.attributes"
+                                          html="data.twitter_url.html"
+                                    ></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   target="_blank"
+                                   class="video-article-share-link js-social-share"
+                                   data-sshare="linkedin"
+                                   attr="{
+                                    'data-url-custom': data.linkedin_url.html,
+                                   }">
+                                    <span class="icon-share-linkedin"></span>
+                                    <span class="pagebuilder-attributes-placeholder"
+                                          attr="data.linkedin_url.attributes"
+                                          html="data.linkedin_url.html"
+                                    ></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /ko -->
+                    <button type="button" class="video-article-toggle-trigger bordered js-video-article-collapse-trigger">
+                        <span class="icon-x"></span>
+                        <span>Collapse</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

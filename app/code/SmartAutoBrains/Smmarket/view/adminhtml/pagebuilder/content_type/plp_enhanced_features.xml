@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type
+        name="plp_enhanced_features"
+        label="PLP features"
+        menu_section="enhance-plp-items"
+        component="Magento_PageBuilder/js/content-type-collection"
+        preview_component="Astound_ContentTypes/js/content-type/plp_enhanced_features/preview"
+        master_component="Magento_PageBuilder/js/content-type/master-collection"
+        form="pagebuilder_plp_enhanced_features_form"
+        icon="icon-pagebuilder-banner"
+        translate="label"
+    >
+        <parents default_policy="deny">
+            <parent name="root-container" policy="allow"/>
+        </parents>
+
+        <children default_policy="deny">
+            <child name="plp_enhanced_feature_item" policy="allow"/>
+        </children>
+
+        <appearances>
+            <appearance
+                default="true"
+                name="default"
+                preview_template="Astound_ContentTypes/content-type/plp_enhanced_features/default/preview"
+                master_template="Astound_ContentTypes/content-type/plp_enhanced_features/default/master"
+                reader="Magento_PageBuilder/js/master-format/read/configurable">
+
+                <elements>
+                    <element name="main">
+                        <style name="background_color" source="background_color"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter name="background_images" component="Magento_PageBuilder/js/mass-converter/background-images">
+                        <config>
+                            <item name="attribute_name" value="background_images"/>
+                            <item name="desktop_image_variable" value="background_image"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+        </appearances>
+    </type>
+</config>

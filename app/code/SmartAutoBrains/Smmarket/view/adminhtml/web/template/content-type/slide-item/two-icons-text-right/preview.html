@@ -1,0 +1,137 @@
+<div class="pagebuilder-content-type pagebuilder-slide"
+     attr="data.main.attributes"
+     css="data.main.css"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }">
+    <div class="pagebuilder-slide-poster-wrapper poster">
+        <div class="pagebuilder-slide-overlay"
+             attr="data.overlay.attributes"
+             css="data.overlay.css">
+            <scope args="getUploader().getUiComponent()">
+                <render />
+            </scope>
+
+            <!-- ko if: data.desktop_image.attributes().src -->
+                <!-- ko if: data.desktop_image.attributes().alt && data.desktop_image.attributes().title -->
+                <img attr="data.desktop_image.attributes"
+                     class="preview-image pagebuilder-slide-image"
+                     loading="eager" />
+                <!-- /ko -->
+                <!-- ko if: data.desktop_image.attributes().alt && !data.desktop_image.attributes().title -->
+                <img data-bind="attr: { src: data.desktop_image.attributes().src, alt: data.desktop_image.attributes().alt, title: data.title.html }"
+                     class="preview-image pagebuilder-slide-image"
+                     loading="eager" />
+                <!-- /ko -->
+                <!-- ko if: !data.desktop_image.attributes().alt && data.desktop_image.attributes().title -->
+                <img data-bind="attr: { src: data.desktop_image.attributes().src,  alt: data.title.html, title: data.desktop_image.attributes().title }"
+                     class="preview-image pagebuilder-slide-image"
+                     loading="eager" />
+                <!-- /ko -->
+                <!-- ko if: !data.desktop_image.attributes().alt && !data.desktop_image.attributes().title -->
+                <img data-bind="attr: { src: data.desktop_image.attributes().src,  alt: data.title.html, title: data.title.html }"
+                     class="preview-image pagebuilder-slide-image"
+                     loading="eager" />
+                <!-- /ko -->
+            <!-- /ko -->
+
+            <!-- ko if: data.mob_image.attributes().src -->
+                <!-- ko if: data.mob_image.attributes().alt && data.mob_image.attributes().title -->
+                <img attr="data.mob_image.attributes"
+                     class="preview-image pagebuilder-slide-image mobile"
+                     loading="eager" />
+                <!-- /ko -->
+                <!-- ko if: data.mob_image.attributes().alt && !data.mob_image.attributes().title -->
+                <img data-bind="attr: { src: data.mob_image.attributes().src, alt: data.mob_image.attributes().alt, title: data.title.html }"
+                     class="preview-image pagebuilder-slide-image mobile"
+                     loading="eager" />
+                <!-- /ko -->
+                <!-- ko if: !data.mob_image.attributes().alt && data.mob_image.attributes().title -->
+                <img data-bind="attr: { src: data.mob_image.attributes().src,  alt: data.title.html, title: data.mob_image.attributes().title }"
+                     class="preview-image pagebuilder-slide-image mobile"
+                     loading="eager" />
+                <!-- /ko -->
+                <!-- ko if: !data.mob_image.attributes().alt && !data.mob_image.attributes().title -->
+                <img data-bind="attr: { src: data.mob_image.attributes().src,  alt: data.title.html, title: data.title.html }"
+                     class="preview-image pagebuilder-slide-image mobile"
+                     loading="eager" />
+                <!-- /ko -->
+            <!-- /ko -->
+
+            <div class="pagebuilder-poster-content class-content">
+                <div class="pagebuilder-poster-content-left">
+                    <!-- ko if: data.mobile_icon.attributes().src -->
+                        <!-- ko if: data.mobile_icon.attributes().alt && data.mobile_icon.attributes().title -->
+                        <img attr="data.mobile_icon.attributes"
+                             class="pagebuilder-slide-icon" />
+                        <!-- /ko -->
+                        <!-- ko if: data.mobile_icon.attributes().alt && !data.mobile_icon.attributes().title -->
+                        <img data-bind="attr: { src: data.mobile_icon.attributes().src, alt: data.mobile_icon.attributes().alt, title: data.title.htm }"
+                             class="pagebuilder-slide-icon" />
+                        <!-- /ko -->
+                        <!-- ko if:  !data.mobile_icon.attributes().alt && data.mobile_icon.attributes().title -->
+                        <img data-bind="attr: { src: data.mobile_icon.attributes().src,  alt: data.title.html, title: data.mobile_icon.attributes().title }"
+                             class="pagebuilder-slide-icon" />
+                        <!-- /ko -->
+                        <!-- ko if: !data.mobile_icon.attributes().alt && !data.mobile_icon.attributes().title -->
+                        <img data-bind="attr: { src: data.mobile_icon.attributes().src,  alt: data.title.html, title: data.title.html }"
+                             class="pagebuilder-slide-icon" />
+                        <!-- /ko -->
+                    <!-- /ko -->
+                </div>
+
+                <div class="pagebuilder-poster-content-right">
+                    <!-- ko if: data.desktop_icon.attributes().src -->
+                        <!-- ko if: data.desktop_icon.attributes().alt && data.desktop_icon.attributes().title -->
+                        <img attr="data.desktop_icon.attributes"
+                             class="pagebuilder-slide-icon" />
+                        <!-- /ko -->
+                        <!-- ko if: data.desktop_icon.attributes().alt && !data.desktop_icon.attributes().title -->
+                        <img data-bind="attr: { src: data.desktop_icon.attributes().src, alt: data.desktop_icon.attributes().alt, title: data.title.html }"
+                             class="pagebuilder-slide-icon" />
+                        <!-- /ko -->
+                        <!-- ko if: !data.desktop_icon.attributes().alt && data.desktop_icon.attributes().title -->
+                        <img data-bind="attr: { src: data.desktop_icon.attributes().src,  alt: data.title.html, title: data.desktop_icon.attributes().title }"
+                             class="pagebuilder-slide-icon" />
+                        <!-- /ko -->
+                        <!-- ko if: !data.desktop_icon.attributes().alt && !data.desktop_icon.attributes().title -->
+                        <img data-bind="attr: { src: data.desktop_icon.attributes().src,  alt: data.title.html, title: data.title.html }"
+                             class="pagebuilder-slide-icon" />
+                        <!-- /ko -->
+                    <!-- /ko -->
+                    <div class="pagebuilder-slide-intro"
+                         attr="data.intro.attributes"
+                         ko-style="data.intro.style"
+                         data-bind="liveEdit: { field: 'intro', placeholder: 'Intro', selectAll: true }">
+                    </div>
+                    <div class="pagebuilder-slide-title"
+                         attr="data.title.attributes"
+                         ko-style="data.title.style"
+                         data-bind="liveEdit: { field: 'title', placeholder: 'Title', selectAll: true }">
+                    </div>
+                    <div class="pagebuilder-slide-title pagebuilder-slide-title-html"
+                         attr="data.title_html.attributes"
+                         html="data.title_html.html"
+                         ko-style="data.title_html.style">
+                    </div>
+                    <div class="pagebuilder-slide-description"
+                         attr="data.description.attributes"
+                         ko-style="data.description.style"
+                         data-bind="liveEdit: { field: 'description', placeholder: 'Description', selectAll: true }">
+                    </div>
+                    <div if="data.desc.html()" class="pagebuilder-content-type pagebuilder-html">
+                        <div attr="data.desc.attributes"
+                             html="data.desc.html"
+                             class="pagebuilder-slide-description-content">
+                        </div>
+                    </div>
+                    <a type="button"
+                       class="pagebuilder-slide-button"
+                       attr="data.button.attributes"
+                       ko-style="data.button.style"
+                       css="data.button.css">
+                        <span data-bind="liveEdit: { field: 'button_text', placeholder: buttonPlaceholder, selectAll: true }"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

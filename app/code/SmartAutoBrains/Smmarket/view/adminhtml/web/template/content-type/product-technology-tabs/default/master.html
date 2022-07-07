@@ -1,0 +1,47 @@
+<div class="product-tab-content product-tab-technology-wrapper" data-mage-init='{
+         "tabsCustom": {
+            "titleClass": ".js-technology-heading",
+            "contentsClass": ".js-technology-content"
+        }
+    }'>
+    <a href="#tab-title-technology" rel="nofollow" class="js-back-to-nav-link back-to-nav-link" data-bind="i18n: 'Back to Navigation'"></a>
+    <div class="product-tab-content-inner">
+        <div attr="data.main.attributes" ko-style="data.main.style" css="data.main.css" class="product-tab-technology">
+            <ul role="tablist"
+                class="tabs-navigation product-tab-technology-headings"
+                each="contentType.getChildren()"
+                attr="data.navigation.attributes"
+                ko-style="data.navigation.style"
+                css="data.navigation.css">
+                <with args="content">
+                    <li role="tab"
+                        class="product-tab-technology-heading js-technology-heading"
+                        attr="Object.assign({}, contentType.parentContentType.content.data.headers.attributes(), { active: getData().default_active_tab })"
+                        ko-style="contentType.parentContentType.content.data.headers.style"
+                        css="contentType.parentContentType.content.data.headers.css">
+                        <button class="product-tab-technology-heading-button">
+                            <div class="product-tab-technology-title-icon">
+                                <!-- ko if: data.tab_image.attributes().src -->
+                                <div class="pagebuilder-attributes-placeholder"
+                                     attr="data.tab_image.attributes"></div>
+                                <img attr="{
+                                        'src': data.tab_image.attributes().src,
+                                        'title':  getData().tab_name_text,
+                                        'alt':  getData().tab_name_text,
+                                     }"
+                                     class="feature-row-image"/>
+                                <!-- /ko -->
+                            </div>
+                            <div class="product-tab-technology-title">
+                                <p text="getData().tab_name_text"></p>
+                            </div>
+                        </button>
+                    </li>
+                </with>
+            </ul>
+            <div class="tabs-content product-tab-technology-contents" attr="data.content.attributes" ko-style="data.content.style" css="data.content.css">
+                <render args="masterTemplate" />
+            </div>
+        </div>
+    </div>
+</div>

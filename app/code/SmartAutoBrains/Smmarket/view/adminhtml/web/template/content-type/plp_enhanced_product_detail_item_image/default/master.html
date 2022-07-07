@@ -1,0 +1,35 @@
+<div ko-style="data.main.style"
+     css="data.main.css"
+     class="product-detail-image"
+     attr="Object.assign(data.main.attributes(), {
+        class: data.product_description_image_desktop.attributes()['data-image-type'] == 'double-image'
+        ?
+        'product-detail-image double-image'
+        :
+        'product-detail-image single-image'
+     })"
+>
+
+    <div class="column-image-container" ko-style="data.main.style">
+        <div class="content-section"
+             if="data.description.html()"
+             ko-style="data.description.style"
+             attr="data.description.attributes"
+             html="data.description.html"
+        >
+        </div>
+
+        <div class="images-section">
+            <img if="data.product_description_image_desktop.attributes().src"
+                 attr="data.product_description_image_desktop.attributes"
+                 class="product-detail-img product-detail-img--desktop"
+                 css="'pagebuilder-mobile-hidden': !!data.product_description_image_mobile.attributes().src"
+            />
+
+            <img if="data.product_description_image_mobile.attributes().src"
+                 attr="data.product_description_image_mobile.attributes"
+                 class="product-detail-img product-detail-img--mobile pagebuilder-mobile-only"
+            />
+        </div>
+    </div>
+</div>

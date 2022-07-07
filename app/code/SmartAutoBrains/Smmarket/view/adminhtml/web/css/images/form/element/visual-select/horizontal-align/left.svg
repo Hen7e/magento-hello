@@ -1,0 +1,10 @@
+<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <g transform="rotate(90 10 10)" id="svg_1" fill-rule="evenodd" fill="none">
+   <rect id="svg_2" fill="#E8E8E8" height="20" width="20"/>
+   <path id="svg_3" d="m0,18l20,0l0,2l-20,0l0,-2zm0,-3l20,0l0,2l-20,0l0,-2z" fill-rule="nonzero" fill="#646160"/>
+  </g>
+ </g>
+</svg>

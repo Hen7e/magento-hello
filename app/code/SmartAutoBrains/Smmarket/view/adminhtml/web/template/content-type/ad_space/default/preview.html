@@ -1,0 +1,27 @@
+<div class="pagebuilder-content-type pagebuilder-ad-space"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="element-children content-type-container pagebuilder-ad-space-wrapper"
+         each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+         data-bind="sortable: getSortableOptions()"
+         afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+        <div class="pagebuilder-content-type-wrapper pagebuilder-ad-space-item-wrapper"
+             template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+             attr="{ id: id }"
+             css="preview.data.main.css">
+        </div>
+    </div>
+
+    <div class="pagebuilder-display-label" text="function () { return displayLabel().toUpperCase(); }()"></div>
+
+    <div class="pagebuilder-empty-container pagebuilder-empty-ad-space"
+         css="placeholderCss()">
+        <button class="action-add" event="{mousedown: addTileItem}">Add Ad Space Item</button>
+    </div>
+
+</div>

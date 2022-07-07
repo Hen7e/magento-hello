@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 Helen of Troy. (https://www.helenoftroy.com/)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="my_hydro_swatch"
+          label="My Hydro Swatch"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Astound_ContentTypes/js/content-type/my_hydro_swatch/preview"
+          master_component="Magento_PageBuilder/js/content-type/master"
+          form="pagebuilder_my_hydro_swatch_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-block"
+          sortOrder="22"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="root-container" policy="allow"/>
+        </parents>
+        <children default_policy="deny"/>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/my_hydro_swatch/default/preview"
+                        master_template="Astound_ContentTypes/content-type/my_hydro_swatch/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_position" source="background_position"/>
+                        <style name="background_size" source="background_size"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                    </element>
+                    <element name="link_anchor">
+                        <attribute name="my_hydro_swatch_anchor" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="my_hydro_swatch_anchor" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="my_hydro_swatch_anchor" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="my_hydro_swatch_anchor" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                    <element name="link_text">
+                        <html name="my_hydro_swatch_link_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <is_system>true</is_system>
+    </type>
+</config>

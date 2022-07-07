@@ -1,0 +1,313 @@
+[data-content-type='products'],
+.pagebuilder-products {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #f7f7f7;
+	.products-listing-grid {
+		float: none;
+		display: flex;
+		flex-flow: row nowrap;
+		overflow: hidden;
+	}
+	.product-item-name {
+		display: block;
+		max-height: 72px;
+		overflow: hidden;
+		padding: 0 15px;
+		margin: 0;
+		text-align: center;
+	}
+	.product-item {
+		margin: 0 20px 20px 0 !important;
+		flex: 0 0 auto;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: normal;
+		padding: 0;
+		position: relative;
+		background: #fff;
+		border-radius: 0 0 5px 5px;
+		.actions-primary {
+			width: 100%;
+			display: block;
+			&.multi-actions{
+				width: 100%;
+				display: flex;
+				.actions-primary-size-btn {
+					width: 50%;
+					float: left;
+					display: block;
+					padding-left: 20px;
+				}
+				.actions-primary-tocart-form {
+					padding-left: 0;
+					padding-right: 0;
+					width: 50%;
+					float: left;
+					.action.primary {
+						width: 100%;
+						min-width: 100%;
+						padding: 12px 0 10px;
+						font-size: 16px;
+						border-radius: 0 0 5px 0;
+					}
+				}
+			}
+		}
+		.action.primary {
+			width: 100%;
+			padding: 12px 0 10px;
+			font-size: 18px;
+			border-radius: 0 0 5px 5px;
+			text-transform: uppercase;
+			&.disabled {
+				background: #b1cfdb;
+				border: solid 1px #b1cfdb;
+			}
+		}
+		.product-item-name-link {
+			-webkit-transition: color 0.1s ease;
+			-moz-transition: color 0.1s ease;
+			-ms-transition: color 0.1s ease;
+			transition: color 0.1s ease;
+			color: #000;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 1.2;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+		.product-item-price { text-align: center; }
+		.price-box {
+			display: inline-flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 5px 0 25px;
+			margin: 0;
+			.price { font-weight: 400; }
+			.price-container { margin: 0 5px; }
+			.old-price,
+			.special-price {
+				.price-label { display: none; }
+			}
+			.old-price .price-wrapper {
+				font-size: 16px;
+				color: #707070;
+				text-decoration: line-through;
+			}
+			.special-price .price {
+				font-size: 16px;
+				color: #ce0000;
+			}
+			.old-price + .js-special-price .price { color: #ce0000; }
+		}
+		.product-item-photo {
+			display: block;
+			margin-bottom: 12px;
+			position: relative;
+		}
+	}
+	.product-item-content {
+		width: 100%;
+		flex: 1 1 auto;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+	}
+	.product-item-details {
+		margin-top: auto;
+	}
+	.product-item-info {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		float: left;
+		width: 100%;
+		flex: 1 1 auto;
+	}
+	.actions-primary-size-btn {
+		display: none;
+		position: relative;
+		min-width: 50%;
+		font-size: 16px;
+		text-align: left;
+		color: #000;
+		background: #fff;
+		border: solid 1px #ccc;
+		border-radius: 0 0 0 5px;
+		&:hover {
+			color: #000;
+			background: #fff;
+			border: solid 1px #ccc;
+		}
+		&::after {
+			position: absolute;
+			top: 50%;
+			right: 15%;
+		//@include icon-arrow-down-blue;
+			content: '';
+			transform: translate(0, -50%);
+		}
+		&.active {
+			&::after {
+				position: absolute;
+				top: 50%;
+				right: 15px;
+			//@include icon-arrow-down-blue;
+				content: '';
+				transform: translate(0, -50%) rotate(180deg);
+			}
+		}
+		&:focus {
+			color: #000;
+			border: solid 1px #ccc;
+		}
+	}
+	.actions-primary-size-label {
+		font-weight: 400;
+	}
+	.product-item-badges {
+		height: 25px;
+		position: relative;
+		margin: 15px 15px 10px 15px;
+		img {
+			max-height: 40px;
+		}
+	}
+	.product-item-swatches {
+		display: none;
+	}
+	.products-widget-subtitle {
+		color: #000;
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 54px;
+		text-align: center;
+		position: relative;
+		padding-bottom: 15px;
+		margin-bottom: 30px;
+	}
+	.product-item-unavailable {
+		user-select: none;
+		line-height: 18px;
+		text-align: center;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-decoration: none;
+		display: inline-block;
+		vertical-align: middle;
+		min-width: 190px;
+		padding: 11px 30px 9px;
+		width: 100%;
+		font-size: 18px;
+		color: #000;
+		background-color: #cccccc;
+		border: solid 1px #cccccc;
+		border-radius: 0 0 5px 5px;
+		cursor: initial;
+	}
+	.row:after { display: none; }
+	.bx-wrapper {
+		margin: 0 auto;
+	}
+	.bx-pager {
+		width: 100%;
+		margin-top: 10px;
+		text-align: center;
+		.bx-pager-item {
+			margin-right: 20px;
+			display: inline-block;
+			a {
+				width: 10px;
+				height: 10px;
+				background-color: #dadada;
+				display: block;
+				border-radius: 50%;
+				cursor: pointer;
+				text-indent: -9999px;
+				position: relative;
+				border: 2px solid #fff;
+				&.active {
+					width: 10px;
+					height: 10px;
+					background-color: #0074a2;
+					@media (max-width: 767px) {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+	.products-widget .bx-controls-direction a.bx-prev, .products-widget .bx-controls-direction a.bx-next {
+		width: 40px;
+		height: 50px;
+		background: rgba(255, 255, 255, 0.8) none;
+		&.disabled { opacity: 0.2; }
+	}
+
+	.bx-controls-direction a {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		overflow: hidden;
+		text-indent: -9999px;
+		line-height: 0;
+		font-size: 0;
+		position: absolute;
+		top: 50%;
+		right: auto;
+		bottom: auto;
+		left: auto;
+		transform: translateY(-50%);
+		outline: 0;
+		z-index: 80;
+		pointer-events: auto !important;
+	}
+
+	.bx-controls-direction .bx-next:after,
+	.bx-controls-direction .bx-prev:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.bx-controls-direction .bx-next {
+		font-size: 10px;
+		right: 0;
+
+		&:after {
+			right: 10px;
+			font-size: 10px;
+			background-image: url('@{baseDir}Astound_ContentTypes/css/images/icons/arrow-right.svg');
+			background-repeat: no-repeat;
+			background-size: 80%;
+			background-position: center;
+			width: 1.9em;
+			height: 3.4em;
+		}
+
+	}
+
+	.bx-controls-direction .bx-prev {
+		font-size: 10px;
+		left: 0;
+
+		&:after {
+			left: 10px;
+			font-size: 10px;
+			background-image: url('@{baseDir}Astound_ContentTypes/css/images/icons/arrow-left.svg');
+			background-repeat: no-repeat;
+			background-size: 80%;
+			background-position: center;
+			width: 1.9em;
+			height: 3.4em;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+<div class="pagebuilder-content-type pagebuilder-press-item pagebuilder-content-type-wrapper"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"></render>
+
+    <div class="pagebuilder-press-item-inner">
+        <div if="!data.title.html()"
+             class="pagebuilder-press-item-empty">
+            EMPTY
+        </div>
+        <div if="data.title.html()"
+             attr="data.main.attributes"
+             class="pagebuilder-press-item-content">
+            <div class="pagebuilder-press-item-badge">
+                image
+            </div>
+            <div class="pagebuilder-press-item-image">
+                <img attr="data.image.attributes"/>
+            </div>
+            <div class="pagebuilder-press-item-data"
+                 ko-style="data.main.style">
+                <div>
+                    <p class="pagebuilder-press-item-date"
+                       attr="data.date.attributes"
+                       html="data.date.html"
+                    ></p>
+                    <hr>
+                    <p class="pagebuilder-press-item-title"
+                       html="data.title.html"
+                       attr="data.title.attributes"
+                    ></p>
+                    <p if="data.source.html()"
+                       attr="data.source.attributes"
+                       class="pagebuilder-press-item-source"
+                       html="data.source.html"
+                    ></p>
+                </div>
+                <a attr="data.link.attributes"
+                   style="pointer-events: none; display: none">
+                    <div attr="data.action.attributes"
+                         html="data.action.html"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

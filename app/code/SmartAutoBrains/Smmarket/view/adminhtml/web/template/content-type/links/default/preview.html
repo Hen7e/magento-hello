@@ -1,0 +1,33 @@
+<div class="pagebuilder-content-type pagebuilder-links"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"></render>
+
+    <div if="!data.first.html() || !data.second.html() || !data.third.html()"
+         class="pagebuilder-links-empty">
+        <h4>EMPTY</h4>
+    </div>
+
+    <div if="data.first.html() && data.second.html() && data.third.html()"
+         class="pagebuilder-links-container">
+
+        <a attr="data.first.attributes"
+           class="pagebuilder-links-item"
+           html="data.first.html"></a>
+
+        <a attr="data.second.attributes"
+           class="pagebuilder-links-item"
+           html="data.second.html"></a>
+
+        <a attr="data.third.attributes"
+           class="pagebuilder-links-item"
+           html="data.third.html"></a>
+
+    </div>
+
+    <div class="pagebuilder-display-label"
+         text="function () { return displayLabel().toUpperCase(); }()"
+    ></div>
+
+</div>

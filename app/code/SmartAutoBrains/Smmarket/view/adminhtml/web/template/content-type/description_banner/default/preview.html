@@ -1,0 +1,44 @@
+<div class="pagebuilder-content-type pagebuilder-description-banner"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+     css="data.main.css">
+
+    <render args="getOptions().template" />
+
+    <div if="!data.title.html()" class="description-banner-empty-placeholder" />
+
+    <img if="data.banner_mobile_image.attributes().src"
+         attr="data.banner_mobile_image.attributes"
+         class="pagebuilder-description-banner-mobile-image" />
+
+    <div class="pagebuilder-description-banner-inner">
+        <div class="pagebuilder-description-banner-content">
+            <h4 if="data.title.html()"
+                class="pagebuilder-tile-item-title"
+                attr="data.title.attributes"
+                html="data.title.html">
+            </h4>
+
+            <div if="data.details.html()"
+                 class="pagebuilder-description-banner-details"
+                 attr="data.details.attributes"
+                 html="data.details.html">
+            </div>
+
+            <div if="data.link_text.html()"
+                 class="pagebuilder-tile-item-link"
+                 attr="data.link_text.attributes"
+                 html="data.link_text.html">
+            </div>
+        </div>
+    </div>
+
+    <div if="data.banner_image.attributes().src"
+         class="pagebuilder-description-banner-desktop-image"
+         data-bind="style: { backgroundImage: 'url(' + data.banner_image.attributes().src + ')' }">
+        <img if="data.banner_image.attributes().src"
+             attr="data.banner_image.attributes"
+             class="description-banner-image" />
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="articles"
+          label="Articles"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="Astound_ContentTypes/js/content-type/articles/preview"
+          master_component="Magento_PageBuilder/js/content-type/master-collection"
+          form="pagebuilder_articles_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-block"
+          sortOrder="22"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="collapsible_tab_item" policy="allow"/>
+            <parent name="root-container" policy="allow"/>
+            <parent name="row" policy="allow"/>
+        </parents>
+        <children default_policy="deny">
+            <child name="articles_item" policy="allow"/>
+        </children>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/articles/default/preview"
+                        master_template="Astound_ContentTypes/content-type/articles/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="use_disclaimer" source="data-use-disclaimer"/>
+                        <attribute name="visible_items_amount" source="data-visible-items-amount"/>
+                        <attribute name="trigger_text_closed" source="data-trigger-text-closed"/>
+                        <attribute name="trigger_text_opened" source="data-trigger-text-opened"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <is_system>true</is_system>
+    </type>
+</config>

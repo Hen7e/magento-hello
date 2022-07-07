@@ -1,0 +1,55 @@
+<div class="pagebuilder-content-type pagebuilder-cart-content"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="pagebuilder-cart-content-header">
+        <div class="pagebuilder-cart-content-titles">
+            <img if="data.cart_content_image.attributes().src"
+                 class="pagebuilder-cart-content-icon"
+                 attr="data.cart_content_image.attributes" />
+
+            <div if="data.title.html()"
+                class="pagebuilder-cart-content-title"
+                attr="data.title.attributes"
+                html="data.title.html">
+            </div>
+        </div>
+
+        <div if="data.details.html()"
+             class="pagebuilder-cart-content-details"
+             attr="data.details.attributes"
+             html="data.details.html">
+        </div>
+    </div>
+
+    <div class="pagebuilder-cart-content-children">
+        <div class="pagebuilder-empty-container pagebuilder-empty-cart-content"
+             css="placeholderCss()">
+            <button class="action-add" event="{mousedown: addContentItem}">Add Item</button>
+        </div>
+
+        <div class="element-children content-type-container pagebuilder-cart-content-wrapper"
+             each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+             data-bind="sortable: getSortableOptions()"
+             afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+            <div class="pagebuilder-content-type-wrapper pagebuilder-cart-content-item-wrapper"
+                 template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                 attr="{ id: id }"
+                 css="preview.data.main.css">
+            </div>
+        </div>
+    </div>
+
+    <div class="pagebuilder-display-label" text="function () { return displayLabel().toUpperCase(); }()"></div>
+
+    <div if="data.cart_content_footer_text.html()"
+         class="pagebuilder-cart-content-footer">
+        <div class="pagebuilder-cart-content-footer-text"
+             attr="data.cart_content_footer_text.attributes"
+             html="data.cart_content_footer_text.html"></div>
+    </div>
+</div>

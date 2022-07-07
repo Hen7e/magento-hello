@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="content_box"
+          label="Content Box"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="Magento_PageBuilder/js/content-type/preview-collection"
+          master_component="Magento_PageBuilder/js/content-type/master-collection"
+          form="pagebuilder_content_box_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-block"
+          sortOrder="22"
+          translate="label">
+        <parents default_policy="allow">
+            <parent name="root-container" policy="deny"/>
+        </parents>
+        <children default_policy="allow"/>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/content_box/default/preview"
+                        master_template="Astound_ContentTypes/content-type/content_box/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <style name="background_color" source="background_color"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <css name="css_classes"/>
+                    </element>
+                    <element name="container"/>
+                    <element name="inner"/>
+                </elements>
+            </appearance>
+        </appearances>
+        <is_system>true</is_system>
+    </type>
+</config>

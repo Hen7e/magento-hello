@@ -1,0 +1,30 @@
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Andrey Bugaev <abugaev@helenoftroy.com>
+ */
+-->
+
+<div attr="data.main.attributes"
+     class="pagebuilder-content-type advocate-slide"
+     ko-style="data.main.style"
+     css="data.main.css">
+
+  <figure class="pagebuilder-advocates-carousel-item">
+    <div if="!data.advocates_carousel_item_image.attributes().src" class="carousel-item-empty-placeholder" />
+
+    <div class="pagebuilder-advocates-carousel-item-image-outer">
+      <img attr="data.advocates_carousel_item_image.attributes"
+          class="advocates-carousel-item-image"
+          loading="eager" />
+    </div>
+
+    <div class="pagebuilder-content-type pagebuilder-html">
+      <div attr="data.description_content.attributes"
+           html="data.description_content.html"
+           class="pagebuilder-advocates-carousel-description"></div>
+    </div>
+  </figure>
+
+</div>

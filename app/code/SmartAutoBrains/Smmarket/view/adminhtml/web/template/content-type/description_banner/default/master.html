@@ -1,0 +1,66 @@
+<div attr="data.main.attributes"
+     class="description-banner row-full"
+     ko-style="data.main.style"
+     css="data.main.css">
+    <img if="data.banner_mobile_image.attributes().src"
+         attr="data.banner_mobile_image.attributes"
+         class="description-banner-mobile-image" />
+
+    <div class="row-fix">
+        <div class="row">
+            <div class="column large-6">
+                <div class="description-banner-content">
+                    <a if="data.link_anchor.attributes().href"
+                       class="js-description-banner-scroll-trigger"
+                       attr="data.link_anchor.attributes">
+                        <div if="data.title.html()"
+                             class="description-banner-title"
+                             attr="data.title.attributes"
+                             html="data.title.html">
+                        </div>
+
+                        <div if="data.details.html()"
+                             class="description-banner-details"
+                             attr="data.details.attributes"
+                             html="data.details.html">
+                        </div>
+
+                        <div if="data.link_text.html()"
+                             class="description-banner-link"
+                             attr="data.link_text.attributes"
+                             html="data.link_text.html">
+                        </div>
+                    </a>
+
+                    <ifnot args="data.link_anchor.attributes().href">
+                        <div if="data.title.html()"
+                             class="description-banner-title"
+                             attr="data.title.attributes"
+                             html="data.title.html">
+                        </div>
+
+                        <div if="data.details.html()"
+                             class="description-banner-details"
+                             attr="data.details.attributes"
+                             html="data.details.html">
+                        </div>
+
+                        <div if="data.link_text.html()"
+                             class="description-banner-link"
+                             attr="data.link_text.attributes"
+                             html="data.link_text.html">
+                        </div>
+                    </ifnot>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div if="data.banner_image.attributes().src"
+         class="description-banner-desktop-image"
+         attr="{'style': 'background-image: url(' + data.banner_image.attributes().src + ')'}">
+        <img if="data.banner_image.attributes().src"
+             attr="data.banner_image.attributes"
+             class="description-banner-image" />
+    </div>
+</div>

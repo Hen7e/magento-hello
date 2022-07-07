@@ -1,0 +1,1245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Helen of Troy. (https://www.helenoftroy.com/)
+ */
+ -->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd" extends="pagebuilder_base_form">
+    <!-- Required settings, boilerplate code -->
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">pagebuilder_hockey_card_form.pagebuilder_hockey_card_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Hockey Card</item>
+    </argument>
+    <settings>
+        <deps>
+            <dep>pagebuilder_hockey_card_form.pagebuilder_hockey_card_form_data_source</dep>
+        </deps>
+        <namespace>pagebuilder_hockey_card_form</namespace>
+    </settings>
+    <dataSource name="pagebuilder_hockey_card_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_PageBuilder/js/form/provider</item>
+            </item>
+        </argument>
+        <dataProvider name="pagebuilder_hockey_card_form_data_source" class="Magento\PageBuilder\Model\ContentType\DataProvider">
+            <settings>
+                <requestFieldName/>
+                <primaryFieldName/>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="appearance_fieldset" sortOrder="10" component="Magento_PageBuilder/js/form/element/dependent-fieldset">
+        <settings>
+            <label translate="true">Appearance</label>
+            <additionalClasses>
+                <class name="admin__fieldset-visual-select-large">true</class>
+            </additionalClasses>
+            <collapsible>false</collapsible>
+            <opened>true</opened>
+            <imports>
+                <link name="hideFieldset">${$.name}.appearance:options</link>
+                <link name="hideLabel">${$.name}.appearance:options</link>
+            </imports>
+        </settings>
+        <field name="appearance" formElement="select" sortOrder="10" component="Magento_PageBuilder/js/form/element/dependent-visual-select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">default</item>
+                </item>
+            </argument>
+            <settings>
+                <additionalClasses>
+                    <class name="admin__field-wide">true</class>
+                    <class name="admin__field-visual-select-container">true</class>
+                </additionalClasses>
+                <dataType>text</dataType>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <elementTmpl>Magento_PageBuilder/form/element/visual-select</elementTmpl>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="AppearanceSourceDefaultOnly"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+
+    <!-- Form Content -->
+    <!-- ADA Background -->
+    <fieldset name="hc_ada_configuration" sortOrder="20">
+        <settings>
+            <label translate="true">Background</label>
+            <collapsible>true</collapsible>
+            <opened>true</opened>
+        </settings>
+        <field name="hc_wrapper_background_color" sortOrder="10" formElement="colorPicker">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">#000000</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">ADA Background Color</label>
+                <placeholder translate="true">Select color...</placeholder>
+                <notice>Sets the background color of the content, if background image is disabled by accessibility software, default color is #000000</notice>
+                <dataType>text</dataType>
+                <dataScope>hc_wrapper_background_color</dataScope>
+                <componentType>colorPicker</componentType>
+                <additionalClasses>
+                    <class name="admin__field-medium">true</class>
+                </additionalClasses>
+            </settings>
+            <formElements>
+                <colorPicker>
+                    <settings>
+                        <colorPickerMode>full</colorPickerMode>
+                        <colorFormat>hex</colorFormat>
+                    </settings>
+                </colorPicker>
+            </formElements>
+        </field>
+    </fieldset>
+
+<!-- Desktop Configuration -->
+    <fieldset name="hc_desktop_configuration" sortOrder="30">
+        <settings>
+            <label translate="true">Desktop Configuration</label>
+            <collapsible>true</collapsible>
+            <opened>false</opened>
+        </settings>
+        <!-- Desktop Content -->
+        <field name="hc_desktop_content" sortOrder="10" formElement="textarea">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Content</label>
+                <placeholder translate="true">Add valid HTML markup here...</placeholder>
+                <notice>Sets the desktop content of the hockey card</notice>
+                <dataType>text</dataType>
+                <dataScope>hc_desktop_content</dataScope>
+            </settings>
+        </field>
+        <!-- Desktop Content Color -->
+        <field name="hc_desktop_content_color" sortOrder="20" formElement="colorPicker">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">#000000</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Content Color</label>
+                <placeholder translate="true">Select color...</placeholder>
+                <notice>Sets the color of the desktop content, default color is #000000</notice>
+                <dataType>text</dataType>
+                <dataScope>hc_desktop_content_color</dataScope>
+                <componentType>colorPicker</componentType>
+                <additionalClasses>
+                    <class name="admin__field-medium">true</class>
+                </additionalClasses>
+            </settings>
+            <formElements>
+                <colorPicker>
+                    <settings>
+                        <colorPickerMode>full</colorPickerMode>
+                        <colorFormat>hex</colorFormat>
+                    </settings>
+                </colorPicker>
+            </formElements>
+        </field>
+        <!-- Desktop Content Font Size -->
+        <field name="hc_desktop_content_font_size" sortOrder="30" formElement="input">
+            <settings>
+                <label translate="true">Font Size</label>
+                <placeholder translate="true">Add font size value here...</placeholder>
+                <notice>Sets the font size of the desktop text content</notice>
+            </settings>
+        </field>
+        <!-- Desktop Content Line Height -->
+        <field name="hc_desktop_content_line_height" sortOrder="40" formElement="input">
+            <settings>
+                <label translate="true">Line Height</label>
+                <placeholder translate="true">Add line height value here...</placeholder>
+                <notice>Sets the line height of the desktop text content</notice>
+            </settings>
+        </field>
+        <!-- Desktop Content Image -->
+        <field name="hc_desktop_image" sortOrder="50" formElement="imageUploader">
+            <settings>
+                <label translate="true">Background Image</label>
+                <notice>Desktop background image for the hockey card</notice>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">pagebuilder/contenttype/image_upload</param>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_PageBuilder/form/element/uploader/preview</previewTmpl>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <!-- Desktop Content Image Alt Text -->
+        <field name="hc_desktop_image_alt" sortOrder="60" formElement="input">
+            <settings>
+                <label translate="true">Background Image Alt Text</label>
+                <placeholder translate="true">Add alt text here...</placeholder>
+                <notice>Sets the alt tag of the desktop background image</notice>
+                <validation>
+                    <rule name="validate-string" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <!-- Desktop Content Icon -->
+        <field name="hc_desktop_icon" sortOrder="70" formElement="imageUploader">
+            <settings>
+                <label translate="true">Icon/Image</label>
+                <notice>Adds an icon/image to the hockey card content body for desktop view</notice>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">pagebuilder/contenttype/image_upload</param>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_PageBuilder/form/element/uploader/preview</previewTmpl>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <!-- Desktop Content Icon Alt Text -->
+        <field name="hc_desktop_icon_alt" sortOrder="80" formElement="input">
+            <settings>
+                <label translate="true">Icon/Image Alt Text</label>
+                <placeholder translate="true">Add alt text here...</placeholder>
+                <notice>Sets the alt tag of the desktop icon/image</notice>
+                <validation>
+                    <rule name="validate-string" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="hc_desktop_icon_max_width" sortOrder="90" formElement="input">
+            <settings>
+                <label translate="true">Icon/Image Max Width</label>
+                <placeholder translate="true">Add value here...</placeholder>
+                <notice>Sets the max width of the desktop icon/image</notice>
+            </settings>
+        </field>
+    </fieldset>
+
+    <!-- Tablet Configuration -->
+    <fieldset name="hc_tablet_configuration" sortOrder="40">
+        <settings>
+            <label translate="true">Tablet Configuration</label>
+            <collapsible>true</collapsible>
+            <opened>false</opened>
+        </settings>
+        <!-- Tablet Content -->
+        <field name="hc_tablet_content" sortOrder="10" formElement="textarea">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Content</label>
+                <placeholder translate="true">Add valid HTML markup here...</placeholder>
+                <notice>Sets the tablet content of the hockey card</notice>
+                <dataType>text</dataType>
+                <dataScope>hc_tablet_content</dataScope>
+            </settings>
+        </field>
+        <!-- Tablet Content Color -->
+        <field name="hc_tablet_content_color" sortOrder="20" formElement="colorPicker">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">#000000</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Content Color</label>
+                <placeholder translate="true">Select color...</placeholder>
+                <notice>Sets the color of the tablet content, default color is #000000</notice>
+                <dataType>text</dataType>
+                <dataScope>hc_tablet_content_color</dataScope>
+                <componentType>colorPicker</componentType>
+                <additionalClasses>
+                    <class name="admin__field-medium">true</class>
+                </additionalClasses>
+            </settings>
+            <formElements>
+                <colorPicker>
+                    <settings>
+                        <colorPickerMode>full</colorPickerMode>
+                        <colorFormat>hex</colorFormat>
+                    </settings>
+                </colorPicker>
+            </formElements>
+        </field>
+        <!-- Tablet Content Font Size -->
+        <field name="hc_tablet_content_font_size" sortOrder="30" formElement="input">
+            <settings>
+                <label translate="true">Font Size</label>
+                <placeholder translate="true">Add font size value here...</placeholder>
+                <notice>Sets the font size of the tablet text content</notice>
+            </settings>
+        </field>
+        <!-- Tablet Content Line Height -->
+        <field name="hc_tablet_content_line_height" sortOrder="40" formElement="input">
+            <settings>
+                <label translate="true">Line Height</label>
+                <placeholder translate="true">Add line height value here...</placeholder>
+                <notice>Sets the line height of the tablet text content</notice>
+            </settings>
+        </field>
+        <!-- Tablet Content Image -->
+        <field name="hc_tablet_image" sortOrder="50" formElement="imageUploader">
+            <settings>
+                <label translate="true">Background Image</label>
+                <notice>Tablet background image for the hockey card</notice>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">pagebuilder/contenttype/image_upload</param>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_PageBuilder/form/element/uploader/preview</previewTmpl>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <!-- Tablet Content Image Alt -->
+        <field name="hc_tablet_image_alt" sortOrder="60" formElement="input">
+            <settings>
+                <label translate="true">Background Image Alt Text</label>
+                <placeholder translate="true">Add alt text here...</placeholder>
+                <notice>Sets the alt tag of the tablet background image</notice>
+                <validation>
+                    <rule name="validate-string" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <!-- Tablet Content Icon -->
+        <field name="hc_tablet_icon" sortOrder="70" formElement="imageUploader">
+            <settings>
+                <label translate="true">Icon/Image</label>
+                <notice>Adds an icon/image to the hockey card content body for tablet view</notice>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">pagebuilder/contenttype/image_upload</param>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_PageBuilder/form/element/uploader/preview</previewTmpl>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <!-- Tablet Content Icon Alt -->
+        <field name="hc_tablet_icon_alt" sortOrder="80" formElement="input">
+            <settings>
+                <label translate="true">Icon/Image Alt Text</label>
+                <placeholder translate="true">Add alt text here...</placeholder>
+                <notice>Sets the alt tag of the tablet icon/image</notice>
+                <validation>
+                    <rule name="validate-string" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="hc_tablet_icon_max_width" sortOrder="90" formElement="input">
+            <settings>
+                <label translate="true">Icon/Image Max Width</label>
+                <placeholder translate="true">Add value here...</placeholder>
+                <notice>Sets the max width of the tablet icon/image</notice>
+            </settings>
+        </field>
+    </fieldset>
+
+    <!-- Mobile Configuration -->
+    <fieldset name="hc_mobile_configuration" sortOrder="50">
+        <settings>
+            <label translate="true">Mobile Configuration</label>
+            <collapsible>true</collapsible>
+            <opened>false</opened>
+        </settings>
+        <!-- Mobile Content -->
+        <field name="hc_mobile_content" sortOrder="10" formElement="textarea">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Content</label>
+                <placeholder translate="true">Add valid HTML markup here...</placeholder>
+                <notice>Sets the mobile content of the hockey card</notice>
+                <dataType>text</dataType>
+                <dataScope>hc_mobile_content</dataScope>
+            </settings>
+        </field>
+        <!-- Mobile Content Color -->
+        <field name="hc_mobile_content_color" sortOrder="20" formElement="colorPicker">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">#000000</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Content Color</label>
+                <placeholder translate="true">Select color...</placeholder>
+                <notice>Sets the color of the mobile content, default color is #000000</notice>
+                <dataType>text</dataType>
+                <dataScope>hc_mobile_content_color</dataScope>
+                <componentType>colorPicker</componentType>
+                <additionalClasses>
+                    <class name="admin__field-medium">true</class>
+                </additionalClasses>
+            </settings>
+            <formElements>
+                <colorPicker>
+                    <settings>
+                        <colorPickerMode>full</colorPickerMode>
+                        <colorFormat>hex</colorFormat>
+                    </settings>
+                </colorPicker>
+            </formElements>
+        </field>
+        <!-- Mobile Content Font Size -->
+        <field name="hc_mobile_content_font_size" sortOrder="30" formElement="input">
+            <settings>
+                <label translate="true">Font Size</label>
+                <placeholder translate="true">Add font size value here...</placeholder>
+                <notice>Sets the font size of the mobile text content</notice>
+            </settings>
+        </field>
+        <!-- Mobile Content Line Height -->
+        <field name="hc_mobile_content_line_height" sortOrder="40" formElement="input">
+            <settings>
+                <label translate="true">Line Height</label>
+                <placeholder translate="true">Add line height value here...</placeholder>
+                <notice>Sets the line height of the mobile text content</notice>
+            </settings>
+        </field>
+        <!-- Mobile Content Image -->
+        <field name="hc_mobile_image" sortOrder="50" formElement="imageUploader">
+            <settings>
+                <label translate="true">Background Image</label>
+                <notice>Mobile background image for the hockey card</notice>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">pagebuilder/contenttype/image_upload</param>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_PageBuilder/form/element/uploader/preview</previewTmpl>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <!-- Mobile Content Image Alt -->
+        <field name="hc_mobile_image_alt" sortOrder="60" formElement="input">
+            <settings>
+                <label translate="true">Background Image Alt Text</label>
+                <placeholder translate="true">Add alt text here...</placeholder>
+                <notice>Sets the alt tag of the mobile background image</notice>
+                <validation>
+                    <rule name="validate-string" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <!-- Mobile Content Icon -->
+        <field name="hc_mobile_icon" sortOrder="70" formElement="imageUploader">
+            <settings>
+                <label translate="true">Icon/Image</label>
+                <notice>Adds an icon/image to the hockey card content body for mobile view</notice>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">pagebuilder/contenttype/image_upload</param>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_PageBuilder/form/element/uploader/preview</previewTmpl>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <!-- Mobile Content Icon Alt -->
+        <field name="hc_mobile_icon_alt" sortOrder="80" formElement="input">
+            <settings>
+                <label translate="true">Icon/Image Alt Text</label>
+                <placeholder translate="true">Add alt text here...</placeholder>
+                <notice>Sets the alt tag of the mobile icon/image</notice>
+                <validation>
+                    <rule name="validate-string" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="hc_mobile_icon_max_width" sortOrder="90" formElement="input">
+            <settings>
+                <label translate="true">Icon/Image Max Width</label>
+                <placeholder translate="true">Add value here...</placeholder>
+                <notice>Sets the max width of the mobile icon/image</notice>
+            </settings>
+        </field>
+    </fieldset>
+
+    <!-- Link (CTA) Configuration -->
+    <fieldset name="hc_link_configuration" sortOrder="60">
+        <settings>
+            <label translate="true">CTA Configuration</label>
+            <collapsible>true</collapsible>
+            <opened>false</opened>
+        </settings>
+
+        <!-- Link Right Arrow Toggle -->
+        <field name="hc_link_has_arrow" sortOrder="10" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">true</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Add Right Arrow</label>
+                <notice>If active, adds the arrow to the right of the link text</notice>
+                <dataType>boolean</dataType>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="string">false</map>
+                            <map name="true" xsi:type="string">true</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+
+        <!-- Link (CTA) Configuration Main Link -->
+        <fieldset name="hc_link_configuration_main" sortOrder="20">
+            <settings>
+                <label translate="true">Link</label>
+                <collapsible>true</collapsible>
+                <opened>true</opened>
+            </settings>
+            <!-- Link Text -->
+            <field name="hc_link_text" sortOrder="10" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">page</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Text</label>
+                    <placeholder translate="true">Add text here...</placeholder>
+                    <notice>Sets the text of the link</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_text</dataScope>
+                </settings>
+            </field>
+            <!-- Link Url -->
+            <urlInput name="hc_link_url" sortOrder="20">
+                <settings>
+                    <label translate="true">Link URL</label>
+                    <notice>Sets the address of the link</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_url</dataScope>
+                    <urlTypes class="Magento\Ui\Model\UrlInput\LinksConfigProvider"/>
+                </settings>
+            </urlInput>
+            <!-- Link Color -->
+            <field name="hc_link_color" sortOrder="30" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">#000000</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Color</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the link, default color is #000000</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_color</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                    <validation>
+                        <rule name="validate-color" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <!-- Link Color Hover -->
+            <field name="hc_link_color_hover" sortOrder="40" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">#0074a2</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Color Hover</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the link on hover, default color is #0074a2</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_color_hover</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                    <validation>
+                        <rule name="validate-color" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <!-- Link Background Color -->
+            <field name="hc_link_color_background" sortOrder="50" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">rgba(0, 0, 0, 0)</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Background Color</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the background color of the link, default color is rgba(0, 0, 0, 0)</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_color_background</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                    <validation>
+                        <rule name="validate-color" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <!-- Link Background Color Hover-->
+            <field name="hc_link_color_background_hover" sortOrder="60" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">rgba(0, 0, 0, 0)</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Background Color Hover</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the background color of the link, default color is rgba(0, 0, 0, 0)</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_color_background_hover</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                    <validation>
+                        <rule name="validate-color" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+        </fieldset>
+
+        <!-- Link (CTA) Configuration Additional Link -->
+        <fieldset name="hc_link_configuration_additional" sortOrder="30">
+            <settings>
+                <label translate="true">Additional Link</label>
+                <collapsible>true</collapsible>
+                <opened>false</opened>
+            </settings>
+            <!-- Second Link Text -->
+            <field name="hc_link_text_second" sortOrder="10" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">page</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Text</label>
+                    <placeholder translate="true">Add text here...</placeholder>
+                    <notice>Sets the text of the second link</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_text_second</dataScope>
+                </settings>
+            </field>
+            <!-- Link Url -->
+            <urlInput name="hc_link_url_second" sortOrder="20">
+                <settings>
+                    <label translate="true">Link URL</label>
+                    <notice>Sets the address of the second link</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_url_second</dataScope>
+                    <urlTypes class="Magento\Ui\Model\UrlInput\LinksConfigProvider"/>
+                </settings>
+            </urlInput>
+            <!-- Link Color -->
+            <field name="hc_link_color_second" sortOrder="30" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">#000000</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Color</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the second link, default color is #000000</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_color_second</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                    <validation>
+                        <rule name="validate-color" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <field name="hc_link_color_hover_second" sortOrder="40" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">#0074a2</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Color Hover</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the second link, default color is #0074a2</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_color_second_hover</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                    <validation>
+                        <rule name="validate-color" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <!-- Link Background Color -->
+            <field name="hc_link_color_background_second" sortOrder="50" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">rgba(0, 0, 0, 0)</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Background Color</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the background color of the link, default color is rgba(0, 0, 0, 0)</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_color_background_second</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                    <validation>
+                        <rule name="validate-color" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <!-- Link Background Color Hover-->
+            <field name="hc_link_color_background_hover_second" sortOrder="60" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">rgba(0, 0, 0, 0)</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Link Background Color Hover</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the background color of the link, default color is rgba(0, 0, 0, 0)</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_link_color_background_hover_second</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                    <validation>
+                        <rule name="validate-color" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+        </fieldset>
+    </fieldset>
+
+    <!-- Content Additional -->
+    <fieldset name="hc_content_additional_configuration" sortOrder="70">
+        <settings>
+            <label translate="true">Content Additional</label>
+            <collapsible>true</collapsible>
+            <opened>false</opened>
+        </settings>
+
+        <!-- Content Additional Desktop -->
+        <fieldset name="hc_content_additional_desktop_configuration" sortOrder="10">
+            <settings>
+                <label translate="true">Desktop Configuration</label>
+                <collapsible>true</collapsible>
+                <opened>false</opened>
+            </settings>
+            <!-- Content Additional Desktop Content -->
+            <field name="hc_content_additional_desktop_content" sortOrder="10" formElement="textarea">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">page</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Content</label>
+                    <placeholder translate="true">Add valid HTML markup here...</placeholder>
+                    <notice>Sets the additional instance of separate desktop content of the hockey card</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_content_additional_desktop_content</dataScope>
+                </settings>
+            </field>
+            <!-- Content Additional Desktop Color -->
+            <field name="hc_content_additional_desktop_content_color" sortOrder="20" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">#000000</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Content Color</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the content, default color is #000000</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_content_additional_desktop_content_color</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <!-- Desktop Content Font Size -->
+            <field name="hc_content_additional_desktop_content_font_size" sortOrder="30" formElement="input">
+                <settings>
+                    <label translate="true">Font Size</label>
+                    <placeholder translate="true">Add font size value here...</placeholder>
+                    <notice>Sets the font size of the additional text content</notice>
+                </settings>
+            </field>
+            <!-- Desktop Content Line Height -->
+            <field name="hc_content_additional_desktop_content_line_height" sortOrder="40" formElement="input">
+                <settings>
+                    <label translate="true">Line Height</label>
+                    <placeholder translate="true">Add line height value here...</placeholder>
+                    <notice>Sets the line height of the additional text content</notice>
+                </settings>
+            </field>
+        </fieldset>
+
+        <!-- Content Additional Tablet -->
+        <fieldset name="hc_content_additional_tablet_configuration" sortOrder="20">
+            <settings>
+                <label translate="true">Tablet Configuration</label>
+                <collapsible>true</collapsible>
+                <opened>false</opened>
+            </settings>
+            <!-- Content Additional Tablet Content -->
+            <field name="hc_content_additional_tablet_content" sortOrder="10" formElement="textarea">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">page</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Content</label>
+                    <placeholder translate="true">Add valid HTML markup here...</placeholder>
+                    <notice>Sets the additional instance of separate tablet content of the hockey card</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_content_additional_tablet_content</dataScope>
+                </settings>
+            </field>
+            <!-- Content Additional Tablet Color -->
+            <field name="hc_content_additional_tablet_content_color" sortOrder="20" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">#000000</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Content Color</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the content, default color is #000000</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_content_additional_tablet_content_color</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <!-- Tablet Content Font Size -->
+            <field name="hc_content_additional_tablet_content_font_size" sortOrder="30" formElement="input">
+                <settings>
+                    <label translate="true">Font Size</label>
+                    <placeholder translate="true">Add font size value here...</placeholder>
+                    <notice>Sets the font size of the additional text content</notice>
+                </settings>
+            </field>
+            <!-- Tablet Content Line Height -->
+            <field name="hc_content_additional_tablet_content_line_height" sortOrder="40" formElement="input">
+                <settings>
+                    <label translate="true">Line Height</label>
+                    <placeholder translate="true">Add line height value here...</placeholder>
+                    <notice>Sets the line height of the additional text content</notice>
+                </settings>
+            </field>
+        </fieldset>
+
+        <!-- Content Additional Mobile -->
+        <fieldset name="hc_content_additional_mobile_configuration" sortOrder="30">
+            <settings>
+                <label translate="true">Mobile Configuration</label>
+                <collapsible>true</collapsible>
+                <opened>false</opened>
+            </settings>
+            <!-- Content Additional Mobile Content -->
+            <field name="hc_content_additional_mobile_content" sortOrder="10" formElement="textarea">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">page</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Content</label>
+                    <placeholder translate="true">Add valid HTML markup here...</placeholder>
+                    <notice>Sets the additional instance of separate mobile content of the hockey card</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_content_additional_mobile_content</dataScope>
+                </settings>
+            </field>
+            <!-- Content Additional Mobile Color -->
+            <field name="hc_content_additional_mobile_content_color" sortOrder="20" formElement="colorPicker">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="default" xsi:type="string">#000000</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Content Color</label>
+                    <placeholder translate="true">Select color...</placeholder>
+                    <notice>Sets the color of the content, default color is #000000</notice>
+                    <dataType>text</dataType>
+                    <dataScope>hc_content_additional_mobile_content_color</dataScope>
+                    <componentType>colorPicker</componentType>
+                    <additionalClasses>
+                        <class name="admin__field-medium">true</class>
+                    </additionalClasses>
+                </settings>
+                <formElements>
+                    <colorPicker>
+                        <settings>
+                            <colorPickerMode>full</colorPickerMode>
+                            <colorFormat>hex</colorFormat>
+                        </settings>
+                    </colorPicker>
+                </formElements>
+            </field>
+            <!-- Mobile Content Font Size -->
+            <field name="hc_content_additional_mobile_content_font_size" sortOrder="30" formElement="input">
+                <settings>
+                    <label translate="true">Font Size</label>
+                    <placeholder translate="true">Add font size value here...</placeholder>
+                    <notice>Sets the font size of the additional text content</notice>
+                </settings>
+            </field>
+            <!-- Mobile Content Line Height -->
+            <field name="hc_content_additional_mobile_content_line_height" sortOrder="40" formElement="input">
+                <settings>
+                    <label translate="true">Line Height</label>
+                    <placeholder translate="true">Add line height value here...</placeholder>
+                    <notice>Sets the line height of the additional text content</notice>
+                </settings>
+            </field>
+        </fieldset>
+    </fieldset>
+
+    <!-- CSS Classes Settings -->
+    <fieldset name="advanced" sortOrder="80">
+        <settings>
+            <label translate="true">CSS Classes Settings</label>
+            <collapsible>true</collapsible>
+            <opened>false</opened>
+        </settings>
+        <!-- Hidden OOTB Fields -->
+        <field name="text_align" formElement="hidden" />
+        <field name="border" formElement="hidden" />
+        <field name="border_color" formElement="hidden" />
+        <field name="border_width" formElement="hidden" />
+        <field name="border_radius" formElement="hidden" />
+        <field name="margins_and_padding" formElement="hidden" />
+        <!-- EO Hidden OOTB Fields -->
+
+        <!-- CSS Classes for the ".hockey-card__content-wrapper" element -->
+        <field name="css_classes" sortOrder="10" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Hockey Card Container Classes</label>
+                <notice translate="true">Space separated list of classes.</notice>
+                <validation>
+                    <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+
+        <!-- Desktop CSS Classes Fiedset -->
+        <fieldset name="hc_css_classes_desktop_configuration" sortOrder="20">
+            <settings>
+                <label translate="true">Desktop Configuration</label>
+                <collapsible>true</collapsible>
+                <opened>false</opened>
+            </settings>
+            <field name="hc_css_classes_desktop_content" sortOrder="10" formElement="input">
+                <settings>
+                    <label translate="true">Content Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <dataType>text</dataType>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+            <field name="hc_css_classes_desktop_content_additional" sortOrder="20" formElement="input">
+                <settings>
+                    <dataType>text</dataType>
+                    <label translate="true">Additional Content Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+            <field name="hc_css_classes_desktop_icon" sortOrder="30" formElement="input">
+                <settings>
+                    <label translate="true">Icon/Image Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <dataType>text</dataType>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+        </fieldset>
+
+        <!-- Tablet CSS Classes Fiedset -->
+        <fieldset name="hc_css_classes_tablet_configuration" sortOrder="30">
+            <settings>
+                <label translate="true">Tablet Configuration</label>
+                <collapsible>true</collapsible>
+                <opened>false</opened>
+            </settings>
+            <field name="hc_css_classes_tablet_content" sortOrder="10" formElement="input">
+                <settings>
+                    <label translate="true">Content Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <dataType>text</dataType>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+            <field name="hc_css_classes_tablet_content_additional" sortOrder="20" formElement="input">
+                <settings>
+                    <dataType>text</dataType>
+                    <label translate="true">Additional Content Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+            <field name="hc_css_classes_tablet_icon" sortOrder="30" formElement="input">
+                <settings>
+                    <label translate="true">Icon/Image Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <dataType>text</dataType>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+        </fieldset>
+
+        <!-- Mobile CSS Classes Fiedset -->
+        <fieldset name="hc_css_classes_mobile_configuration" sortOrder="40">
+            <settings>
+                <label translate="true">Mobile Configuration</label>
+                <collapsible>true</collapsible>
+                <opened>false</opened>
+            </settings>
+            <field name="hc_css_classes_mobile_content" sortOrder="10" formElement="input">
+                <settings>
+                    <label translate="true">Content Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <dataType>text</dataType>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+            <field name="hc_css_classes_mobile_content_additional" sortOrder="20" formElement="input">
+                <settings>
+                    <dataType>text</dataType>
+                    <label translate="true">Additional Content Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+            <field name="hc_css_classes_mobile_icon" sortOrder="30" formElement="input">
+                <settings>
+                    <label translate="true">Icon/Image Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <dataType>text</dataType>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+        </fieldset>
+
+        <!-- CSS Classes CTA Configuration -->
+        <fieldset name="hc_css_classes_cta_configuration" sortOrder="50">
+            <settings>
+                <label translate="true">CTA Configuration</label>
+                <collapsible>true</collapsible>
+                <opened>false</opened>
+            </settings>
+            <!-- Link CSS Classes -->
+            <field name="hc_link_css_classes" sortOrder="10" formElement="input">
+                <settings>
+                    <dataType>text</dataType>
+                    <label translate="true">Link Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+            <!-- Additional Link CSS Classes -->
+            <field name="hc_link_css_classes_second" sortOrder="20" formElement="input">
+                <settings>
+                    <dataType>text</dataType>
+                    <label translate="true">Additional Link Classes</label>
+                    <notice translate="true">Space separated list of classes.</notice>
+                    <validation>
+                        <rule name="validate-css-class" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+        </fieldset>
+    </fieldset>
+</form>

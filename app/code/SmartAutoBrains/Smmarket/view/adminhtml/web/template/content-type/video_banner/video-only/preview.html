@@ -1,0 +1,14 @@
+<div class="pagebuilder-content-type pagebuilder-video-only-banner"
+     attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <div class="pagebuilder-video-banner-inner" attr="data.video_container.attributes" ko-style="data.video_container.style">
+        <div class="pagebuilder-video-banner-container">
+            <iframe frameborder="0" allowfullscreen attr="data.video.attributes"/>
+            <i class="icon-pagebuilder-video-banner pagebuilder-video-banner-placeholder"
+               ifnot="data.video.attributes().src"/>
+        </div>
+    </div>
+    <render args="getOptions().template"/>
+</div>

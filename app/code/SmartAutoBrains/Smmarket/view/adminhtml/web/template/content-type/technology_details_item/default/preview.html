@@ -1,0 +1,30 @@
+<div class="pagebuilder-content-type pagebuilder-technology-details-item"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+     css="data.main.css">
+
+    <render args="getOptions().template" />
+
+    <div if="!data.title.html()" class="technology-details-item-empty-placeholder " />
+
+    <div class="pagebuilder-technology-details-item-content">
+        <img if="data.technology_details_item_image.attributes().src"
+             class="pagebuilder-technology-details-item-image"
+             attr="data.technology_details_item_image.attributes"/>
+
+        <div class="pagebuilder-technology-details-item-texts">
+            <div if="data.title.html()"
+                class="pagebuilder-technology-details-item-title"
+                attr="data.title.attributes"
+                html="data.title.html">
+            </div>
+
+            <div if="data.details.html()"
+                 class="pagebuilder-technology-details-item-details"
+                 attr="data.details.attributes"
+                 html="data.details.html">
+            </div>
+        </div>
+    </div>
+</div>

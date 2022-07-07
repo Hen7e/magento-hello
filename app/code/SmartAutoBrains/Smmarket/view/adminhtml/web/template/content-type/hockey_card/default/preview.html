@@ -1,0 +1,73 @@
+<!--
+/**
+ * Copyright © 2021 Helen of Troy. (https://www.helenoftroy.com/)
+ */
+-->
+
+<div class="pagebuilder-content-type hockey-card__content-wrapper" ko-style="data.main.style"
+    attr="data.main.attributes" event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+    css="data.main.css">
+
+    <render args="getOptions().template" />
+
+    <!-- Hockey Card Background Images -->
+    <div class="p-absolute width-100 height-100 z-negative" data-element="hc_background_images_element">
+        <img if="data.hc_desktop_image_element.attributes().src" attr="data.hc_desktop_image_element.attributes" />
+        <img if="data.hc_tablet_image_element.attributes().src" attr="data.hc_tablet_image_element.attributes" />
+        <img if="data.hc_mobile_image_element.attributes().src" attr="data.hc_mobile_image_element.attributes" />
+    </div>
+
+    <!-- Hockey Card Icon -->
+    <img if="data.hc_desktop_icon_element.attributes().src" attr="data.hc_desktop_icon_element.attributes"
+        css="data.hc_desktop_icon_element.css" ko-style="data.hc_desktop_icon_element.style" />
+    <img if="data.hc_tablet_icon_element.attributes().src" attr="data.hc_tablet_icon_element.attributes"
+        css="data.hc_tablet_icon_element.css" ko-style="data.hc_tablet_icon_element.style" />
+    <img if="data.hc_mobile_icon_element.attributes().src" attr="data.hc_mobile_icon_element.attributes"
+        css="data.hc_mobile_icon_element.css" ko-style="data.hc_mobile_icon_element.style" />
+
+    <!-- Hockey Card Content -->
+    <div if="data.hc_desktop_content_element.html()" attr="data.hc_desktop_content_element.attributes"
+        ko-style="data.hc_desktop_content_element.style" html="data.hc_desktop_content_element.html"
+        css="data.hc_desktop_content_element.css">
+    </div>
+    <div if="data.hc_tablet_content_element.html()" attr="data.hc_tablet_content_element.attributes"
+        ko-style="data.hc_tablet_content_element.style" html="data.hc_tablet_content_element.html"
+        css="data.hc_tablet_content_element.css">
+    </div>
+    <div if="data.hc_mobile_content_element.html()" attr="data.hc_mobile_content_element.attributes"
+        ko-style="data.hc_mobile_content_element.style" html="data.hc_mobile_content_element.html"
+        css="data.hc_mobile_content_element.css">
+    </div>
+
+    <!-- Hockey Card Content Additional -->
+    <div if="data.hc_content_additional_desktop_content_element.html()"
+        attr="data.hc_content_additional_desktop_content_element.attributes"
+        ko-style="data.hc_content_additional_desktop_content_element.style"
+        html="data.hc_content_additional_desktop_content_element.html"
+        css="data.hc_content_additional_desktop_content_element.css">
+    </div>
+    <div if="data.hc_content_additional_tablet_content_element.html()"
+        attr="data.hc_content_additional_tablet_content_element.attributes"
+        ko-style="data.hc_content_additional_tablet_content_element.style"
+        html="data.hc_content_additional_tablet_content_element.html"
+        css="data.hc_content_additional_tablet_content_element.css">
+    </div>
+    <div if="data.hc_content_additional_mobile_content_element.html()"
+        attr="data.hc_content_additional_mobile_content_element.attributes"
+        ko-style="data.hc_content_additional_mobile_content_element.style"
+        html="data.hc_content_additional_mobile_content_element.html"
+        css="data.hc_content_additional_mobile_content_element.css">
+    </div>
+
+    <!-- Hockey Card CTA -->
+    <a if="data.hc_link_url_element.html()" attr="data.hc_link_url_element.attributes"
+        ko-style="data.hc_link_url_element.style" css="data.hc_link_url_element.css"
+        html="data.hc_link_url_element.html">
+    </a>
+
+    <!-- Hockey Card Second CTA -->
+    <a if="data.hc_link_url_element_second.html()" attr="data.hc_link_url_element_second.attributes"
+        ko-style="data.hc_link_url_element_second.style" css="data.hc_link_url_element_second.css"
+        html="data.hc_link_url_element_second.html">
+    </a>
+</div>

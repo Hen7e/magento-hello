@@ -1,0 +1,30 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     class="cart-content-item"
+     css="data.main.css">
+    <div class="cart-content-item-inner">
+        <a if="data.link.attributes().href" attr="data.link.attributes">
+            <div if="data.value.html()"
+                class="cart-content-item-value"
+                attr="data.value.attributes"
+                html="data.value.html"></div>
+
+            <div if="data.label.html()"
+                 class="cart-content-item-label"
+                 attr="data.label.attributes"
+                 html="data.label.html"></div>
+        </a>
+
+         <ifnot args="data.link.attributes().href">
+            <div if="data.value.html()"
+                 class="cart-content-item-value"
+                 attr="data.value.attributes"
+                 html="data.value.html"></div>
+
+            <div if="data.label.html()"
+                 class="cart-content-item-label"
+                 attr="data.label.attributes"
+                 html="data.label.html"></div>
+        </ifnot>
+    </div>
+</div>

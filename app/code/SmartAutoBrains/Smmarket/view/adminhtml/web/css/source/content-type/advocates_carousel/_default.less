@@ -1,0 +1,32 @@
+.pagebuilder-advocates-carousel {
+    padding: 60px 0;
+    margin: 1px 0 0 0;
+    min-height: 300px;
+
+    .pagebuilder-advocates-carousel-title {
+        text-align: center;
+    }
+
+    .element-children.content-type-container {
+        min-height: 300px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        max-width: @layout-width;
+        margin: 0 auto;
+    }
+
+    .pagebuilder-advocates-carousel-item-wrapper {
+        flex: 0 0 20%;
+    }
+}
+
+.pagebuilder-content-type .pagebuilder-empty-container.empty-placeholder-background.advocates_carousel-empty-placeholder {
+    .lib-css(transform, translateY(0), 1);
+    background: url('@{baseDir}Astound_ContentTypes/css/images/empty-carousel.svg') no-repeat center center;
+    height: 180px;
+    background-size: 600px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

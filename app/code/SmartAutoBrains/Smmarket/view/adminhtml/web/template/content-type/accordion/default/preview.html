@@ -1,0 +1,20 @@
+<div class="pagebuilder-content-type pagebuilder-accordion"
+     attr="data.main.attributes"
+     css="data.main.css"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template" />
+
+    <div class="pagebuilder-accordion-wrapper">
+        <div class="pagebuilder-accordion-title js-pagebuilder-accordion"
+             attr="data.title.attributes"
+             data-bind="liveEdit: { field: 'accordion_title', placeholder: 'Accordion title', selectAll: true }">
+        </div>
+        <div class="pagebuilder-accordion-content-wrapper">
+            <div class="pagebuilder-accordion-content"
+                 attr="data.content.attributes"
+                 data-bind="liveEdit: { field: 'accordion_content', placeholder: 'Accordion content', selectAll: true }">
+            </div>
+        </div>
+    </div>
+</div>

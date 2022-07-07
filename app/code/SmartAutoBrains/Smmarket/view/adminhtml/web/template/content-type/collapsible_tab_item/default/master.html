@@ -1,0 +1,13 @@
+<div attr="Object.assign({}, data.main.attributes(), { id: contentType.id })"
+     css="data.main.css">
+    <div attr="{ class: 'collapsible-tab-trigger js-ctab-trigger-' + contentType.parentContentType.id }">
+        <img if="data.icon_inactive && data.icon_inactive.attributes().src"
+             attr="data.icon_inactive.attributes" />
+        <img if="data.icon_active && data.icon_active.attributes().src"
+             attr="data.icon_active.attributes" />
+        <text args="getData().tab_name"></text>
+    </div>
+    <div class="collapsible-tab-content">
+        <render args="masterTemplate" />
+    </div>
+</div>

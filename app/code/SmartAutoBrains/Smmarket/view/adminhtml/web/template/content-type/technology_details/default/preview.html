@@ -1,0 +1,42 @@
+<div class="pagebuilder-content-type pagebuilder-technology-details"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="pagebuilder-technology-details-header">
+        <div if="data.title.html()"
+            class="pagebuilder-technology-details-title"
+            attr="data.title.attributes"
+            html="data.title.html">
+        </div>
+
+        <div if="data.details.html()"
+             class="pagebuilder-technology-details-details"
+             attr="data.details.attributes"
+             html="data.details.html">
+        </div>
+    </div>
+
+    <div class="pagebuilder-technology-details-children">
+        <div class="pagebuilder-empty-container pagebuilder-empty-technology-details"
+             css="placeholderCss()">
+            <button class="action-add" event="{mousedown: addTileItem}">Add Item</button>
+        </div>
+
+        <div class="element-children content-type-container pagebuilder-technology-details-wrapper"
+             each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+             data-bind="sortable: getSortableOptions()"
+             afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+            <div class="pagebuilder-content-type-wrapper pagebuilder-technology-details-item-wrapper"
+                 template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                 attr="{ id: id }"
+                 css="preview.data.main.css">
+            </div>
+        </div>
+    </div>
+
+    <div class="pagebuilder-display-label" text="function () { return displayLabel().toUpperCase(); }()"></div>
+</div>

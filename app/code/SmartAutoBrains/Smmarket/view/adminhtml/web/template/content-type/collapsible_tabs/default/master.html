@@ -1,0 +1,34 @@
+<div class="collapsible-tabs"
+     attr="Object.assign({}, data.main.attributes(), { 'data-id': contentType.id })"
+     css="data.main.css">
+    <div class="collapsible-tabs-roster">
+        <ul role="tablist"
+            class="collapsible-tabs-titles"
+            attr="data.navigation.attributes"
+            css="data.navigation.css">
+            <each args="contentType.getChildren()">
+                <with args="content">
+                    <li role="tab"
+                        tabindex="0"
+                        attr="Object.assign({}, contentType.parentContentType.content.data.headers.attributes(), {
+                            'data-element': data.main.attributes()['data-element'],
+                            'data-section': data.main.attributes()['data-section'] ? data.main.attributes()['data-section'] : '',
+                            'data-appearance': data.main.attributes()['data-appearance'],
+                            'data-tab-name': data.main.attributes()['data-tab-name'],
+                            active: getData().default_active_tab,
+                            class: 'collapsible-tab-title js-ctab-title-' + contentType.parentContentType.id
+                        })">
+                        <text args="getData().tab_name"></text>
+                    </li>
+                </with>
+            </each>
+            <li attr="class: 'collapsible-tab-pointer js-ctab-pointer-' + contentType.id"></li>
+        </ul>
+    </div>
+
+    <div class="collapsible-tabs-container"
+         attr="data.content.attributes"
+         css="data.content.css">
+        <render args="masterTemplate" />
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     class="technology-details-item column large-3"
+     css="data.main.css">
+    <div class="technology-details-item-inner">
+        <div class="technology-details-item-image">
+            <img if="data.technology_details_item_image.attributes().src"
+                 attr="data.technology_details_item_image.attributes"/>
+        </div>
+
+        <div class="technology-details-item-texts">
+            <div class="technology-details-item-texts">
+                <h5 if="data.title.html()"
+                    class="technology-details-item-title"
+                    attr="data.title.attributes"
+                    html="data.title.html">
+                </h5>
+
+                <div if="data.details.html()"
+                     class="technology-details-item-details"
+                     attr="data.details.attributes"
+                     html="data.details.html">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

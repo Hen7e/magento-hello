@@ -1,0 +1,34 @@
+<div class="pagebuilder-content-type pagebuilder-category-carousel"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <h3 class="pagebuilder-category-carousel-title"
+        if="data.title.html()"
+        attr="data.title.attributes"
+        html="data.title.html">
+    </h3>
+
+    <div class="element-children content-type-container pagebuilder-category-carousel-wrapper"
+         each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+         data-bind="sortable: getSortableOptions()"
+         afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+        <div class="pagebuilder-content-type-wrapper pagebuilder-category-carousel-item-wrapper"
+             template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+             attr="{ id: id }"
+             css="{'pagebuilder-content-type-hidden': !preview.display()}">
+        </div>
+
+    </div>
+
+    <div class="pagebuilder-display-label" text="function () { return displayLabel().toUpperCase(); }()"></div>
+
+    <div class="pagebuilder-empty-container pagebuilder-empty-carousel"
+         css="placeholderCss()">
+        <button class="action-add" event="{mousedown: addCarouselItem}">Add Category</button>
+    </div>
+
+</div>

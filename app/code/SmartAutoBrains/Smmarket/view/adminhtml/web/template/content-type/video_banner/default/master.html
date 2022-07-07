@@ -1,0 +1,31 @@
+<div class="row-full video-banner"
+     attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css">
+    <div class="row-fix">
+        <div class="row video-banner-row">
+            <div class="column large-6 video-banner-description">
+                <div if="data.title.html()"
+                     class="video-banner-title"
+                     attr="data.title.attributes"
+                     html="data.title.html"></div>
+                <div if="data.description.html()"
+                     class="video-banner-details"
+                     attr="data.description.attributes"
+                     html="data.description.html"></div>
+                <a href="#" if="data.button.html()"
+                        class="video-banner-modal-trigger js-video-banner-modal-trigger"
+                        attr="data.button.attributes"
+                        html="data.button.html"></a>
+                <iframe class="modal-video-frame js-video-banner-modal-video" allow="autoplay; encrypted-media"
+                        frameborder="0" allowfullscreen  attr="data.video.attributes"/>
+            </div>
+
+            <div class="column large-6 video-banner-video">
+                <div class="video-banner-iframe-wrapper">
+                    <iframe class="js-video-banner-video" frameborder="0" allowfullscreen attr="data.video.attributes"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

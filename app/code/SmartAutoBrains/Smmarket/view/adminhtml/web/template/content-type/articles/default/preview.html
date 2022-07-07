@@ -1,0 +1,59 @@
+<div class="pagebuilder-content-type pagebuilder-articles"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"></render>
+
+    <if args="data.main.attributes()['data-use-disclaimer'] === 'true' && contentType.children().length > data.main.attributes()['data-visible-items-amount']">
+        <div class="element-children content-type-container pagebuilder-articles-wrapper"
+             each="contentType.getChildren().slice(0, data.main.attributes()['data-visible-items-amount'])" attr="{id: contentType.id + '-children'}"
+             data-bind="sortable: getSortableOptions()"
+             afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+            <div class="pagebuilder-content-type-wrapper pagebuilder-articles-item-wrapper"
+                 template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                 attr="{ id: id }">
+            </div>
+        </div>
+
+        <div class="articles-accordion-wrapper">
+            <div class="articles-accordion-content-wrapper" afterRender=" function (element) { accordionContentMountAfter(element); } ">
+                <div class="element-children content-type-container pagebuilder-articles-wrapper"
+                     each="contentType.getChildren().slice(data.main.attributes()['data-visible-items-amount'])" attr="{id: contentType.id + '-children'}"
+                     data-bind="sortable: getSortableOptions()"
+                     afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+                    <div class="pagebuilder-content-type-wrapper pagebuilder-articles-item-wrapper"
+                         template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                         attr="{ id: id }">
+                    </div>
+                </div>
+            </div>
+
+            <div class="articles-accordion-title" afterRender=" function (element) { accordionTitleMountAfter(element); } ">
+                <div class="articles-accordion-text-closed" data-bind="text: data.main.attributes()['data-trigger-text-closed']"></div>
+                <div class="articles-accordion-text-opened" data-bind="text: data.main.attributes()['data-trigger-text-opened']"></div>
+            </div>
+        </div>
+    </if>
+
+    <if args="data.main.attributes()['data-use-disclaimer'] === 'true' && contentType.children().length <= data.main.attributes()['data-visible-items-amount']">
+        <div class="element-children content-type-container pagebuilder-articles-wrapper"
+             each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+             data-bind="sortable: getSortableOptions()"
+             afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+            <div class="pagebuilder-content-type-wrapper pagebuilder-articles-item-wrapper"
+                 template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                 attr="{ id: id }">
+            </div>
+        </div>
+    </if>
+
+    <div class="pagebuilder-display-label" text="function () { return displayLabel().toUpperCase(); }()"></div>
+    <div class="pagebuilder-empty-container pagebuilder-empty-articles"
+         css="placeholderCss()">
+        <button class="action-add" event="{mousedown: addArticleItem}">Add Article</button>
+    </div>
+
+</div>

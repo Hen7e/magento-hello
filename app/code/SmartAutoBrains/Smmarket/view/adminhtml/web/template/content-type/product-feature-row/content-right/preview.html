@@ -1,0 +1,32 @@
+<div class="pagebuilder-content-type pagebuilder-product-feature-row"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="pagebuilder-product-feature-image-wrapper">
+
+        <div if="!data.product_feature_image.attributes().src" class="description-pdp-image-placeholder"/>
+
+        <img if="data.product_feature_image.attributes().src"
+             attr="data.product_feature_image.attributes"/>
+    </div>
+
+    <div class="pagebuilder-product-feature-description">
+        <h2 if="data.product_feature_title.html()"
+            class="pagebuilder-product-feature-row-title">
+            <span attr="data.product_feature_title.attributes"
+                  html="data.product_feature_title.html"></span>
+            <span if="data.product_feature_title_accent.html()"
+                  class="pagebuilder-product-feature-row-title-accent"
+                  attr="data.product_feature_title_accent.attributes"
+                  html="data.product_feature_title_accent.html"></span>
+        </h2>
+
+        <p if="data.product_feature_description.html()"
+           attr="data.product_feature_description.attributes"
+           html="data.product_feature_description.html">
+        </p>
+    </div>
+</div>

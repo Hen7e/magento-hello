@@ -1,0 +1,132 @@
+/* HOCKEY CARDS PAGEBUILDER */
+
+[data-content-type="hockey_card"] {
+    position: relative;
+    max-width: 292px;
+    height: 566px;
+    margin: 0 auto;
+    z-index: 1;
+
+    &.rounded-border-bottom {
+        [data-element="hc_background_images_element"] img,
+        [data-element="hc_link_url_element"],
+        [data-element="hc_link_url_element_second"] {
+            border-radius: 0 0 5px 5px;
+        }
+    }
+
+    /* Hockey Card Sizing */
+    @media only screen and (min-width: 768px) and (max-width: 800px) {
+        height: 89.583vw;
+    }
+
+    @media only screen and (min-width: 551px) and (max-width: 767px) {
+        height: 96.089vw;
+    }
+
+    @media only screen and (max-width: 550px) {
+        height: 144vw;
+    }
+    /* EO Hockey Card Sizing */
+
+    /* Background Images */
+    [data-element="hc_desktop_image_element"],
+    [data-element="hc_tablet_image_element"],
+    [data-element="hc_mobile_image_element"] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        display: none;
+    }
+
+    @media only screen and (min-width: 1025px) {
+        [data-element="hc_desktop_image_element"] {
+            display: block;
+        }
+    }
+
+
+    @media only screen and (min-width: 551px) and (max-width: 1024px) {
+        [data-element="hc_tablet_image_element"] {
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        [data-element="hc_mobile_image_element"] {
+            display: block;
+        }
+    }
+    /* EO Background Images */
+
+    /* Hockey Card Icon */
+    [data-element="hc_desktop_icon_element"],
+    [data-element="hc_tablet_icon_element"],
+    [data-element="hc_mobile_icon_element"] {
+        display: none;
+    }
+
+    @media only screen and (min-width: 1025px) {
+        [data-element="hc_desktop_icon_element"] {
+            display: block;
+        }
+    }
+
+    @media only screen and (min-width: 551px) and (max-width: 1024px) {
+        [data-element="hc_tablet_icon_element"] {
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        [data-element="hc_mobile_icon_element"] {
+            display: block;
+        }
+    }
+    /* EO Hockey Card Icon */
+
+    /* Hockey Card Text Content */
+    @media only screen and (min-width: 801px) {
+        [data-element="hc_tablet_content_element"],
+        [data-element="hc_mobile_content_element"],
+        [data-element="hc_content_additional_tablet_content_element"],
+        [data-element="hc_content_additional_mobile_content_element"] {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 551px) and (max-width: 800px) {
+        [data-element="hc_desktop_content_element"],
+        [data-element="hc_mobile_content_element"],
+        [data-element="hc_content_additional_desktop_content_element"],
+        [data-element="hc_content_additional_mobile_content_element"] {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        [data-element="hc_desktop_content_element"],
+        [data-element="hc_tablet_content_element"],
+        [data-element="hc_content_additional_desktop_content_element"],
+        [data-element="hc_content_additional_tablet_content_element"] {
+            display: none;
+        }
+    }
+    /* EO Hockey Card Text Content */
+
+    /* CTA */
+    &[data-arrow="true"] {
+        [data-element="hc_link_url_element"],
+        [data-element="hc_link_url_element_second"] {
+            &::after {
+                content: @btn-right-arrow-symbol;
+                display: inline-block;
+                padding-left: 0.3em;
+            }
+        }
+    }
+    /* EO CTA */
+}

@@ -1,0 +1,39 @@
+<div class="pagebuilder-content-type pagebuilder-collapsible-tabs children-min-height"
+     attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <render args="getOptions().template" visible="focusedTab() === null" />
+    <div class="tabs-container" afterRender="function (element) { onContainerRender.call(this, element); }">
+        <ul role="tablist"
+            class="tabs-navigation"
+            each="contentType.getChildren()"
+            data-bind="sortableChildren: getSortableOptions()">
+            <with args="preview">
+                <li role="tab" class="tab-header"
+                    css="{focused: contentType.parentContentType.preview.focusedTab() === $index()}"
+                    click="function (context, event) { onClick($index(), event); }"
+                    event="{ focusin: function (context, event) { onFocusIn($index(), event); }, focusout: function (context, event) { onFocusOut($index(), event); } }">
+                    <a href="#no-tab"
+                       class="tab-title focus-options"
+                       attr="{ href: '#' + contentType.id }" event="{ dragstart: function(context, event) { event.preventDefault(); }}">
+                        <render args="getOptions().template" />
+                        <span class="tab-drag-handle" css="{disabled: contentType.parentContentType.children().length <= 1}"></span>
+                        <img if="data.icon_inactive.attributes().src"
+                             class="inactive"
+                             attr="data.icon_inactive.attributes" />
+                        <img if="data.icon_active.attributes().src"
+                             class="active"
+                             attr="data.icon_active.attributes" />
+                        <span class="tab-title tab-name"
+                              data-tab-title="true"
+                              data-bind="liveEdit: { field: 'tab_name', placeholder: $t('...'), selectAll: true }, hasFocusNoScroll: contentType.parentContentType.preview.focusedTab() === $index()"></span>
+                    </a>
+                </li>
+            </with>
+        </ul>
+        <div class="tabs-content children-min-height">
+            <render args="childTemplate" />
+        </div>
+    </div>
+</div>

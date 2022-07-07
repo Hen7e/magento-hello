@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="plp_enhanced_product_detail_item"
+          label="Products configuration"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Astound_ContentTypes/js/content-type/plp_enhanced_product_detail_item/preview"
+          form="pagebuilder_plp_enhanced_product_detail_item_form"
+          menu_section="enhance-plp-items"
+          icon="icon-pagebuilder-products"
+          sortOrder="20"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="plp_enhanced_product_details" policy="allow"/>
+        </parents>
+        <children default_policy="deny"/>
+        <appearances>
+            <appearance default="true"
+                        name="default"
+                        preview_template="Astound_ContentTypes/content-type/plp_enhanced_product_detail_item/default/preview"
+                        master_template="Astound_ContentTypes/content-type/plp_enhanced_product_detail_item/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <html name="html"
+                              preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter
+                        component="Astound_ContentTypes/js/content-type/plp_enhanced_product_detail_item/mass-converter/widget-directive"
+                        name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+        </appearances>
+        <is_system>false</is_system>
+    </type>
+</config>

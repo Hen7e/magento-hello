@@ -1,0 +1,90 @@
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+
+//
+// Common
+// ______________________________
+
+.pagebuilder-content-type-plp-enhanced-hero {
+    .lib-css(box-shadow, 0 0 0 1px rgba(153, 153, 153, .3), 1);
+    margin: 10px 0;
+
+    .empty-placeholder-background {
+        background: url('@{baseDir}Astound_ContentTypes/css/images/empty_plp_enhanced_hero.svg') no-repeat 50% 50%;
+        height: 404px;
+    }
+
+    .pagebuilder-plp-enhanced-hero-container {
+        .lib-vendor-prefix-display();
+        position: relative;
+        height: 404px;
+    }
+
+    .left-side-image,
+    .right-side-image {
+        width: 50%;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .left-side-image,
+    .right-side-image {
+        .lib-vendor-prefix-display();
+        max-width: 1268px;
+        margin: auto;
+        width: 100%;
+        z-index: 5;
+
+        &:not(.image-exists) {
+            padding: 0 15px;
+        }
+    }
+
+    .center-side-image {
+        .lib-css(transform, translate(-50%, -50%), 1);
+        position: absolute;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        top: 50%;
+        height: 285px;
+        width: auto;
+        z-index: 5;
+
+        .hero-banner-img-desktop {
+            height: 100%;
+            width: 217px;
+            object-fit: cover;
+        }
+    }
+
+    .right-side-image,
+    .left-side-image {
+        &.image-exists {
+            position: absolute;
+            width: 50%;
+            top: 0;
+            bottom: 0;
+            padding-top: 0;
+
+            .description {
+                display: none;
+            }
+        }
+    }
+
+    .right-side-image {
+        right: 0;
+    }
+
+    .left-side-image {
+        left: 0;
+    }
+}

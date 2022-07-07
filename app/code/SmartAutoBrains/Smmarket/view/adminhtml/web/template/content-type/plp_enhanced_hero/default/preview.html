@@ -1,0 +1,68 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     class="pagebuilder-content-type pagebuilder-content-type-plp-enhanced-hero"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div if="data.description_image_left.attributes().src || data.description_image_center.attributes().src || data.description_image_right.attributes().src"
+         class="pagebuilder-plp-enhanced-hero-container"
+         attr="data.description_background.attributes"
+         ko-style="data.description_background.style"
+         css="data.description_background.css"
+    >
+
+        <div class="left-side-image"
+             css="{'image-exists': !!data.description_image_left.attributes().src}"
+             attr="data.description_alignment.attributes"
+             ko-style="data.description_alignment.style">
+
+            <img if="data.description_image_left.attributes().src"
+                 class="hero-banner-img-desktop hero-banner-img-desktop--left"
+                 attr="data.description_image_left.attributes"
+                 css="{'pagebuilder-mobile-hidden': !!data.description_mobile_image_left.attributes().src}"/>
+
+            <img if="data.description_mobile_image_left.attributes().src"
+                 class="hero-banner-img-mobile hero-banner-img-mobile--left pagebuilder-mobile-only"
+                 attr="data.description_mobile_image_left.attributes"/>
+
+            <div class="description" if="data.description.html">
+                <span attr="data.description.attributes" html="data.description.html"></span>
+            </div>
+        </div>
+        <div class="center-side-image">
+            <img if="data.description_image_center.attributes().src"
+                 class="hero-banner-img-desktop hero-banner-img-desktop--center"
+                 attr="data.description_image_center.attributes"
+                 css="{'pagebuilder-mobile-hidden': !!data.description_mobile_image_center.attributes().src}"/>
+
+            <img if="data.description_mobile_image_center.attributes().src"
+                 class="hero-banner-img-mobile hero-banner-img-mobile--center pagebuilder-mobile-only"
+                 attr="data.description_mobile_image_center.attributes"/>
+        </div>
+        <div class="right-side-image"
+             ko-style="data.description_alignment.style"
+             attr="data.description_alignment.attributes"
+             css="{'image-exists': !!data.description_image_right.attributes().src}"
+        >
+            <div class="description" if="data.description.html">
+                <span attr="data.description.attributes" html="data.description.html"></span>
+            </div>
+
+            <img if="data.description_image_right.attributes().src"
+                 class="hero-banner-img-desktop hero-banner-img-desktop--right"
+                 attr="data.description_image_right.attributes"
+                 css="{'pagebuilder-mobile-hidden': !!data.description_mobile_image_right.attributes().src}"/>
+
+            <img if="data.description_mobile_image_right.attributes().src"
+                 class="hero-banner-img-mobile hero-banner-img-mobile--right pagebuilder-mobile-only"
+                 attr="data.description_mobile_image_right.attributes"/>
+        </div>
+    </div>
+
+    <ifnot
+        args="data.description_image_left.attributes().src || data.description_image_center.attributes().src || data.description_image_right.attributes().src">
+        <div class="empty-placeholder-background"></div>
+    </ifnot>
+</div>

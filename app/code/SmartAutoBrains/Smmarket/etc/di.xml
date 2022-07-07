@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\PageBuilder\Model\WidgetInitializerConfig">
+        <arguments>
+            <argument name="config" xsi:type="array">
+                <item name="slider" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/slider/appearance/default/widget</item>
+                        <item name="appearance" xsi:type="string">default</item>
+                    </item>
+                </item>
+                <item name="slider_gallery" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/slider-gallery/appearance/default/widget</item>
+                        <item name="appearance" xsi:type="string">default</item>
+                    </item>
+                </item>
+                <item name="accordion" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/accordion/appearance/default/widget</item>
+                        <item name="appearance" xsi:type="string">default</item>
+                    </item>
+                </item>
+                <item name="accordion_feature" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/accordion_feature/appearance/default/widget</item>
+                        <item name="appearance" xsi:type="string">default</item>
+                    </item>
+                </item>
+                <item name="description_banner" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/description_banner/appearance/default/widget</item>
+                        <item name="appearance" xsi:type="string">default</item>
+                    </item>
+                </item>
+                <item name="collapsible_tabs" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/collapsible_tabs/appearance/default/widget</item>
+                    </item>
+                </item>
+                <item name="product_video" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/product-video/appearance/default/widget</item>
+                    </item>
+                </item>
+                <item name="press" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/press/appearance/default/widget</item>
+                        <item name="appearance" xsi:type="string">default</item>
+                    </item>
+                </item>
+                <item name="video_article" xsi:type="array">
+                    <item name="main-full" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/video-article/appearance/default/widget</item>
+                    </item>
+                </item>
+                <item name="articles" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/articles/appearance/default/widget</item>
+                    </item>
+                </item>
+                <item name="video_banner" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/video_banner/appearance/default/widget</item>
+                    </item>
+                </item>
+                <item name="products" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/products/appearance/carousel/widget</item>
+                        <item name="appearance" xsi:type="string">carousel</item>
+                    </item>
+                    <item name="carousel_extend" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/products/appearance/carousel/widget</item>
+                        <item name="appearance" xsi:type="string">carousel_extend</item>
+                    </item>
+                </item>
+                <item name="quote_slider" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/quote_slider/appearance/default/widget</item>
+                    </item>
+                </item>
+                <item name="advocates_carousel" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/advocates_carousel/appearance/default/widget</item>
+                    </item>
+                </item>
+                <item name="plp_enhanced_product_details" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="component" xsi:type="string">Astound_ContentTypes/js/content-type/plp_enhanced_product_details/appearance/image-dependant/widget</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\PageBuilder\Model\Config\ContentType\Reader">
+        <arguments>
+            <argument name="idAttributes" xsi:type="array">
+                <item name="/config/type/additional_data/item/item" xsi:type="string">name</item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Magento\PageBuilder\Controller\Adminhtml\ContentType\Image\Upload"
+                type="Astound\ContentTypes\Controller\Adminhtml\ContentType\Image\Upload" />
+    <type name="Magento\PageBuilder\Model\Stage\RendererPool">
+        <arguments>
+            <argument name="renderers" xsi:type="array">
+                <item name="plp_enhanced_product_detail_item" xsi:type="object">Magento\PageBuilder\Model\Stage\Renderer\WidgetDirective</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

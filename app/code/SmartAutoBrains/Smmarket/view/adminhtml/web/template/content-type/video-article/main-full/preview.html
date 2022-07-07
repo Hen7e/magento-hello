@@ -1,0 +1,34 @@
+<div class="pagebuilder-content-type type-container pagebuilder-video-article"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="pagebuilder-video-article-main">
+        <div class="pagebuilder-video-article-image-wrapper">
+            <div if="!data.video_article_image.attributes().src" class="description-pdp-image-placeholder"/>
+                <img if="data.video_article_image.attributes().src" attr="data.video_article_image.attributes"/>
+        </div>
+
+        <div class="pagebuilder-video-article-main-inner">
+            <h2 if="data.video_article_title.html()"
+                class="pagebuilder-video-article-title">
+            <span attr="data.video_article_title.attributes"
+                  html="data.video_article_title.html"></span>
+            </h2>
+
+            <p if="data.video_article_description.html()"
+               attr="data.video_article_description.attributes"
+               html="data.video_article_description.html"
+               class="pagebuilder-video-article-description"></p>
+        </div>
+    </div>
+
+    <div class="pagebuilder-video-article-content-wrapper">
+        <div class="pagebuilder-video-article-content"
+             attr="data.video_article_content.attributes"
+             data-bind="liveEdit: { field: 'video_article_content', placeholder: 'Video article content', selectAll: true }">
+        </div>
+    </div>
+</div>

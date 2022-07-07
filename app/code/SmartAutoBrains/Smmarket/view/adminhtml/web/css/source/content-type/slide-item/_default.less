@@ -1,0 +1,98 @@
+.pagebuilder-slide-intro {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.pagebuilder-slide-title {
+  @media only screen and (min-width: @mobile-point) {
+    font-size: 2.1vw;
+    margin-bottom: 20px;
+  }
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.pagebuilder-slide-description {
+  @media only screen and (min-width: 1200px) {
+    font-size: 1.15vw;
+  }
+  @media only screen and (min-width: @mobile-point) {
+    padding-bottom: 2.95vw;
+  }
+  font-size: 20px;
+  padding-bottom: 42px;
+  margin: 0;
+}
+
+.pagebuilder-slide-icon {
+  @media only screen and (min-width: @mobile-point) {
+    &.mobile {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: @mobile-point) {
+    display: none;
+    &.mobile {
+      display: block;
+    }
+  }
+}
+
+.pagebuilder-slide-button {
+  background-color: transparent;
+  border: 2px solid #292929;
+  border-radius: 8px;
+  color: #292929;
+  font-size: 14px;
+  display: inline-block;
+  padding: 10px;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.pagebuilder-slide-white {
+  .pagebuilder-slide-intro,
+  .pagebuilder-slide-title,
+  .pagebuilder-slide-description,
+  .pagebuilder-slide-description-content,
+  .pagebuilder-slide-button {
+    color: @color-white_slider;
+  }
+  .pagebuilder-slide-description {
+    width: 100%;
+  }
+  .pagebuilder-slide-description-content {
+    p { color: @color-white_slider; }
+  }
+  .pagebuilder-slide-button {
+    border-color: @color-white_slider;
+    &:hover {
+      background-color: @color-white_slider;
+      color: @color-black_slider;
+    }
+  }
+}
+
+.pagebuilder-slide-black {
+  .pagebuilder-slide-intro,
+  .pagebuilder-slide-title,
+  .pagebuilder-slide-description,
+  .pagebuilder-slide-description-content,
+  .pagebuilder-slide-button {
+    color: @color-black_slider;
+  }
+  .pagebuilder-slide-description-content {
+    p { color: @color-black_slider; }
+  }
+  .pagebuilder-slide-button {
+    border-color: @color-black_slider;
+    &:hover {
+      background-color: @color-black_slider;
+      color: @color-white_slider;
+    }
+  }
+}

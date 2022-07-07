@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"
+      extends="pagebuilder_base_form_with_background_attributes">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">
+                pagebuilder_plp_enhanced_product_details_image_dependant_form.pagebuilder_plp_enhanced_product_details_image_dependant_form_data_source
+            </item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">PLP enhanced product details</item>
+    </argument>
+    <settings>
+        <deps>
+            <dep>
+                pagebuilder_plp_enhanced_product_details_image_dependant_form.pagebuilder_plp_enhanced_product_details_image_dependant_form_data_source
+            </dep>
+        </deps>
+        <namespace>pagebuilder_plp_enhanced_product_details_image_dependant_form</namespace>
+    </settings>
+    <dataSource name="pagebuilder_plp_enhanced_product_details_image_dependant_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_PageBuilder/js/form/provider</item>
+            </item>
+        </argument>
+        <dataProvider name="pagebuilder_plp_enhanced_product_details_image_dependant_form_data_source"
+                      class="Magento\PageBuilder\Model\ContentType\DataProvider">
+            <settings>
+                <requestFieldName/>
+                <primaryFieldName/>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="background" sortOrder="15">
+        <settings>
+            <label translate="true">Background</label>
+            <collapsible>true</collapsible>
+            <opened>true</opened>
+        </settings>
+        <field name="background_image" formElement="hidden"/>
+        <field name="mobile_image" formElement="hidden"/>
+        <field name="background_size" sortOrder="40" formElement="hidden"/>
+        <field name="background_position" formElement="hidden"/>
+        <field name="background_attachment" formElement="hidden"/>
+        <field name="background_repeat" formElement="hidden"/>
+    </fieldset>
+    <fieldset name="advanced" sortOrder="30">
+        <field name="margins_and_padding">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">
+                        {"margin":{"bottom":"","left":"","right":"","top":""},"padding":{"bottom":"10","left":"10","right":"10","top":"10"}}
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="border" formElement="hidden"/>
+        <field name="border_color" formElement="hidden"/>
+        <field name="text_align" sortOrder="5" formElement="hidden"/>
+        <field name="border_width" sortOrder="7" formElement="hidden"/>
+        <field name="border_radius" sortOrder="9" formElement="hidden"/>
+        <field name="css_classes" sortOrder="15" formElement="hidden"/>
+    </fieldset>
+</form>

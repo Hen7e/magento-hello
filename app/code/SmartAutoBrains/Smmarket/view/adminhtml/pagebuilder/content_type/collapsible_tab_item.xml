@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="collapsible_tab_item"
+          label="Collapsible Tab"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="Astound_ContentTypes/js/content-type/collapsible_tab_item/preview"
+          master_component="Magento_PageBuilder/js/content-type/master-collection"
+          form="pagebuilder_collapsible_tab_item_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-tabs"
+          sortOrder="25"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="collapsible_tabs" policy="allow"/>
+        </parents>
+        <children default_policy="allow">
+            <child name="row" policy="deny"/>
+        </children>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/collapsible_tab_item/default/preview"
+                        master_template="Astound_ContentTypes/content-type/collapsible_tab_item/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="tab_name" source="data-tab-name"/>
+                        <attribute name="tab_hash" source="data-section" converter="Astound_ContentTypes/js/converter/add-sharp"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                        <css name="css_classes"/>
+                    </element>
+                    <element name="container" />
+                    <element name="icon_inactive">
+                        <attribute name="icon_inactive" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                    </element>
+                    <element name="icon_active">
+                        <attribute name="icon_active" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <is_system>false</is_system>
+    </type>
+</config>

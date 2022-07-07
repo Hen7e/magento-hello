@@ -1,0 +1,108 @@
+.pagebuilder-press-item-wrapper {
+    width: 25%;
+    height: 200px;
+    padding: 5px;
+}
+
+.pagebuilder-press-item {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.12);
+    border-right: 5px;
+}
+
+.pagebuilder-press-item-inner {
+    height: 100%;
+}
+
+.pagebuilder-press-item-empty,
+.pagebuilder-press-item-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.pagebuilder-press-item-empty {
+    font-weight: bold;
+    font-size: 18px;
+    color: #bbbbbb;
+    padding: 20px;
+}
+
+.pagebuilder-press-item-content > div {
+    position: absolute;
+}
+
+.pagebuilder-press-item-data {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 20px;
+    & p {
+        color: inherit;
+    }
+    & > div {
+        position: relative;
+        height: 100%;
+        & > hr {
+            border: none;
+            height: 1px;
+            background-color: rgba(255,255,255,.5);
+        }
+    }
+}
+
+.pagebuilder-press-item[data-appearance="card"] {
+    .pagebuilder-press-item-data {
+        hr {
+            background-color: #919191;
+        }
+    }
+}
+
+.pagebuilder-press-item-content[data-appearance="image"] {
+
+    .pagebuilder-press-item-data hr {
+        background-color: rgba(255,255,255,.5);
+    }
+
+    .pagebuilder-press-item-image {
+
+        z-index: 1;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+p.pagebuilder-press-item-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+p.pagebuilder-press-item-source {
+    float: right;
+    font-size: 12px;
+}
+
+.pagebuilder-press-item-badge {
+    z-index: 3;
+    font-size: 12px;
+    padding: 4px 11px;
+    background-color: #008dc3;
+    color: #fff;
+    left: 10px;
+    bottom: 10px;
+    border-radius: 2px;
+}

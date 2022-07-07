@@ -1,0 +1,31 @@
+<div class="pagebuilder-content-type pagebuilder-description-pdp"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+     css="data.main.css">
+
+    <render args="getOptions().template"/>
+
+    <div class="pagebuilder-description-pdp-inner">
+        <div class="pagebuilder-description-pdp-content">
+            <div if="data.description.html()" class="pagebuilder-content-type pagebuilder-html">
+                <div attr="data.description.attributes"
+                     html="data.description.html"
+                     class="pagebuilder-description-pdp-content-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="description-pdp-image">
+        <img if="data.description_mobile_image.attributes().src"
+             attr="data.description_mobile_image.attributes"
+             class="pagebuilder-description-pdp-mobile-image"/>
+
+        <div if="!data.description_image.attributes().src" class="description-pdp-image-placeholder"/>
+
+        <div if="data.description_image.attributes().src"
+             class="pagebuilder-description-pdp-desktop-image"
+             data-bind="style: { background: 'url(' + data.description_image.attributes().src + ') no-repeat center center/cover' }">
+        </div>
+    </div>
+</div>

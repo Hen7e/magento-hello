@@ -1,0 +1,625 @@
+.pagebuilder-slide-poster-wrapper {
+    .pagebuilder-slide-overlay {
+        padding: 0;
+        max-width: 100%;
+    }
+}
+
+.pagebuilder-poster-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    top: 40px;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.poster {
+    .pagebuilder-slide-intro,
+    .pagebuilder-slide-title,
+    .pagebuilder-slide-description,
+    .pagebuilder-html,
+    .pagebuilder-slide-button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .pagebuilder-slide-image {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    @media only screen and (min-width: @mobile-point) {
+        &.mobile {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: @mobile-point) {
+        display: none;
+        &.mobile {
+            display: block;
+        }
+    }
+}
+
+div[data-slide-name="unbound-summer"] {
+    .poster {
+        .pagebuilder-slide-description {
+            @media only screen and (min-width: @mobile-point) {
+                padding-bottom: 10px;
+            }
+        }
+        .pagebuilder-slide-title {
+            @media only screen and (min-width: @mobile-point) {
+                font-size: 1.8vw;
+                margin-bottom: 10px;
+            }
+        }
+        .pagebuilder-slide-title,
+        .pagebuilder-slide-description-content {
+            color: #22334c;
+        }
+        .pagebuilder-poster-content {
+            text-align: left;
+            max-width: 250px;
+        }
+        .pagebuilder-slide-intro,
+        .pagebuilder-slide-title,
+        .pagebuilder-slide-description,
+        .pagebuilder-slide-button {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .pagebuilder-slide-title,
+        .pagebuilder-slide-description,
+        .pagebuilder-slide-description-content {
+            color: #22334c;
+        }
+        .pagebuilder-slide-description-content {
+            font-size: 13px;
+        }
+        .pagebuilder-slide-intro {
+            display: none;
+        }
+        .pagebuilder-slide-button {
+            color: #22334c;
+            background-color: #fff;
+            border-radius: 0;
+            &:hover {
+                background-color: #22334c;
+                border-color: #22334c;
+                color: #fff;
+            }
+        }
+    }
+}
+
+div[data-slide-name="back-to-school"] {
+    .poster {
+        .pagebuilder-slide-intro,
+        .pagebuilder-slide-description {
+            display: none;
+        }
+        .pagebuilder-poster-content {
+            text-align: left;
+            top: 10px;
+            left: 32.5%;
+            right: 20%;
+        }
+        .pagebuilder-slide-title,
+        .pagebuilder-slide-button {
+            margin-left: unset;
+            margin-right: unset;
+        }
+        .pagebuilder-slide-title,
+        .pagebuilder-slide-description-content {
+            color: #0e2b57;
+        }
+        .pagebuilder-slide-description-content {
+            font-size: 15px;
+        }
+        .pagebuilder-slide-button {
+            color: #fff;
+            background-color: #0e2b57;
+            border-color: #0e2b57;
+            border-radius: 5px;
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: #fff;
+                border-color: #fff;
+                color: #0e2b57;
+            }
+        }
+    }
+}
+
+div[data-slide-name="my-hydro-reboot"] {
+    .poster {
+        .pagebuilder-slide-intro,
+        .pagebuilder-slide-title,
+        .pagebuilder-slide-description,
+        .pagebuilder-slide-button {
+            margin-left: 0;
+            margin-right: 0;
+            max-width: 18vw;
+        }
+        .pagebuilder-slide-intro,
+        .pagebuilder-slide-description {
+            display: none;
+        }
+        .pagebuilder-slide-title {
+            line-height: 1.1;
+        }
+        .pagebuilder-poster-content {
+            max-width: none;
+            width: 35%;
+            left: auto;
+            right: 20px;
+            text-align: left;
+        }
+        .pagebuilder-slide-description-content {
+            text-align: left;
+            max-width: 17vw;
+            p {
+                color: #fff;
+            }
+            svg {
+                width: auto;
+                height: 50px;
+            }
+        }
+        .pagebuilder-slide-button {
+            background: #fff;
+            color: #0b1c42;
+            border-radius: 3px;
+            padding: 5px 10px;
+        }
+    }
+}
+
+div[data-slide-name="сoffee-flex"] {
+    .pagebuilder-poster-content {
+        top: 15px;
+        left: 0;
+        right: 160px;
+    }
+    .pagebuilder-slide-intro,
+    .pagebuilder-slide-title,
+    .pagebuilder-slide-description-content {
+        font-size: 40px;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+    .pagebuilder-slide-intro {
+        text-transform: uppercase;
+    }
+    .pagebuilder-slide-title {
+        text-transform: uppercase;
+        color: #d3a50b;
+        font-weight: 400;
+    }
+    .pagebuilder-slide-description-content {
+        font-weight: 600;
+        sup {
+            font-size: .3em;
+            vertical-align: top;
+            top: .6em;
+        }
+    }
+    .pagebuilder-slide-description {
+        display: none;
+    }
+    .pagebuilder-content-type {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    .pagebuilder-slide-button {
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 5px 10px;
+        &:hover,
+        &:active,
+        &:visited {
+            background-color: #d3a50b;
+            color: #484643;
+        }
+    }
+}
+
+.pagebuilder-slide[data-slide-name="gift-of-go-sale"] {
+    .placeholder-text {
+        display: none;
+    }
+    .pagebuilder-poster-content {
+        top: auto;
+        bottom: 200px;
+        left: auto;
+        right: 615px;
+        .pagebuilder-content-type {
+            position: absolute;
+            color: #2f4560;
+            bottom: -1.5625vw;
+            width: 100%;
+            font-size: 0.78125vw;
+            margin: 0 auto;
+            p { color: #2f4560; }
+        }
+    }
+    .pagebuilder-slide-button {
+        margin-right: 0;
+        color: #fff;
+        font-weight: 700;
+        font-size: 24px;
+        background-color: #e25d48;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+}
+
+/**
+    Spring Colors Marquee
+ */
+.pagebuilder-slide[data-slide-name="spring-colors-marquee"] {
+    .placeholder-text {
+        display: none;
+    }
+    .pagebuilder-poster-content {
+        top: 55px;
+        left: 680px;
+        right: auto;
+        bottom: auto;
+    }
+    .pagebuilder-slide-button {
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+        font-weight: bold;
+        color: #b6ac9d;
+        border: none;
+        &:after {
+            color: inherit;
+        }
+        &:hover {
+            background-color: unset;
+        }
+    }
+}
+/**
+   EO Spring Colors Marquee
+ */
+
+.pagebuilder-slide[data-slide-name="nutrition-marquee"] {
+    .placeholder-text {
+        display: none;
+    }
+    .pagebuilder-poster-content {
+        text-align: left;
+        left: 480px;
+        right: auto;
+    }
+    .pagebuilder-slide-intro {
+        margin-bottom: 0;
+    }
+    .pagebuilder-slide-intro,
+    .pagebuilder-slide-title {
+        max-width: 6em;
+        font-size: 40px;
+        margin-left: 0;
+    }
+    .pagebuilder-slide-description-content {
+        max-width: 10em;
+        font-size: 20px;
+        margin-left: 0;
+    }
+    .pagebuilder-slide-button {
+        margin-left: 0;
+        border-radius: 0;
+        color: @color-base;
+        background-color: @color-main;
+        font-weight: bold;
+    }
+}
+
+/**
+   My Hydro BTS Homepage Marquee
+ */
+
+.bts-marquee-homepage {
+    [data-element="title"] {
+        font-family: @font-bold;
+        margin: 0;
+    }
+
+    [data-element="desc"],
+    [data-element="description"],
+    [data-element="button"] {
+        font-family: @font-regular;
+    }
+
+    [data-element="desc"] {
+        color: @color-white;
+    }
+
+    .pagebuilder-slide-button {
+        &[data-element="button"] {
+            background: @color-white;
+            border: 0;
+            border-radius: 8px;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    [data-slide-name="see-you-in-class"] {
+        [data-element="button"] {
+            color: @color-see-you-in-class-db;
+
+            &::after {
+                color: @color-see-you-in-class-db;
+            }
+
+            &:hover {
+                background: @color-see-you-in-class-db;
+                color: @color-white;
+
+                &::after {
+                    color: @color-white;
+                }
+            }
+        }
+    }
+
+    [data-slide-name="keep-learning"] {
+        [data-element="button"] {
+            color: @color-keep-learning-o;
+
+            &::after {
+                color: @color-keep-learning-o;
+            }
+
+            &:hover {
+                background: @color-keep-learning-o;
+                color: @color-white;
+
+                &::after {
+                    color: @color-white;
+                }
+            }
+        }
+    }
+
+    [data-slide-name="stay-hydrated"] {
+        [data-element="button"] {
+            color: @color-stay-hydrated-pr;
+
+            &::after {
+                color: @color-stay-hydrated-pr;
+            }
+
+            &:hover {
+                background: @color-stay-hydrated-pr;
+                color: @color-white;
+
+                &::after {
+                    color: @color-white;
+                }
+            }
+        }
+    }
+}
+
+.homepage_marquee_slider {
+    .bts-marquee-homepage {
+        .pagebuilder-poster-content {
+            .lib-vendor-prefix-display();
+            .lib-vendor-box-align(flex-start);
+            .lib-css(justify-content, flex-end, 1);
+            .lib-vendor-prefix-flex-direction(column);
+            width: 100%;
+            max-width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 4.77083vw;
+            left: 7.0625vw;
+            margin: 0;
+
+            .pagebuilder-slide-title {
+                font-size: 5.20833vw;
+                margin: 0 0 1vw 0;
+            }
+
+            .pagebuilder-slide-description {
+                font-size: 1.25vw;
+                text-align: start;
+                padding: 0;
+                margin: 0 0 1vw 0;
+            }
+
+            [data-element="desc"] {
+                display: none;
+            }
+
+            .pagebuilder-slide-button {
+                .lib-vendor-prefix-display();
+                .lib-vendor-box-align(center);
+                .lib-css(justify-content, center, 1);
+                font-size: 14px;
+                width: 11.25vw;
+                height: 2.08333vw;
+            }
+        }
+    }
+}
+/* Kids BTS  */
+.pagebuilder-slide[data-slide-name="kids-bts"] {
+    .placeholder-text { display: none; }
+    .pagebuilder-poster-content {
+        max-width: 280px;
+        text-align: left;
+    }
+    .pagebuilder-slide-description {
+        max-width: 275px;
+        margin: 0 0 20px;
+        padding-bottom: 0;
+    }
+    .pagebuilder-slide-button {
+        background-color: #136cc0;
+        color: #fff;
+        border: 0;
+        border-radius: 4px;
+        &:hover {
+            background-color: #fff;
+            color: #136cc0;
+        }
+    }
+    .pagebuilder-slide-overlay {
+        padding: 0;
+        left: 495px;
+        top: 305px;
+        transform: none;
+    }
+    .pagebuilder-slide-title {
+        margin: 0;
+        max-width: 18em;
+        font-size: 16px;
+        color: #B3CC33;
+    }
+    .pagebuilder-slide-button {
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        color: #B3CC33;
+        &:hover,
+        &:active,
+        &:focus {
+            background: transparent;
+            color: #B3CC33;
+        }
+    }
+}
+/* EO Kids BTS */
+
+/* Hydration Accessories Marquee */
+.hydration-marquee {
+    [data-slide-name="hydration-accessories-marquee"] {
+        .pagebuilder-poster-content {
+            .lib-css(justify-content, flex-start, 1);
+            max-width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 2vw 0 0 8vw;
+        }
+
+        .pagebuilder-slide-title-html,
+        .pagebuilder-slide-description-content,
+        .pagebuilder-slide-button {
+            color: @color-hydration-marquee-text;
+            margin: 0;
+        }
+
+        .pagebuilder-slide-title-html,
+        .pagebuilder-slide-description-content {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .pagebuilder-slide-title-html {
+            font-family: @font-bold;
+            font-size: 2.60417vw;
+        }
+
+        .pagebuilder-slide-description-content {
+            font-family: @font-regular;
+            font-size: 1.30208vw;
+            line-height: 1;
+        }
+
+        .pagebuilder-slide-button {
+            background: @color-white;
+            font-size: 14px;
+            min-width: auto;
+            font-family: @font-bold;
+
+            &::after {
+                color: @color-hydration-marquee-text;
+            }
+
+            &:hover {
+                background: @color-hydration-marquee-text;
+                border-color: @color-hydration-marquee-text;
+                color: @color-white;
+
+                &::after {
+                    color: @color-white;
+                }
+            }
+        }
+
+        .pagebuilder-slide-description,
+        .pagebuilder-slide-intro,
+        .pagebuilder-slide-title {
+            &.placeholder-text {
+                display: none;
+            }
+        }
+    }
+
+    .pagebuilder-content-type {
+        &.pagebuilder-html {
+            margin: 0;
+        }
+    }
+}
+
+/* EO Hydration Accessories Marquee */
+
+[data-slide-name="s22-trail-series-hp-marquee"] {
+    .pagebuilder-poster-content {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        max-width: 100%;
+        margin: 2vw 0 0 14.4vw;
+
+        [data-element="title"],
+        .pagebuilder-slide-description {
+            font-weight: normal;
+        }
+
+        .pagebuilder-slide-title,
+        .pagebuilder-slide-button,
+        .pagebuilder-slide-description {
+            margin: 0;
+            padding: 0;
+        }
+
+        [data-element="title"],
+        [data-element="title_html"] {
+            font-size: 2.34vw;
+            line-height: 3.12vw;
+        }
+
+        .pagebuilder-slide-description {
+            font-size: 1.4vw;
+            line-height: 1.6vw;
+            letter-spacing: 0.1vw;
+        }
+
+        .pagebuilder-slide-button {
+            font-size: 1.25vw;
+            min-width: auto;
+            padding: 0.98vw 1.3vw;
+            margin-top: 1.82vw;
+        }
+    }
+}

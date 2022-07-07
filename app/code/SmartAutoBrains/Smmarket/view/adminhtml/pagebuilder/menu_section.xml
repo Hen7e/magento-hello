@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/menu_sections.xsd">
+    <menu_section name="hydro" translate="label" sortOrder="100" label="HydroFlask"/>
+    <menu_section name="product-tabs" translate="label" sortOrder="110" label="Product Tabs"/>
+    <menu_section name="enhance-plp-items" translate="label" sortOrder="120" label="Enhance PLP Items"/>
+</config>

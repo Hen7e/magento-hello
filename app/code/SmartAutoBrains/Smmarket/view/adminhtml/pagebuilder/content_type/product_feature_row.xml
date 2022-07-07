@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="product_feature_row"
+          label="Product feature row"
+          menu_section="product-tabs"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="Magento_PageBuilder/js/content-type/preview"
+          master_component="Magento_PageBuilder/js/content-type/master"
+          form="pagebuilder_product_feature_row_form"
+          icon="icon-pagebuilder-columns"
+          sortOrder="10"
+          translate="label">
+        <children default_policy="deny"/>
+        <parents default_policy="deny">
+            <parent name="root-container" policy="allow" />
+        </parents>
+        <appearances>
+            <appearance name="content-left"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/product-feature-row/content-left/preview"
+                        master_template="Astound_ContentTypes/content-type/product-feature-row/content-left/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <html name="html" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <css name="css_classes"/>
+                    </element>
+                    <element name="product_feature_title">
+                        <html name="product_feature_title_text"
+                              converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="product_feature_title_accent">
+                        <html name="product_feature_title_accent_text"
+                              converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="product_feature_description">
+                        <html name="product_feature_description_text"
+                              converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="product_feature_image">
+                        <attribute name="product_feature_image"
+                                   source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src" />
+                        <attribute name="alt" source="alt" />
+                        <attribute name="title_attribute" source="title" />
+                        <attribute name="feature_image_width" source="width"/>
+                        <attribute name="feature_image_height" source="height"/>
+                    </element>
+                </elements>
+            </appearance>
+            <appearance name="content-right"
+                        preview_template="Astound_ContentTypes/content-type/product-feature-row/content-right/preview"
+                        master_template="Astound_ContentTypes/content-type/product-feature-row/content-right/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <html name="html" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <css name="css_classes"/>
+                    </element>
+                    <element name="product_feature_title">
+                        <html name="product_feature_title_text"
+                              converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="product_feature_title_accent">
+                        <html name="product_feature_title_accent_text"
+                              converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="product_feature_description">
+                        <html name="product_feature_description_text"
+                              converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="product_feature_image">
+                        <attribute name="product_feature_image"
+                                   source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src" />
+                        <attribute name="alt" source="alt" />
+                        <attribute name="title_attribute" source="title" />
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <additional_data>
+            <item name="uploaderConfig" xsi:type="array">
+                <item name="isShowImageUploadInstructions" xsi:type="boolean">true</item>
+                <item name="isShowImageUploadOptions" xsi:type="boolean">true</item>
+                <item name="maxFileSize" xsi:type="object">ImageMaxFileSizeDesktop</item>
+                <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png webp</item>
+                <item name="component" xsi:type="string">Magento_PageBuilder/js/form/element/image-uploader</item>
+                <item name="componentType" xsi:type="string">imageUploader</item>
+                <item name="dataScope" xsi:type="string">background_image</item>
+                <item name="formElement" xsi:type="string">imageUploader</item>
+                <item name="uploaderConfig" xsi:type="array">
+                    <item name="url" xsi:type="object">Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\Uploader\SaveUrl</item>
+                </item>
+                <item name="previewTmpl" xsi:type="string">Magento_PageBuilder/form/element/uploader/preview</item>
+                <item name="template" xsi:type="string">Magento_PageBuilder/form/element/uploader/preview/image</item>
+                <item name="mediaGallery" xsi:type="array">
+                    <item name="openDialogUrl" xsi:type="object">Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\Uploader\OpenDialogUrl</item>
+                    <item name="openDialogTitle" xsi:type="string" translate="true">Insert Images...</item>
+                    <item name="initialOpenSubpath" xsi:type="string">categories-carousel</item>
+                    <item name="storeId" xsi:type="object">Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\StoreId</item>
+                </item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">true</item>
+                </item>
+            </item>
+        </additional_data>
+    </type>
+</config>

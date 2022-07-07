@@ -1,0 +1,20 @@
+<div class="pagebuilder-content-type type-container pagebuilder-tab-item" attr="Object.assign({}, {id: contentType.id}, data.main.attributes())">
+    <div class="product-tab-technology-content js-technology-content">
+        <div class="product-tab-technology-content-icon">
+            <img if="data.tab_image.attributes().src"
+                 attr="data.tab_image.attributes"/>
+        </div>
+        <div class="product-tab-technology-description">
+            <h6 if="data.tab_name.html()"
+                attr="data.tab_name.attributes"
+                html="data.tab_name.html"></h6>
+            <h4 if="data.tab_title.html()"
+                attr="data.tab_title.attributes"
+                html="data.tab_title.html"></h4>
+            <p if="data.tab_description.html()"
+               attr="data.tab_description.attributes"
+               html="data.tab_description.html">
+            </p>
+        </div>
+    </div>
+</div>

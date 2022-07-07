@@ -1,0 +1,54 @@
+.pagebuilder-content-type.pagebuilder-hero-banner {
+    min-height: 150px;
+    &.children-min-height:not(.empty-container) {
+        > .element-children {
+            padding: 0;
+            min-height: 0;
+        }
+    }
+
+    .pagebuilder-hero-banner-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .content-type-container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &[data-appearance="backgroundDependant"] {
+        position: relative;
+        .pagebuilder-hero-banner-img-desktop,
+        .pagebuilder-hero-banner-img-mobile {
+            position: relative;
+            z-index: 0;
+            display: block;
+            width: 100%;
+            height: auto;
+
+        }
+        .pagebuilder-hero-banner-img-mobile { display: none; }
+        .content-type-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        @media only screen and (max-width: @screen__m) {
+            .pagebuilder-hero-banner-img-desktop { display: none; }
+            .pagebuilder-hero-banner-img-mobile { display: block; }
+        }
+    }
+}
+.hydro-cms_wsl_hero {
+    .hydro-cms_wsl_hero-title {
+        color: #fff;
+    }
+}

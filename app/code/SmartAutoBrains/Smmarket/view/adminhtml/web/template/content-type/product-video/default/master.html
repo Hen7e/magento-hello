@@ -1,0 +1,21 @@
+<div class="feature-video"
+     attr="data.main.attributes">
+
+    <div class="product-tab-video">
+
+        <button class="product-tab-video-trigger js-product-tab-video-trigger" data-bind="attr: { title: jQuery.mage.__('Play Icon Button') }" >
+            <img attr="data.product_video_thumbnail.attributes"/>
+            <span class="play-icon"></span>
+        </button>
+
+        <div class="product-tab-video-frame-wrapper">
+            <span class="product-tab-video-frame-placeholder"
+                  attr="data.product_video.attributes"
+                  html="data.product_video.html"></span>
+            <iframe title="video-player"
+                    class="modal-video-frame js-modal-video-frame"
+                    data-bind="attr: { src: data.product_video.html() }">
+            </iframe>
+        </div>
+    </div>
+</div>

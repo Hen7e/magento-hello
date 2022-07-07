@@ -1,0 +1,30 @@
+<div class="pagebuilder-content-type pagebuilder-video-banner"
+     attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <div class="pagebuilder-video-banner-row">
+        <div class="pagebuilder-video-banner-column">
+            <div if="data.title.html()"
+                 class="pagebuilder-video-banner-title"
+                 attr="data.title.attributes"
+                 html="data.title.html"></div>
+            <div if="data.description.html()"
+                 class="pagebuilder-video-banner-details"
+                 attr="data.description.attributes"
+                 html="data.description.html"></div>
+            <button if="data.button.html()"
+                 class="pagebuilder-video-banner-modal-trigger js-video-banner-trigger"
+                 attr="data.button.attributes"
+                 html="data.button.html"></button>
+        </div>
+        <div class="pagebuilder-video-banner-column">
+            <div class="pagebuilder-video-banner-container">
+                <iframe frameborder="0" allowfullscreen attr="data.video.attributes"/>
+                <i class="icon-pagebuilder-video-banner pagebuilder-video-banner-placeholder" ifnot="data.video.attributes().src"/>
+            </div>
+        </div>
+    </div>
+
+    <render args="getOptions().template" />
+</div>

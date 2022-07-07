@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="products"
+          label="Products carousel"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Astound_ContentTypes/js/content-type/products/preview"
+          form="pagebuilder_products_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-products"
+          sortOrder="20"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="root-container" policy="allow"/>
+        </parents>
+        <children default_policy="deny"/>
+        <appearances>
+            <appearance name="grid"
+                        preview_template="Astound_ContentTypes/content-type/products/grid/preview">
+                <elements>
+                    <element name="title">
+                        <html name="title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter component="Astound_ContentTypes/js/content-type/products/mass-converter/widget-directive"
+                               name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+
+            <appearance name="carousel"
+                        preview_template="Astound_ContentTypes/content-type/products/grid/preview">
+                <form>pagebuilder_products_carousel_form</form>
+                <elements>
+                    <element name="main">
+                        <attribute source="data-show-arrows" name="show_arrows"/>
+                        <attribute source="data-show-dots" name="show_dots"/>
+                        <attribute source="data-is-infinite" name="is_infinite"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter component="Astound_ContentTypes/js/content-type/products/mass-converter/carousel-widget-directive"
+                               name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+
+            <appearance name="carousel_extend"
+                        preview_template="Astound_ContentTypes/content-type/products/grid/preview"
+                        master_template="Astound_ContentTypes/content-type/products/grid/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <form>pagebuilder_products_carousel_form</form>
+                <elements>
+                    <element name="main">
+                        <attribute source="data-show-arrows" name="show_arrows"/>
+                        <attribute source="data-show-dots" name="show_dots"/>
+                        <attribute source="data-is-infinite" name="is_infinite"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <html name="html" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter component="Astound_ContentTypes/js/content-type/products/mass-converter/carousel-widget-simple-products"
+                               name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+        </appearances>
+    </type>
+</config>

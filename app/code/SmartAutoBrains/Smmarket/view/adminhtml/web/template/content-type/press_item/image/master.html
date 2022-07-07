@@ -1,0 +1,37 @@
+<div if="data.title.html() && data.image.attributes().src"
+        class="pagebuilder-press-item"
+     attr="Object.assign({}, data.main.attributes(), { 'data-config': JSON.stringify({'image': data.image.attributes(), 'link': data.link.attributes()}) })">
+    <div>
+        <div class="pagebuilder-press-item-image">
+            <div>
+                <img attr="data.image.attributes"/>
+            </div>
+        </div>
+        <div class="pagebuilder-press-item-data">
+            <div ko-style="data.main.style"
+                 class="pagebuilder-press-item-data-container">
+
+                <p if="data.source.html"
+                   class="pagebuilder-press-item-source"
+                   attr="data.source.attributes"
+                   html="data.source.html"></p>
+
+                <p class="pagebuilder-press-item-title"
+                   attr="data.title.attributes"
+                   html="data.title.html"></p>
+
+                <p class="pagebuilder-press-item-date"
+                   attr="data.date.attributes"
+                   html="data.date.html"></p>
+
+            </div>
+        </div>
+        <div class="pagebuilder-press-item-action">
+            <a attr="data.link.attributes"
+               class="pagebuilder-press-item-action-container">
+                <div attr="data.action.attributes"
+                     html="data.action.html"></div>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Alexey Panchenko <apanchenko@helenoftroy.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type
+        name="plp_enhanced_banner"
+        label="PLP banner"
+        menu_section="enhance-plp-items"
+        component="Magento_PageBuilder/js/content-type"
+        preview_component="Magento_PageBuilder/js/content-type/preview"
+        master_component="Magento_PageBuilder/js/content-type/master"
+        form="pagebuilder_plp_enhanced_banner_form"
+        icon="icon-pagebuilder-banner"
+        translate="label"
+    >
+
+        <parents default_policy="deny">
+            <parent name="root-container" policy="allow"/>
+        </parents>
+        <children default_policy="deny"/>
+
+        <appearances>
+            <appearance
+                name="default"
+                default="true"
+                preview_template="Astound_ContentTypes/content-type/plp_enhanced_banner/default/preview"
+                master_template="Astound_ContentTypes/content-type/plp_enhanced_banner/default/master"
+                reader="Magento_PageBuilder/js/master-format/read/configurable">
+
+                <elements>
+                    <element name="main">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_image" source="background_image"
+                               converter="Magento_PageBuilder/js/converter/style/background-image"
+                               preview_converter="Magento_PageBuilder/js/converter/style/preview/background-image"
+                               persistence_mode="write"/>
+                        <style name="background_position" source="background_position"/>
+                        <style name="background_size" source="background_size"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                        <attribute name="overlap_overlay_image" source="data-overlapped"/>
+                    </element>
+                    <element name="plp_banner_title">
+                        <style name="title_color" source="color"/>
+                        <html name="plp_banner_title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="plp_banner_subtitle">
+                        <style name="subtitle_color" source="color"/>
+                        <html name="plp_banner_subtitle" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="description_image_left">
+                        <attribute name="description_image_left" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_left_image" source="alt"/>
+                    </element>
+                    <element name="description_mobile_image_left">
+                        <attribute name="description_mobile_image_left" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_left_image" source="alt"/>
+                    </element>
+                    <element name="description_image_center">
+                        <attribute name="description_image_center" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_center_image" source="alt"/>
+                    </element>
+                    <element name="description_mobile_image_center">
+                        <attribute name="description_mobile_image_center" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_center_image" source="alt"/>
+                    </element>
+                    <element name="description_image_center_overlay">
+                        <attribute name="description_image_center_overlay" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_center_image_overlay" source="alt"/>
+                    </element>
+                    <element name="description_mobile_image_center_overlay">
+                        <attribute name="description_mobile_image_center_overlay" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_center_image_overlay" source="alt"/>
+                    </element>
+                    <element name="description_image_right">
+                        <attribute name="description_image_right" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_right_image" source="alt"/>
+                    </element>
+                    <element name="description_mobile_image_right">
+                        <attribute name="description_mobile_image_right" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_right_image" source="alt"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <additional_data>
+            <item name="wysiwygConfig" xsi:type="array">
+                <item name="wysiwygConfigData" xsi:type="object">
+                    Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\Wysiwyg\Config
+                </item>
+            </item>
+        </additional_data>
+    </type>
+</config>

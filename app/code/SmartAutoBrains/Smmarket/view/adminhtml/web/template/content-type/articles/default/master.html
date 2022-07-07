@@ -1,0 +1,18 @@
+<div class="pagebuilder-articles"
+     attr="data.main.attributes">
+
+    <if args="getData().use_disclaimer === 'true' && contentType.children().length > getData().visible_items_amount">
+        <div class="articles-accordion-wrapper">
+            <div class="articles-accordion-content-wrapper js-accordion-content"></div>
+
+            <div class="articles-accordion-title js-accordion-title">
+                <div class="articles-accordion-text-closed" data-bind="text: getData().trigger_text_closed"></div>
+                <div class="articles-accordion-text-opened" data-bind="text: getData().trigger_text_opened"></div>
+            </div>
+        </div>
+    </if>
+
+    <div class="pagebuilder-articles-content js-disclaimer">
+        <render args="masterTemplate"/>
+    </div>
+</div>

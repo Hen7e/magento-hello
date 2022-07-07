@@ -1,0 +1,41 @@
+<div class="cart-content row-full"
+     attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css">
+    <div class="row-fix">
+        <div class="row">
+            <div class="column cart-content-contents">
+                <div class="cart-content-header">
+                    <div if="data.cart_content_image.attributes().src || data.title.html()"
+                         class="cart-content-titles">
+                        <div if="data.cart_content_image.attributes().src" class="cart-content-icon">
+                            <img attr="data.cart_content_image.attributes" />
+                        </div>
+
+                        <h3 if="data.title.html()"
+                            attr="data.title.attributes"
+                            class="cart-content-title"
+                            html="data.title.html"></h3>
+                    </div>
+
+                    <div if="data.details.html()"
+                         class="column large-6 large-centered">
+                        <div class="cart-content-details"
+                             attr="data.details.attributes"
+                             html="data.details.html"></div>
+                    </div>
+                </div>
+
+                <div if="data.cart_content_footer_text.html()" class="cart-content-footer">
+                    <div class="cart-content-footer-text"
+                         attr="data.cart_content_footer_text.attributes"
+                         html="data.cart_content_footer_text.html"></div>
+                </div>
+
+                <div class="cart-content-content">
+                    <render args="masterTemplate"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

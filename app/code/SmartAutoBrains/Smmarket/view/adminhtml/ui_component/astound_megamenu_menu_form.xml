@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="content" class="Astound\MegaMenu\Model\UiComponent\Form\Fieldset\Content">
+        <fieldset name="general_content">
+            <container name="container_main_static_content">
+                <field name="main_static_content">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="wysiwygConfigData" xsi:type="array">
+                                <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                                <item name="pagebuilder_button" xsi:type="boolean">false</item>
+                            </item>
+                        </item>
+                    </argument>
+                </field>
+            </container>
+        </fieldset>
+        <fieldset name="featured_content">
+            <container name="container_featured_static_content">
+                <field name="featured_static_content">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="wysiwygConfigData" xsi:type="array">
+                                <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                                <item name="pagebuilder_button" xsi:type="boolean">false</item>
+                            </item>
+                        </item>
+                    </argument>
+                </field>
+            </container>
+        </fieldset>
+        <fieldset name="extra_content">
+            <container name="container_extra_header_static_content">
+                <field name="extra_header_static_content">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="wysiwygConfigData" xsi:type="array">
+                                <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                                <item name="pagebuilder_button" xsi:type="boolean">false</item>
+                            </item>
+                        </item>
+                    </argument>
+                </field>
+            </container>
+            <container name="container_extra_footer_static_content">
+                <field name="extra_footer_static_content">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="wysiwygConfigData" xsi:type="array">
+                                <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                                <item name="pagebuilder_button" xsi:type="boolean">false</item>
+                            </item>
+                        </item>
+                    </argument>
+                </field>
+            </container>
+        </fieldset>
+    </fieldset>
+</form>

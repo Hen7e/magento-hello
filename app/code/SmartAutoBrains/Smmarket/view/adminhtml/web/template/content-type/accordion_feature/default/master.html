@@ -1,0 +1,66 @@
+<div class="pagebuilder-feature-accordion js-pagebuilder-feature-accordion"
+     attr="data.main.attributes">
+    <div class="feature-accordion-header">
+        <div class="feature-accordion-header-wrapper">
+            <div class="feature-accordion-header-content"
+                 attr="data.background.attributes"
+                 ko-style="data.background.style">
+
+                <div  if="data.title.html()"
+                      class="feature-accordion-header-title"
+                      attr="data.title.attributes"
+                      html="data.title.html"></div>
+
+                <div if="data.subtitle.html()"
+                     class="feature-accordion-header-subtitle"
+                     attr="data.subtitle.attributes"
+                     html="data.subtitle.html"></div>
+
+                <div if="data.header_content.html()"
+                     class="feature-accordion-header-html"
+                     attr="data.header_content.attributes"
+                     html="data.header_content.html"></div>
+
+                <button if="data.button_label.html() && data.button_label_closed.html()"
+                        type="button"
+                        class="feature-accordion-header-button js-pagebuilder-feature-accordion-trigger active">
+                    <span class="feature-accordion-label-opened"
+                          attr="data.button_label.attributes"
+                          html="data.button_label.html"></span>
+                    <span class="feature-accordion-label-closed"
+                          attr="data.button_label_closed.attributes"
+                          html="data.button_label_closed.html"></span>
+                </button>
+            </div>
+        </div>
+        <div class="feature-accordion-header-image">
+            <img  if="data.header_image.attributes().src"
+                  attr="data.header_image.attributes">
+        </div>
+    </div>
+    <div class="feature-accordion-details js-pagebuilder-feature-accordion-content">
+
+        <div class="feature-accordion-details-wrapper">
+
+            <div if="data.details_content.html()"
+                 class="feature-accordion-details-content"
+                 attr="data.details_content.attributes"
+                 html="data.details_content.html"></div>
+
+            <div if="data.details_content.html()"
+                 class="feature-accordion-details-subcontent"
+                 attr="data.details_subcontent.attributes"
+                 html="data.details_subcontent.html"></div>
+
+        </div>
+
+        <div class="feature-accordion-details-image">
+            <img if="data.details_image_desktop.attributes().src"
+                 class="feature-accordion-image desktop"
+                 attr="data.details_image_desktop.attributes">
+            <img if="data.details_image_mobile.attributes().src"
+                 class="feature-accordion-image mobile"
+                 attr="data.details_image_mobile.attributes">
+        </div>
+    </div>
+</div>

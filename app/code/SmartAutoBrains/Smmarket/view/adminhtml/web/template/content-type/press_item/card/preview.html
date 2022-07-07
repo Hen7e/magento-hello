@@ -1,0 +1,35 @@
+<div class="pagebuilder-content-type pagebuilder-press-item pagebuilder-content-type-wrapper"
+     attr="Object.assign({}, {id: contentType.id}, data.main.attributes())"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"></render>
+
+    <div class="pagebuilder-press-item-inner">
+        <div if="!data.title.html()"
+             class="pagebuilder-press-item-empty">
+            EMPTY
+        </div>
+        <div if="data.title.html()"
+             class="pagebuilder-press-item-content">
+            <div class="pagebuilder-press-item-badge">
+                card
+            </div>
+            <div class="pagebuilder-press-item-data">
+                <div>
+                    <p html="data.date.html"
+                       class="pagebuilder-press-item-date"
+                    ></p>
+                    <hr/>
+                    <p html="data.title.html"
+                       class="pagebuilder-press-item-title"
+                    ></p>
+                </div>
+                <div style="pointer-events: none; display: none">
+                    <a if="data.link.attributes().href"
+                       attr="data.link.attributes"
+                       html="data.action.html"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

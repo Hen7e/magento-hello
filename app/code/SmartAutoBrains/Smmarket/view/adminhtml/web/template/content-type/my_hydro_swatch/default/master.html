@@ -1,0 +1,33 @@
+<!-- 
+/**
+ * Copyright © 2021 Helen of Troy. (https://www.helenoftroy.com/)
+ */
+ -->
+
+<div attr="data.main.attributes"
+     class="my-hydro-swatch my-hydro-cta visually-hidden"
+     ko-style="data.main.style"
+     css="data.main.css">
+
+     <div class="my-hydro-swatch-content">
+     <a if="data.link_anchor.attributes().href"
+          class="js-my-hydro-swatch-link pagebuilder-button-link"
+          attr="data.link_anchor.attributes">
+
+          <div if="data.link_text.html()"
+               class="my-hydro-swatch-link"
+               attr="data.link_text.attributes"
+               html="data.link_text.html">
+          </div>
+     </a>
+
+     <ifnot args="data.link_anchor.attributes().href">
+
+          <div if="data.link_text.html()"
+               class="my-hydro-swatch-link"
+               attr="data.link_text.attributes"
+               html="data.link_text.html">
+          </div>
+     </ifnot>
+     </div>
+</div>

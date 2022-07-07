@@ -1,0 +1,22 @@
+<div class="pagebuilder-content-type pagebuilder-gallery-slide pagebuilder-slide"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <div class="pagebuilder-slide-poster-wrapper">
+        <div class="pagebuilder-slide-overlay">
+            <scope args="getUploader().getUiComponent()">
+                <render />
+            </scope>
+
+            <!-- ko if: data.desktop_image.attributes().src -->
+                <img attr="data.desktop_image.attributes"
+                     class="preview-image pagebuilder-gallery-slide-image"
+                     loading="eager" />
+            <!-- /ko -->
+            <!-- ko if: data.mob_image.attributes().src -->
+                <img attr="data.mob_image.attributes"
+                 class="preview-image pagebuilder-gallery-slide-image mobile" 
+                 loading="eager" />
+            <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<!--
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Andrey Bugaev <abugaev@helenoftroy.com>
+ */
+-->
+
+<div class="pagebuilder-content-type pagebuilder-quote-slider"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+     css="data.main.css">
+
+    <render args="getOptions().template"/>
+
+    <div class="pagebuilder-quote-slider-inner" attr="data.quote_background_image.attributes" ko-style="data.quote_background_image.style">
+        <div class="pagebuilder-quote-slider-content">
+            <div if="data.description.html()" class="pagebuilder-content-type pagebuilder-html">
+
+                <div html="data.description.html"
+                     class="pagebuilder-quote-slider-content-text"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="quote-slider-image">
+        <img if="data.quote_mobile_image.attributes().src"
+             attr="data.quote_mobile_image.attributes"
+             class="pagebuilder-quote-slider-mobile-image"/>
+
+        <div if="!data.quote_image.attributes().src" class="quote-slider-image-placeholder"/>
+
+        <div if="data.quote_image.attributes().src"
+             class="pagebuilder-quote-slider-mobile-image"
+             data-bind="style: { background: 'url(' + data.quote_image.attributes().src + ') no-repeat center center/cover' }">
+        </div>
+    </div>
+</div>

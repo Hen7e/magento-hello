@@ -1,0 +1,15 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_2" height="305" width="670" y="136.5" x="66.5" opacity="0.42" stroke="#000" fill="#fff"/>
+  <rect id="svg_3" height="232" width="312" y="168.5" x="405.5" opacity="0.28" stroke="#000" fill="#fff"/>
+  <rect id="svg_6" height="233" width="291" y="168.5" x="104.5" opacity="0.28" stroke="#000" fill="#fff"/>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_7" y="274.5" x="222.5" opacity="0.4" stroke-width="0" stroke="#000" fill="#000000">text</text>
+  <ellipse stroke="#000" ry="17.5" rx="19.5" id="svg_9" cy="271" cx="366" opacity="0.42" fill="#fff"/>
+  <path transform="rotate(91 367.60498046874994,272.33068847656256) " stroke="#000" id="svg_13" d="m355.60498,272.2995l12,-12.9688l12,12.9688l-6,0l0,13.0312l-12,0l0,-13.0312l-6,0z" opacity="0.42" fill="#fff"/>
+  <ellipse stroke="#000" ry="17.5" rx="19.5" id="svg_16" cy="271" cx="134.5" opacity="0.42" fill="#fff"/>
+  <path transform="rotate(-91 132.89727783203128,270.3306884765625) " stroke="#000" id="svg_17" d="m120.89728,270.2995l12,-12.9688l12,12.9688l-6,0l0,13.0312l-12,0l0,-13.0312l-6,0z" opacity="0.51" fill="#fff"/>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_18" y="274.5" x="543.5" opacity="undefined" fill-opacity="null" stroke-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#000" fill="#fff">img</text>
+ </g>
+</svg>

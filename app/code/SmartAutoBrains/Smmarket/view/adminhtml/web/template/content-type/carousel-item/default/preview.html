@@ -1,0 +1,38 @@
+<div class="pagebuilder-content-type"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <render args="getOptions().template" />
+
+    <figure class="pagebuilder-category-carousel-item" attr="data.main.attributes" css="data.main.css">
+        <scope args="getUploader().getUiComponent()">
+            <render />
+        </scope>
+
+        <div if="!data.carousel_item_image.attributes().src || !data.title.html()" class="carousel-item-empty-placeholder" />
+
+        <div class="pagebuilder-category-carousel-item-image-outer">
+            <img if="data.carousel_item_image.attributes().src"
+                 attr="data.carousel_item_image.attributes"
+                 class="preview-image pagebuilder-category-carousel-item-image" />
+
+            <img if="data.carousel_item_alt_image.attributes().src"
+                 attr="data.carousel_item_alt_image.attributes"
+                 class="preview-image pagebuilder-category-carousel-item-alt-image" />
+
+            <img if="data.carousel_item_ter_image.attributes().src"
+                 attr="data.carousel_item_ter_image.attributes"
+                 class="preview-image pagebuilder-category-carousel-item-ter-image" />
+        </div>
+
+        <span if="data.badge.html()"
+              attr="data.badge.attributes"
+              class="pagebuilder-category-carousel-item-badge"
+              html="data.badge.html"></span>
+
+        <figcaption if="data.title.html()"
+                    attr="data.title.attributes"
+                    class="pagebuilder-category-carousel-item-title"
+                    html="data.title.html">
+        </figcaption>
+    </figure>
+
+</div>

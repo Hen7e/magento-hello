@@ -1,0 +1,30 @@
+<div class="product-tab-technology-content js-technology-content"
+     attr="Object.assign({}, data.main.attributes(), { id: contentType.id })"
+     ko-style="data.main.style()"
+     css="data.main.css">
+    <div class="product-tab-technology-content-icon">
+        <!-- ko if: data.tab_image.attributes().src -->
+        <div class="pagebuilder-attributes-placeholder"
+             attr="data.tab_image.attributes"></div>
+        <img attr="
+            {
+                'src': data.tab_image.attributes().src,
+                'title':  data.tab_name.html,
+                'alt':  data.tab_name.html,
+             }"
+             class="feature-row-image"/>
+        <!-- /ko -->
+    </div>
+    <div class="product-tab-technology-description">
+        <h6 if="data.tab_name.html()"
+            attr="data.tab_name.attributes"
+            html="data.tab_name.html"></h6>
+        <h4 if="data.tab_title.html()"
+            attr="data.tab_title.attributes"
+            html="data.tab_title.html"></h4>
+        <p if="data.tab_description.html()"
+           attr="data.tab_description.attributes"
+           html="data.tab_description.html">
+        </p>
+    </div>
+</div>

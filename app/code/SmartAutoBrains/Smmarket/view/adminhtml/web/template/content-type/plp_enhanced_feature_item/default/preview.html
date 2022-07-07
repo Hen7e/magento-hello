@@ -1,0 +1,62 @@
+<div class="pagebuilder-content-type pagebuilder-feature-content-item"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     css="data.main.css"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+>
+
+    <render args="getOptions().template"/>
+
+    <div
+        if="!data.feature_title.html()
+        && !data.feature_description.html()
+        && !data.svg_image_code.html()
+        && !data.feature_image_desktop.attributes().src
+        && !data.feature_image_mobile.attributes().src"
+        class="pagebuilder-empty-feature-item"
+    ></div>
+
+    <div class="feature-item-container">
+        <div class="feature-item-inner">
+            <div class="feature-item-images-wrapper">
+                <!-- ko if: data.svg_image_code.html() -->
+                <div class="svg-container"
+                     attr="data.svg_image_code.attributes"
+                     ko-style="data.svg_image_code.style"
+                     css="data.svg_image_code.css"
+                     if="data.svg_image_code.html"
+                     html="data.svg_image_code.html"></div>
+                <!-- /ko -->
+                <!-- ko ifnot: data.svg_image_code.html() -->
+                <img
+                    if="data.feature_image_desktop.attributes().src"
+                    attr="data.feature_image_desktop.attributes"
+                    class="desktop-image"
+                    css="'pagebuilder-mobile-hidden': !!data.feature_image_mobile.attributes().src"
+                />
+                <img
+                    if="data.feature_image_mobile.attributes().src"
+                    attr="data.feature_image_mobile.attributes"
+                    class="mobile-image pagebuilder-mobile-only"
+                />
+                <!-- /ko -->
+            </div>
+            <div class="feature-item-description-wrapper">
+                <div attr="data.feature_title.attributes"
+                     css="data.feature_title.css"
+                     ko-style="data.feature_title.style"
+                >
+                    <h3 if="data.feature_title.html" ko-style="data.feature_title.style" html="data.feature_title.html"
+                        class="feature-title"></h3>
+                </div>
+                <div attr="data.feature_description.attributes"
+                     css="data.feature_description.css"
+                     ko-style="data.feature_description.style"
+                >
+                    <p if="data.feature_description.html" ko-style="data.feature_description.style"
+                       html="data.feature_description.html" class="feature-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

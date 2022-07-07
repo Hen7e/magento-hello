@@ -1,0 +1,30 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     class="pagebuilder-content-type product-detail-image"
+     data-bind="event: { mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <render args="getOptions().template"/>
+
+    <div class="column-image-container" ko-style="data.main.style">
+        <div class="content-section"
+             if="data.description.html()"
+             ko-style="data.description.style"
+             attr="data.description.attributes"
+             html="data.description.html"
+        >
+        </div>
+
+        <div class="images-section">
+            <img if="data.product_description_image_desktop.attributes().src"
+                 attr="data.product_description_image_desktop.attributes"
+                 class="product-detail-img product-detail-img--desktop"
+                 css="'pagebuilder-mobile-hidden': !!data.product_description_image_mobile.attributes().src" />
+
+            <img if="data.product_description_image_mobile.attributes().src"
+                 attr="data.product_description_image_mobile.attributes"
+                 class="product-detail-img product-detail-img--mobile pagebuilder-mobile-only" />
+        </div>
+    </div>
+
+    <div class="pagebuilder-empty-container"></div>
+</div>

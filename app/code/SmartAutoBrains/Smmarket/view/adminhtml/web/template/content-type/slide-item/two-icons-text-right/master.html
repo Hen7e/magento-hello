@@ -1,0 +1,157 @@
+<div attr="data.main.attributes" ko-style="data.main.style" css="data.main.css">
+    <a if="data.link.attributes().href" attr="data.link.attributes"
+       ko-style="data.link.style"
+       css="data.link.css">
+       <div class="pagebuilder-slide-wrapper poster"
+            attr="data.wrapper.attributes">
+            <div class="pagebuilder-slide-overlay"
+                 attr="data.overlay.attributes"
+                 ko-style="data.overlay.style"
+                 css="data.overlay.css">
+
+                <!-- ko if: data.desktop_image.attributes().src -->
+                    <span attr="data.desktop_image.attributes" hidden></span>
+                    <!-- ko if: data.desktop_image.attributes().alt && data.desktop_image.attributes().title -->
+                    <img attr="data.desktop_image.attributes"
+                         class="preview-image pagebuilder-slide-image"
+                         loading="eager" />
+                    <!-- /ko -->
+                    <!-- ko if: data.desktop_image.attributes().alt && !data.desktop_image.attributes().title -->
+                    <img data-bind="attr: { src: data.desktop_image.attributes().src, alt: data.desktop_image.attributes().alt, title: data.title.html,
+                         width: data.desktop_image.attributes().width, height: data.desktop_image.attributes().height }"
+                         class="preview-image pagebuilder-slide-image"
+                         loading="eager" />
+                    <!-- /ko -->
+                    <!-- ko if: !data.desktop_image.attributes().alt && data.desktop_image.attributes().title -->
+                    <img data-bind="attr: { src: data.desktop_image.attributes().src,  alt: data.title.html, title: data.desktop_image.attributes().title
+                         width: data.desktop_image.attributes().width, height: data.desktop_image.attributes().height }"
+                         class="preview-image pagebuilder-slide-image"
+                         loading="eager" />
+                    <!-- /ko -->
+                    <!-- ko if: !data.desktop_image.attributes().alt && !data.desktop_image.attributes().title -->
+                    <img data-bind="attr: { src: data.desktop_image.attributes().src,  alt: data.title.html, title: data.title.html,
+                         width: data.desktop_image.attributes().width, height: data.desktop_image.attributes().height }"
+                         class="preview-image pagebuilder-slide-image"
+                         loading="eager" />
+                    <!-- /ko -->
+                <!-- /ko -->
+
+                <!-- ko if: data.mob_image.attributes().src -->
+                    <span attr="data.mob_image.attributes" hidden></span>
+                    <!-- ko if: data.mob_image.attributes().alt && data.mob_image.attributes().title -->
+                    <img attr="data.mob_image.attributes"
+                         class="preview-image pagebuilder-slide-image mobile"
+                         loading="eager" />
+                    <!-- /ko -->
+                    <!-- ko if: data.mob_image.attributes().alt && !data.mob_image.attributes().title -->
+                    <img data-bind="attr: { src: data.mob_image.attributes().src, alt: data.mob_image.attributes().alt, title: data.title.html,
+                            width: data.mob_image.attributes().width, height: data.mob_image.attributes().height }"
+                         class="preview-image pagebuilder-slide-image mobile"
+                         loading="eager" />
+                    <!-- /ko -->
+                    <!-- ko if: !data.mob_image.attributes().alt && data.mob_image.attributes().title -->
+                    <img data-bind="attr: { src: data.mob_image.attributes().src,  alt: data.title.html, title: data.mob_image.attributes().title,
+                         width: data.mob_image.attributes().width, height: data.mob_image.attributes().height }"
+                         class="preview-image pagebuilder-slide-image mobile"
+                         loading="eager" />
+                    <!-- /ko -->
+                    <!-- ko if: !data.mob_image.attributes().alt && !data.mob_image.attributes().title -->
+                    <img data-bind="attr: { src: data.mob_image.attributes().src,  alt: data.title.html, title: data.title.html,
+                         width: data.mob_image.attributes().width, height: data.mob_image.attributes().height }"
+                         class="preview-image pagebuilder-slide-image mobile"
+                         loading="eager" />
+                    <!-- /ko -->
+                <!-- /ko -->
+                <div class="pagebuilder-poster-content">
+                    <div class="pagebuilder-poster-content-left">
+                        <!-- ko if: data.mobile_icon.attributes().src -->
+                            <span attr="data.mobile_icon.attributes" hidden></span>
+                            <!-- ko if: data.mobile_icon.attributes().alt && data.mobile_icon.attributes().title -->
+                            <img attr="data.mobile_icon.attributes"
+                                 class="pagebuilder-slide-icon" />
+                            <!-- /ko -->
+                            <!-- ko if: data.mobile_icon.attributes().alt && !data.mobile_icon.attributes().title -->
+                            <img data-bind="attr: { src: data.mobile_icon.attributes().src, alt: data.mobile_icon.attributes().alt, title: data.title.html,
+                                 width: data.mobile_icon.attributes().width, height: data.mobile_icon.attributes().height }"
+                                 class="pagebuilder-slide-icon" />
+                            <!-- /ko -->
+                            <!-- ko if: !data.mobile_icon.attributes().alt && data.mobile_icon.attributes().title -->
+                            <img data-bind="attr: { src: data.mobile_icon.attributes().src,  alt: data.title.html, title: data.mobile_icon.attributes().title,
+                                 width: data.mobile_icon.attributes().width, height: data.mobile_icon.attributes().height }"
+                                 class="pagebuilder-slide-icon" />
+                            <!-- /ko -->
+                            <!-- ko if: !data.mobile_icon.attributes().alt && !data.mobile_icon.attributes().title -->
+                            <img data-bind="attr: { src: data.mobile_icon.attributes().src,  alt: data.title.html, title: data.title.html,
+                                 width: data.mobile_icon.attributes().width, height: data.mobile_icon.attributes().height }"
+                                 class="pagebuilder-slide-icon" />
+                            <!-- /ko -->
+                        <!-- /ko -->
+                    </div>
+                    <div class="pagebuilder-poster-content-right">
+                        <!-- ko if: data.desktop_icon.attributes().src -->
+                            <span attr="data.desktop_icon.attributes" hidden></span>
+                            <!-- ko if: data.desktop_icon.attributes().alt && data.desktop_icon.attributes().title -->
+                            <img attr="data.desktop_icon.attributes"
+                                 class="pagebuilder-slide-icon" />
+                            <!-- /ko -->
+                            <!-- ko if: data.desktop_icon.attributes().alt && !data.desktop_icon.attributes().title -->
+                            <img data-bind="attr: { src: data.desktop_icon.attributes().src, alt: data.desktop_icon.attributes().alt, title: data.title.html,
+                                 width: data.desktop_icon.attributes().width, height: data.desktop_icon.attributes().height }"
+                                 class="pagebuilder-slide-icon" />
+                            <!-- /ko -->
+                            <!-- ko if: !data.desktop_icon.attributes().alt && data.desktop_icon.attributes().title -->
+                            <img data-bind="attr: { src: data.desktop_icon.attributes().src,  alt: data.title.html, title: data.desktop_icon.attributes().title,
+                                 width: data.desktop_icon.attributes().width, height: data.desktop_icon.attributes().height }"
+                                 class="pagebuilder-slide-icon" />
+                            <!-- /ko -->
+                            <!-- ko if: !data.desktop_icon.attributes().alt && !data.desktop_icon.attributes().title -->
+                            <img data-bind="attr: { src: data.desktop_icon.attributes().src,  alt: data.title.html, title: data.title.html,
+                                 width: data.desktop_icon.attributes().width, height: data.desktop_icon.attributes().height }"
+                                 class="pagebuilder-slide-icon" />
+                            <!-- /ko -->
+                        <!-- /ko -->
+                        <div class="pagebuilder-slide-intro"
+                             if="data.intro.html()"
+                             attr="data.intro.attributes"
+                             html="data.intro.html">
+                        </div>
+                        <div class="pagebuilder-slide-title"
+                             if="data.title.html()"
+                             attr="Object.assign(data.title.attributes(), { contenteditable: false })"
+                             html="data.title.html">
+                        </div>
+                        <div class="pagebuilder-slide-title pagebuilder-slide-title-html"
+                             if="data.title_html.html()"
+                             attr="data.title_html.attributes"
+                             html="data.title_html.html">
+                        </div>
+                        <div class="pagebuilder-slide-description"
+                             if="data.description.html()"
+                             attr="data.description.attributes"
+                             html="data.description.html">
+                        </div>
+                        <div class="pagebuilder-slide-description-content">
+                            <div attr="data.desc.attributes"
+                                 text="data.desc.html"
+                                 class="pagebuilder-slide-description-content-markup bypass-html-filter">
+                            </div>
+                            <div if="data.desc.html()"
+                                 attr="data.desc.attributes"
+                                 html="data.desc.html"
+                                 class="pagebuilder-slide-description-content-text">
+                            </div>
+                        </div>
+                        <button if="data.button.html()"
+                                type="button"
+                                class="pagebuilder-slide-button"
+                                attr="data.button.attributes"
+                                ko-style="data.button.style"
+                                css="data.button.css"
+                                html="data.button.html">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

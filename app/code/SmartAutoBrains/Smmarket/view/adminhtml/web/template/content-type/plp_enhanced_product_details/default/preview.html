@@ -1,0 +1,78 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="Object.assign({'is_reversed': data.main.attributes()['data-reversed'] == 'reversed'}, data.main.css())"
+     class="pagebuilder-content-type pagebuilder-plp-enhanced-product-details"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="plp-enhanced-product-details-container">
+        <ifnot args="data.main.attributes()['data-reversed'] == 'reversed'">
+            <div class="product-details-section">
+                <div class="element-children content-type-container"
+                     each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+                     data-bind="sortable: getSortableOptions()"
+                     afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element, contentType); } }">
+
+                    <div class="pagebuilder-content-type-wrapper"
+                         template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                         attr="{ id: id }"
+                         css="{'pagebuilder-content-type-hidden': !preview.display()}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-description-section">
+                <div class="description" ko-style="data.description.style" >
+                    <div attr="data.description.attributes"
+                                html="data.description.html" class="wysiwyg-content"></div>
+                </div>
+                <div class="images-wrapper">
+                    <img if="data.product_description_image_desktop.attributes().src"
+                         class="hero-banner-img-desktop"
+                         attr="data.product_description_image_desktop.attributes"
+                         css="'pagebuilder-mobile-hidden': !!data.product_description_image_mobile.attributes().src"
+                    />
+
+                    <img if="data.product_description_image_mobile.attributes().src"
+                         class="hero-banner-img-mobile pagebuilder-mobile-only"
+                         attr="data.product_description_image_mobile.attributes"/>
+                </div>
+            </div>
+        </ifnot>
+        <if args=" data.main.attributes()['data-reversed'] == 'reversed'">
+            <div class="image-description-section reversed">
+                <div class="images-wrapper reversed">
+                    <img if="data.product_description_image_desktop.attributes().src"
+                         class="hero-banner-img-desktop"
+                         attr="data.product_description_image_desktop.attributes"
+                         css="'pagebuilder-mobile-hidden': !!data.product_description_image_mobile.attributes().src"
+                    />
+
+                    <img if="data.product_description_image_mobile.attributes().src"
+                         class="hero-banner-img-desktop pagebuilder-mobile-only"
+                         attr="data.product_description_image_mobile.attributes"/>
+                </div>
+                <div class="description" ko-style="data.description.style">
+                    <div attr="data.description.attributes"
+                                html="data.description.html" class="wysiwyg-content"></div>
+                </div>
+            </div>
+            <div class="product-details-section reversed">
+                <div class="element-children content-type-container pagebuilder-cart-content-wrapper"
+                     each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+                     data-bind="sortable: getSortableOptions()"
+                     afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element, contentType); } }">
+
+                    <div class="pagebuilder-content-type-wrapper pagebuilder-cart-content-item-wrapper"
+                         template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                         attr="{ id: id }"
+                         css="preview.data.main.css">
+                    </div>
+                </div>
+            </div>
+        </if>
+
+        <div class="pagebuilder-empty-container" css="placeholderCss()"></div>
+    </div>
+</div>

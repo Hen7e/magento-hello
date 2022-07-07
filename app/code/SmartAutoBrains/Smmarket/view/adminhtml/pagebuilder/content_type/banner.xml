@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="banner"
+          label="Hero banner"
+          form="pagebuilder_banner_form"
+          menu_section="hydro">
+        <children default_policy="deny"/>
+        <is_system>false</is_system>
+    </type>
+</config>

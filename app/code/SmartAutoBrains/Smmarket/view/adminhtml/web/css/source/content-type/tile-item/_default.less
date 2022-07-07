@@ -1,0 +1,1295 @@
+.pagebuilder-tile-item {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    margin: 10px;
+    background-repeat: no-repeat;
+    h1, h2, h3, h4, h5,
+    h6 { color: #fff; }
+    .pagebuilder-tile-item-tablet-image { display: none; }
+    .pagebuilder-tile-item-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 10px 20px;
+        text-align: center;
+        transition: transform 0.5s ease-in-out;
+        z-index: 5;
+    }
+    .pagebuilder-tile-item-image {
+        margin-bottom: 15px;
+    }
+    .pagebuilder-tile-item-title {
+        font-size: 24px;
+        line-height: 1em;
+        color: #ffffff;
+        margin: 0 0 10px;
+        @media (max-width: 1299px) and (min-width: 960px) {
+            font-size: 1.8vw;
+        }
+    }
+    .pagebuilder-tile-item-details,
+    .pagebuilder-tile-item-description {
+        color: #FFF;
+        font-size: 1.075vw;
+        margin-bottom: 12px;
+        margin-top: 10px;
+    }
+    .pagebuilder-tile-item-link {
+        color: #4191c8;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: uppercase;
+        &:after {
+            content: "\00BB";
+            color: #0074a2;
+            display: inline-block;
+            padding-left: .3em;
+        }
+    }
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .18);;
+        content: "";
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        z-index: 1;
+    }
+    &:hover {
+        .pagebuilder-tile-item-content {
+            transform: scale(1.05);
+        }
+        &:after {
+            opacity: 1;
+        }
+    }
+    &[data-additional-class="tile-item-secondary"] {
+        .pagebuilder-tile-item-title {
+            color: #0e2b57;
+        }
+    }
+    &[data-additional-class="tile-item-tertiary"] {
+        .pagebuilder-tile-item-title {
+            color: #22334C;
+            display: inline-block;
+            background-color: #fff;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+    }
+    &[data-additional-class="tile-summer"] {
+        .pagebuilder-tile-item-title {
+            color: #22334C;
+        }
+    }
+    &[data-additional-class="tile-accesories"] {
+        .pagebuilder-tile-item-content {
+            margin: 0 10px 25px;
+        }
+        .pagebuilder-tile-item-title {
+            color: #000;
+            font-size: 20px;
+        }
+        .pagebuilder-tile-item-link {
+            color: #172945;
+            font-size: 12px;
+            &:after {
+                color: inherit;
+            }
+        }
+    }
+    &[data-additional-class="tile-item-secondary"] {
+        .pagebuilder-tile-item-link {
+            color: #026288;
+        }
+    }
+    &[data-additional-class="tile-summer"],
+    &[data-additional-class="tile-item-tertiary"] {
+        .pagebuilder-tile-item-link {
+            color: #22334C;
+            &:after { color: #22334C; }
+        }
+    }
+    &[data-additional-class="tile-climb-higher"],
+    &[data-additional-class="let-it-ride"] {
+        .pagebuilder-tile-item-content {
+            margin-bottom: 25px;
+        }
+        .pagebuilder-tile-item-title {
+            font-size: 26px;
+        }
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+            line-height: 18px;
+            text-align: center;
+            user-select: none;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: middle;
+            min-width: 180px;
+            padding: 5px 0;
+            cursor: pointer;
+            border-radius: 10px;
+            color: #FFF;
+            background-color: transparent;
+            border: 2px solid #FFF;
+            transition: background-color 0.2s ease;
+            &:after { display: none; }
+            &:hover {
+                color: #000;
+                background-color: #FFF;
+                border-color: #FFF;
+                text-decoration: none;
+            }
+            &:focus {
+                outline: none;
+                color: #FFF;
+                background-color: #FFF;
+                border-color: #FFF;
+                text-decoration: none;
+            }
+            &:active {
+                color: #000;
+                background-color: darken(#FFF, 10%);
+                text-decoration: none;
+            }
+            &.disabled,
+            &:disabled {
+                cursor: default;
+                pointer-events: none;
+                color: #cccccc;
+                background-color: transparent;
+                border-color: #cccccc;
+                &:hover, &:focus, &:active { background-color: transparent; }
+            }
+        }
+    }
+    &[data-additional-class="tile-my-hydro-reboot"],
+    &[data-additional-class="tile-my-hydro-reboot-winter"] {
+        .pagebuilder-tile-item-content {
+            text-align: right;
+            margin-bottom: 35px;
+            width: 31.25vw;
+            max-width: 400px;
+        }
+        .pagebuilder-tile-item-image {
+            max-width: 215px;
+            max-height: 53px;
+            margin-right: 0;
+        }
+        .pagebuilder-tile-item-title {
+            font-size: 3.90625vw;
+            @media only screen and (min-width: 1280px) { font-size: 50px; }
+        }
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+            color: #edcc08;
+            &:after { color: #edcc08; }
+        }
+    }
+    &[data-additional-class="tile-my-hydro-reboot-winter"] {
+        .pagebuilder-tile-item-content {
+            margin-bottom: 80px;
+        }
+        .pagebuilder-tile-item-title {
+            color: #2c4d7e;
+        }
+        .pagebuilder-tile-item-link {
+            color: #1f345b;
+            &:after { color: inherit; }
+        }
+    }
+    &[data-additional-class="coffee-flex-tile"] {
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+            &:after {
+                color: inherit;
+            }
+        }
+        .tiles-item-empty-placeholder {
+            display: none;
+        }
+    }
+    &[data-additional-class="timberline-lte-tile"] {
+        .pagebuilder-tile-item-content {
+            margin: 0px 20px 15px;
+        }
+        .pagebuilder-tile-item-title,
+        .pagebuilder-tile-item-description {
+            color: #32372b;
+        }
+        .pagebuilder-tile-item-title {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        .pagebuilder-tile-item-description {
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-size: 10px;
+        }
+        .pagebuilder-tile-item-link {
+            color: #057099;
+            &:after {
+                color: inherit;
+            }
+        }
+    }
+    &[data-additional-class="upgrade-your-lunch-game"] {
+    .pagebuilder-tile-item-content {
+        margin: auto;
+        width: 80%;
+        bottom: 25px;
+    }
+      .pagebuilder-tile-item-title,
+      .pagebuilder-tile-item-link {
+          color: #202227;
+      }
+    .pagebuilder-tile-item-title {
+        font-size: 23px;
+    }
+    .pagebuilder-tile-item-link {
+        font-size: 12px;
+        &:after {
+            color: inherit;
+        }
+    }
+  }
+    &[data-additional-class="tile-food-jar"] {
+        .pagebuilder-tile-item-title {
+            font-size: 28px;
+            color: #22234c;
+        }
+        .pagebuilder-tile-item-link {
+            color: #027cac;
+            &:after {
+                color: inherit;
+            }
+        }
+    }
+    &[data-additional-class="tile-item-secondary"] {
+    .pagebuilder-tile-item-link {
+      color: #026288;
+    }
+  }
+    &[data-additional-class="tile-summer"],
+    &[data-additional-class="tile-item-tertiary"] {
+    .pagebuilder-tile-item-link {
+      color: #22334C;
+      &:after {
+        color: #22334C;
+      }
+    }
+  }
+    &[data-additional-class="gif-of-go-tile"] {
+    .pagebuilder-tile-item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto;
+        top: 70px;
+        left: 60px;
+        right: 120px;
+        margin-bottom: 40px;
+    }
+    .pagebuilder-tile-item-title,
+    .pagebuilder-tile-item-details {
+        font-size: 20px;
+        line-height: 1;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        background-color: #e15c47;
+    }
+    .pagebuilder-tile-item-title {
+        margin-bottom: 4px;
+    }
+    .pagebuilder-tile-item-details {
+        margin: 0 0 0 40px;
+    }
+    .pagebuilder-tile-item-link {
+      margin-left: auto;
+      margin-top: auto;
+      font-size: 14px;
+      color: #397ca2;
+    }
+  }
+    &[data-additional-class="winter-brand-tile"] {
+      .pagebuilder-tile-item-content {
+          width: 100%;
+          margin-bottom: 5%;
+      }
+      .pagebuilder-tile-item-title {
+          font-size: 26px;
+      }
+      .pagebuilder-tile-item-details {
+          font-size: 14px;
+      }
+      .pagebuilder-tile-item-link {
+          font-size: 14px;
+          color: #00deff;
+          &:after {
+              color: inherit;
+          }
+      }
+  }
+    &[data-additional-class="tile-parks-for-all"] {
+        .pagebuilder-tile-item-title {
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &[data-additional-class="tile-holiday-accessories"] {
+        .pagebuilder-tile-item-title {
+            color: #17376c;
+        }
+        .pagebuilder-tile-item-link {
+            color: #03b3f6;
+            &:after {
+                color: inherit;
+            }
+        }
+    }
+    &[data-additional-class="refill-for-good"] {
+        .tiles-item-empty-placeholder {
+            display: none;
+        }
+        .pagebuilder-tile-item-link {
+            color: #0975C8;
+            &:after {
+                color: inherit;
+            }
+        }
+        .pagebuilder-tile-item-content {
+            margin-bottom: 15px;
+        }
+    }
+    &[data-additional-class="parks-for-all-tile"] {
+        .tiles-item-empty-placeholder {
+            display: none;
+        }
+        .pagebuilder-tile-item-image {
+            max-width: 90px;
+        }
+        .pagebuilder-tile-item-description {
+            font-weight: bold;
+        }
+        .pagebuilder-tile-item-link {
+            color: #03B3F6;
+            &:after {
+                color: inherit;
+            }
+        }
+    }
+    &[data-additional-class="nature-tile"] {
+        .pagebuilder-tile-item-content {
+            margin-bottom: 120px;
+        }
+    }
+    &[data-additional-class~="stainless-tile"] {
+        .pagebuilder-tile-item-title {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+    }
+    &[data-additional-class="tile-my-hydro-flex-strap"] {
+        .pagebuilder-tile-item-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 0 8% 15% 0;
+        }
+        .pagebuilder-tile-item-image {
+            order: 2;
+            max-width: 170px;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+        .pagebuilder-tile-item-title {
+            order: 1;
+            margin-bottom: 25px;
+            font-size: 45px;
+            line-height: 0.9;
+            text-align: right;
+        }
+        .pagebuilder-tile-item-link {
+            order: 3;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    }
+    &[data-additional-class="mothers-day-grid"] {
+        .tiles-item-empty-placeholder { display: none; }
+        .pagebuilder-tile-item-description {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .pagebuilder-tile-item-link {
+            &:after { color: inherit; }
+        }
+        .pagebuilder-tile-item-content {
+            text-align: left;
+            margin: 0 0 20px 50px;
+        }
+    }
+
+    &[data-additional-class="outdoor-kitchen-tile"] {
+        .pagebuilder-tile-item-content {
+            top: 15px;
+
+            h4 {
+                font-weight: normal;
+            }
+        }
+
+        .pagebuilder-tile-item-title {
+            &:not(:first-child) {
+                font-size: 24px;
+            }
+        }
+
+        .pagebuilder-tile-item-details,
+        .pagebuilder-tile-item-title {
+            font-size: 15px;
+        }
+
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    &[data-additional-class="trail-series-tile"] {
+        .pagebuilder-tile-item-content {
+            margin-left: 24px;
+            text-align: left;
+        }
+        .pagebuilder-tile-item-title {
+            font-size: 22px;
+            margin-bottom: 0;
+        }
+        .pagebuilder-tile-item-details {
+            margin-top: 0;
+            font-size: 10px;
+        }
+    }
+
+    &[data-additional-class="diving-in"] {
+        .pagebuilder-tile-item-content {
+            margin: 0 auto 110px 57px;
+            left: 0;
+        }
+
+        .pagebuilder-tile-item-title {
+            font-size: 50px;
+        }
+
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+            color: @color-white;
+
+            &:after {
+                color: @color-white;
+            }
+        }
+    }
+
+    &[data-additional-class="hydration-packs"] {
+        .pagebuilder-tile-item-content {
+            height: 100%;
+            margin: 0;
+        }
+
+        .pagebuilder-tile-item-title {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-direction();
+            width: 48%;
+            margin-top: 23px;
+            margin-left: 22px;
+            text-align: left;
+
+            .sub-text {
+                text-transform: uppercase;
+                font-size: 11px;
+                line-height: 13px;
+            }
+
+            .title {
+                text-transform: uppercase;
+                font-size: 32px;
+                line-height: 29px;
+
+                .trade-mark {
+                    font-size: 11px;
+                    vertical-align: top;
+                    margin-left: -7px;
+                    line-height: 26px;
+                }
+            }
+
+            .details {
+                font-size: 16px;
+            }
+        }
+
+        .pagebuilder-tile-item-link {
+            .lib-css(transform, translate(-33px), 0);
+            position: absolute;
+            left: 50%;
+            font-size: 13px;
+            bottom: 28px;
+        }
+    }
+
+    &[data-additional-class="tile-bts-kids-collection-large"] {
+        .pagebuilder-tile-item-content {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-direction();
+            .lib-vendor-box-align(flex-start);
+            left: initial;
+            right: 25px;
+            text-align: left;
+            width: 100%;
+            max-width: 155px;
+            margin: 0;
+            bottom: 45px;
+        }
+
+        .pagebuilder-tile-item-title {
+            .lib-font-size(29);
+            margin-bottom: 10px;
+        }
+
+        .pagebuilder-tile-item-details {
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+            background-color: @color-accent-2;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:after {
+                color: @color-main;
+            }
+
+            &:hover {
+                background-color: @color-main;
+                color: @color-accent-2 !important; // override pagebuilder styles
+
+                &:after {
+                    color: @color-accent-2;
+                }
+            }
+        }
+    }
+}
+
+.tile-item-small {
+    .pagebuilder-tile-item-link {
+        color: #03B3F6;
+        &:after {
+            color: inherit;
+        }
+    }
+
+    &[data-additional-class="tile-refill-for-good-small"] {
+        .pagebuilder-tile-item-description,
+        .pagebuilder-tile-item-title[data-element="title_html"] {
+            display: none;
+        }
+
+        .pagebuilder-tile-item-link {
+            display: inline-block;
+        }
+    }
+
+    &[data-additional-class="tile-day-escape-small"] {
+        .pagebuilder-tile-item-title {
+            font-weight: normal;
+            color: @color-purple;
+            font-size: 13px;
+            line-height: 1.1;
+            margin-bottom: 0;
+
+            b,
+            strong {
+                display: block;
+                padding: 0 15px;
+                font-size: 24px;
+                color: @color-main;
+            }
+        }
+
+        .pagebuilder-tile-item-description {
+            color: @color-main;
+            font-size: 13px;
+            margin-top: 0;
+
+           span {
+                color: @color-purple;
+            }
+        }
+
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+        }
+    }
+
+    &[data-additional-class="tile-new-colors-small"] {
+        .pagebuilder-tile-item-content {
+            margin-bottom: 1.5em;
+
+            .pagebuilder-tile-item-title {
+                &[data-element="title_html"] {
+                    display: none;
+                }
+            }
+
+            .pagebuilder-tile-item-link {
+                &[data-element="link_text"] {
+                    font-size: 16px;
+                    color: @color-orange-1;
+
+                    &::after {
+                        color: @color-orange-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tile-item-large {
+    .pagebuilder-tile-item-content {
+        width: 85%;
+        color: #fff;
+        margin: 0 auto 16%;
+    }
+    .pagebuilder-tile-item-title {
+        font-size: 32px;
+        padding: 5px 0 1px;
+        letter-spacing: 0.05em;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        @media (max-width: 1299px) and (min-width: 960px) {
+            font-size: 2.7vw;
+        }
+    }
+
+    &[data-additional-class="lets-go-grid-2"] {
+        .pagebuilder-tile-item-content {
+            margin: 0 auto 6%;
+        }
+
+        .pagebuilder-tile-item-link {
+            border: 2px solid @color-white;
+            border-radius: 8px;
+            margin: 0 auto;
+            width: 210px;
+        }
+    }
+}
+
+.tile-item-huge {
+    .pagebuilder-tile-item-content {
+        left: auto;
+        margin: 0 6.5% 18% 0;
+        text-align: left;
+        width: 44%;
+    }
+    .pagebuilder-tile-item-title {
+        color: #fff;
+        font-size: 33px;
+        margin-bottom: 20px;
+        @media (max-width: 1299px) and (min-width: 960px) {
+            font-size: 2.25vw;
+        }
+    }
+
+    &[data-additional-class="tile-my-hydro-flex-sip-huge"] {
+        .pagebuilder-tile-item-content {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-direction();
+            .lib-vendor-box-align(flex-end);
+            text-align: right;
+            width: 40%;
+            right: 55px;
+            bottom: 100px;
+            margin: 0;
+        }
+
+        .pagebuilder-tile-item-title {
+            .lib-vendor-prefix-order(1);
+            font-size: 40px;
+        }
+
+        .pagebuilder-tile-item-image {
+            .lib-vendor-prefix-order(2);
+            margin: 25px 0 35px;
+        }
+
+        .pagebuilder-tile-item-link {
+            .lib-vendor-prefix-order(3);
+            font-size: 18px;
+        }
+    }
+
+    &[data-additional-class="tile-outdor-kitchen-huge"] {
+        .pagebuilder-tile-item-content {
+            top: 55px;
+            left: 66px;
+            bottom: inherit;
+            margin: 0;
+            width: 100%;
+        }
+
+        .pagebuilder-tile-item-title {
+            font-weight: lighter;
+            margin-bottom: 0;
+
+            &:nth-child(2) {
+                font-size: 30px;
+            }
+
+            &:nth-child(3) {
+                font-size: 48px;
+            }
+        }
+
+        .pagebuilder-tile-item-details {
+            font-size: 30px;
+            margin-top: 0;
+        }
+
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+            margin-top: 34px;
+
+            &:after {
+                color: @color-dark-gray;
+            }
+        }
+    }
+
+    &[data-additional-class="tile-refill-for-good-huge"] {
+        .pagebuilder-tile-item-content {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-wrap();
+            margin: auto;
+            width: 100%;
+            padding-left: 10%;
+        }
+
+        .pagebuilder-tile-item-title {
+            &[data-element="title"] {
+                font-size: @font-size-xl;
+            }
+
+            &[data-element="title_html"] {
+                font-size: @font-size-base;
+            }
+        }
+
+        .pagebuilder-tile-item-description {
+            display: none;
+
+            p {
+                font-size: @font-size-base;
+                color: @color-white;
+                margin: 0;
+            }
+        }
+
+        .pagebuilder-tile-item-link {
+            background: @color-dark-blue-2;
+            color: @color-white;
+            margin: 0 @indent-s @indent-m 0;
+            padding: @indent-xs @indent-s;
+
+            &::after {
+                color: @color-white;
+            }
+
+            &:hover {
+                background: @color-white;
+                color: @color-dark-blue-2;
+
+                &::after {
+                    color: @color-dark-blue-2;
+                }
+            }
+        }
+    }
+
+    &[data-additional-class="tile-my-hydro-graphics-huge"] {
+        .pagebuilder-tile-item-content {
+            text-align: right;
+            width: 88%;
+            margin: 0 8.8% 6% 5.8%;
+
+            .pagebuilder-tile-item-image {
+                position: absolute;
+                top: auto;
+                right: auto;
+                bottom: 0;
+                left: 0;
+                width: 220px;
+                max-width: 220px;
+                margin: 0;
+            }
+
+            .pagebuilder-tile-item-title,
+            .pagebuilder-tile-item-description,
+            .pagebuilder-tile-item-link {
+                margin: 0;
+            }
+
+
+            .pagebuilder-tile-item-title {
+                font-size: 43px;
+                line-height: 46px;
+                margin-bottom: 3.583%;
+            }
+
+            .pagebuilder-tile-item-description {
+                font-size: 20px;
+                margin-bottom: 4.975%;
+            }
+
+            .pagebuilder-tile-item-link {
+                font-size: 18px;
+                margin-bottom: 0.5%;
+            }
+        }
+    }
+}
+
+.tiles-item-empty-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('@{baseDir}Astound_ContentTypes/css/images/empty-image.svg') no-repeat center center rgba(0, 0, 0, .18);
+    background-size: 65px;
+}
+
+.tile-item-huge {
+    &[data-additional-class="tile-my-hydro-evergreen-huge"] {
+        .pagebuilder-tile-item-content {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-direction();
+            .lib-css(justify-content, center, 1);
+            .lib-vendor-box-align(flex-end);
+            width: 100%;
+            padding-right: 35px;
+            padding-bottom: 40px;
+            margin: 0;
+        }
+
+        .pagebuilder-tile-item-image {
+            max-width: 150px;
+            margin: 0;
+        }
+
+        .pagebuilder-tile-item-title,
+        .pagebuilder-tile-item-description {
+            text-align: end;
+        }
+
+        .pagebuilder-tile-item-title {
+            font-size: 43px;
+            line-height: 46px;
+            margin-bottom: 20px;
+        }
+
+        .pagebuilder-tile-item-description {
+            font-size: 20px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+
+        .content-mobile {
+            display: none;
+        }
+
+        .pagebuilder-tile-item-link {
+            font-size: 18px;
+            line-height: 15px;
+        }
+    }
+}
+
+.tile-item-small {
+    &[data-additional-class="parks-for-all-tile-ep5"] {
+        .tiles-item-empty-placeholder {
+            display: none;
+        }
+
+        .pagebuilder-tile-item-content {
+            margin: 0 0 10px;
+
+            .pagebuilder-tile-item-image {
+                display: inline;
+                vertical-align: middle;
+                margin: 0;
+            }
+
+            .pagebuilder-tile-item-description {
+                display: inline;
+                color: @color-black;
+                font-weight: bold;
+
+                i {
+                    font-style: normal;
+                    font-weight: normal;
+                }
+            }
+
+            .pagebuilder-tile-item-link {
+                color: @color-black;
+            }
+
+            .pagebuilder-tile-item-image {
+                width: 48px;
+            }
+
+            .pagebuilder-tile-item-description {
+                font-size: 13px;
+                line-height: 13px;
+            }
+        }
+    }
+}
+
+/* RFG Evergreen Large Tile */
+.tile-item-large {
+    &[data-additional-class="tile-rfg-evergreen-large"] {
+        .tiles-item-empty-placeholder {
+            display: none;
+        }
+
+        .pagebuilder-tile-item-content {
+            margin-bottom: 10px;
+
+            .pagebuilder-tile-item-link {
+                font-size: 16px;
+
+                &::after {
+                    color: @color-rfg-evergreen-link;
+                }
+            }
+        }
+    }
+}
+/* EO RFG Evergreen Large Tile */
+
+.tile-item-large {
+    &[data-additional-class="tile-health-hydration-large"] {
+        .pagebuilder-tile-item-content {
+            margin-bottom: 25px;
+
+            .content-mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+.tile-item-huge {
+    &[data-additional-class="s22-my-hydro-1st-tile-1"] {
+        .pagebuilder-tile-item-content {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-direction(column);
+            margin: 0 30px 35px 0px;
+
+            .pagebuilder-tile-item-title {
+                .lib-vendor-prefix-order(0);
+                font-size: 25px;
+                font-weight: 400;
+                line-height: 31px;
+            }
+
+            .pagebuilder-tile-item-image {
+                .lib-vendor-prefix-order(1);
+            }
+
+            .pagebuilder-tile-item-link {
+                .lib-vendor-prefix-order(2);
+                font-size: 22px;
+
+                &::after {
+                    color: @color-white;
+                }
+            }
+        }
+    }
+}
+
+.tile-item-small {
+    &[data-additional-class="tile-s22-all-around-tumbler-bundle"] {
+        .pagebuilder-tile-item-title {
+            &[data-element="title"] {
+                width: 52px;
+                background-color: @s22-color-snapper;
+                // Override to pagebuilder inline style used for [data-element="title_html"]
+                color: @color-white !important;
+                font-size: 14px;
+                line-height: 22px;
+                margin: 0 auto 5px;
+            }
+        }
+
+        .pagebuilder-tile-item-link {
+            font-size: 16px;
+        }
+    }
+}
+
+.tile-item-large {
+    &[data-additional-class="2022-trail-series-sg-1"] {
+        .pagebuilder-tile-item-content {
+            text-align: start;
+            margin-left: 34px;
+            margin-bottom: 20px;
+
+            .pagebuilder-tile-item-title {
+                font-size: 26px;
+                line-height: 28px;
+                margin: 0;
+
+                &[data-element="title"] {
+                    font-weight: 400;
+                }
+            }
+
+            .pagebuilder-tile-item-link {
+                font-size: 16px;
+                margin-top: 10px;
+             }
+        }
+    }
+}
+
+.tile-item-small {
+    &[data-additional-class="tile-s22-24-oz-sm-flex-cap-sg-3"] {
+        .pagebuilder-tile-item-content {
+            top: 0;
+            margin-top: 16px;
+
+            .pagebuilder-tile-item-link {
+                font-size: 16px;
+            }
+        }
+    }
+    &[data-additional-class="tile-s22-sw-fs-sg-3"] {
+        .pagebuilder-tile-item-content {
+            top: 0;
+            margin-top: 20px;
+
+            .pagebuilder-tile-item-link {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+[data-content-type="tile_item"] {
+    &[data-appearance="tile-item-split-appearance"] {
+        .tile-item-split-appearance-content {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-direction(column);
+            .lib-css(justify-content, space-between, 1);
+            .lib-vendor-box-align(flex-start);
+            top: 0;
+            width: 100%;
+            margin: 0;
+
+            .pagebuilder-tile-item-title {
+                font-size: 29px;
+                line-height: 36px;
+            }
+
+            .pagebuilder-tile-item-link {
+                width: 141px;
+                background: @color-white;
+                border-radius: 6px;
+                font-size: 16px;
+                line-height: 44px;
+                text-align: center;
+            }
+
+            .tile-content-half {
+                text-align: end;
+
+                &.first-half {
+                    margin: 3.75vw 0 0 2.3vw;
+                }
+
+                &.second-half {
+                    margin: 0 2.344vw 4.688vw auto;
+                }
+            }
+        }
+    }
+}
+
+.tile-item-small {
+    &[data-additional-class="tile-s22-24-oz-sm-flex-cap-sg-3"] {
+        .pagebuilder-tile-item-content {
+            top: 0;
+            margin-top: 16px;
+
+            .pagebuilder-tile-item-link {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.tile-item-large {
+    &[data-additional-class="tile-ail-tumbler-hannah-eddy-2"] {
+        .pagebuilder-tile-item-content {
+            top: 24px;
+            left: 32px;
+            text-align: start;
+            width: auto;
+
+            .content-desktop {
+                font-size: 24px;
+                line-height: 24px;
+
+                span {
+                    font-size: 20px;
+                    font-weight: normal;
+                }
+            }
+
+            .content-mobile {
+                display: none;
+            }
+
+            .pagebuilder-tile-item-link {
+                font-size: 16px;
+                color: @color-white;
+
+                &::after {
+                    color: @color-white;
+                }
+            }
+        }
+    }
+}
+
+[data-content-type="tile_item"] {
+    &[data-appearance="tile-item-icon-left"] {
+        .tile-item-icon-left-appearance-content {
+            .lib-vendor-prefix-display();
+            .lib-css(justify-content, center, 1);
+            .lib-vendor-box-align(flex-end);
+            width: 100%;
+            margin: 0 0 40px 0;
+
+            .icon-container {
+                .pagebuilder-tile-item-image {
+                    margin: 0;
+                }
+            }
+
+            .content-container {
+                margin-left: 24px;
+
+                [data-element="title"] {
+                    font-size: 30px;
+                    font-weight: normal;
+                    margin: 0;
+                }
+
+                [data-element="title_html"] {
+                    font-size: 40px;
+                    line-height: 40px;
+                    margin-bottom: 10px;
+                }
+
+                .sg-trademark {
+                    font-size: 8px;
+                    line-height: 16px;
+                    vertical-align: top;
+                }
+            }
+
+            .pagebuilder-tile-item-link {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+[data-content-type="tile_item"] {
+    &[data-additional-class="s22-coolers-collection-sg"] {
+        .pagebuilder-tile-item-content {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-direction(column);
+            .lib-vendor-box-align(center);
+            height: 100%;
+
+            .pagebuilder-tile-item-title {
+                font-size: 24px;
+                margin-bottom: auto;
+                margin-top: 35px;
+            }
+
+            .pagebuilder-tile-item-description {
+                font-size: 16px;
+                margin-bottom: 5px;
+                margin-top: 0;
+            }
+
+            .pagebuilder-tile-item-link {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.tile-no-parent {
+    width: 100% !important;
+    max-width: 1140px;
+    float: none !important;
+    margin: 0 auto;
+    .tile-item-small {
+        width: 25%;
+        float: none;
+        margin: 0 auto;
+        height: 315px;
+    }
+    .tile-item-large,
+    .tile-item-huge {
+        width: 50%;
+        float: none;
+        margin: 0 auto;
+        height: 630px;
+    }
+    .tile-item-large {
+        height: 315px;
+    }
+}

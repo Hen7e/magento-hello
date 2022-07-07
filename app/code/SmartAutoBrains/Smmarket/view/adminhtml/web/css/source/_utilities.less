@@ -1,0 +1,60 @@
+/**
+ * @module      Astound_ContentTypes
+ * @copyright   Copyright (c) 2021 Helen of Troy (https://www.helenoftroy.com/)
+ * @author      Andrey Bugaev <abugaev@helenoftroy.com>
+*/
+
+.lib-vendor-prefix-justify-content(@_value: flex-start) {
+    -webkit-box-pack: @_value;
+    -ms-flex-pack: @_value;
+    justify-content: @_value;
+}
+
+.arrow-left() {
+    &:before {
+        content: "";
+        .lib-css(transform, translate(-100%, -50%), 1);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 33px 19px 33px 0;
+        border-top-color: transparent;
+        border-right-color: inherit;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+}
+
+.arrow-right() {
+    &:before {
+        content: "";
+        .lib-css(transform, translateY(-50%), 1);
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 33px 0 33px 19px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: inherit;
+    }
+}
+
+.lib-absolute-positioning (
+    @top: auto,
+    @right: auto,
+    @bottom: auto,
+    @left: auto
+) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+}

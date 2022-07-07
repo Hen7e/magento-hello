@@ -1,0 +1,48 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     class="pagebuilder-content-type pagebuilder-content-type--plp-enhanced-hero_banner"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="hero-container">
+        <img if="data.plp_hero_banner_image.attributes().src"
+             class="hero-banner-img hero-banner-img-desktop"
+             attr="data.plp_hero_banner_image.attributes"
+             css="{'pagebuilder-mobile-hidden': !!data.plp_hero_banner_image.attributes().src}"/>
+
+        <img if="data.plp_hero_banner_image_mobile.attributes().src"
+             class="hero-banner-img hero-banner-img-mobile pagebuilder-mobile-only"
+             attr="data.plp_hero_banner_image_mobile.attributes"
+        />
+
+        <div class="hero-banner-content" attr="data.hero_banner_alignment.attributes" ko-style="data.hero_banner_alignment.style">
+            <div class="subtext"
+                 attr="data.plp_banner_subtext.attributes"
+                 ko-style="data.plp_banner_subtext.style"
+                 data-bind="liveEdit: { field: 'plp_hero_banner_subtext', placeholder: 'Subtext', selectAll: true }"></div>
+
+            <div class="title">
+                <strong attr="data.plp_hero_banner_title.attributes"
+                        ko-style="data.plp_hero_banner_title.style"
+                        data-bind="liveEdit: { field: 'plp_hero_banner_title', placeholder: 'Title', selectAll: true }">
+                </strong>
+            </div>
+
+            <div class="subtitle"
+                 attr="data.plp_hero_banner_title_additional.attributes"
+                 ko-style="data.plp_hero_banner_title_additional.style"
+                 data-bind="liveEdit: { field: 'plp_hero_banner_title_additional', placeholder: 'Subtitle', selectAll: true }">
+            </div>
+
+            <div class="content" attr="data.plp_description.attributes" if="data.plp_description.html()"
+                 html="data.plp_description.html"></div>
+    </div>
+
+    <ifnot
+        args="data.plp_hero_banner_image.attributes().src || (data.plp_banner_subtext.html || data.plp_hero_banner_title.html || data.plp_hero_banner_title_additional.html)">
+        <div class="empty-placeholder-background"></div>
+    </ifnot>
+    </div>
+</div>

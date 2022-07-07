@@ -1,0 +1,784 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="slide_item"
+          label="Slide"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Magento_PageBuilder/js/content-type/slide/preview"
+          form="pagebuilder_slide_item_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-slider"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="slider" policy="allow"/>
+        </parents>
+        <children default_policy="deny"/>
+        <appearances>
+            <appearance name="collage-left"
+                        preview_template="Astound_ContentTypes/content-type/slide-item/collage-left/preview"
+                        master_template="Astound_ContentTypes/content-type/slide-item/collage-left/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="slide_name" source="data-slide-name"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="empty_link"/>
+                    <element name="overlay">
+                        <css name="content_style">
+                            <filter>
+                                <class source="pagebuilder-slide-overlay"/>
+                            </filter>
+                        </css>
+                        <style name="overlay_color" source="background_color" persistence_mode="write"/>
+                        <attribute name="overlay_color_attribute" storage_key="overlay_color" source="data-overlay-color" converter="Magento_PageBuilder/js/content-type/slide/converter/attribute/overlay-color"/>
+                    </element>
+                    <element name="wrapper">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_image" source="background_image" converter="Magento_PageBuilder/js/converter/style/background-image" preview_converter="Magento_PageBuilder/js/converter/style/preview/background-image" persistence_mode="write"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                    </element>
+                    <element name="intro">
+                        <html name="intro" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title_html">
+                        <html name="title_html" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="content">
+                        <html name="content" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="desc">
+                        <html name="description_content" converter="Magento_PageBuilder/js/converter/html/decode"/>
+                    </element>
+                    <element name="desktop_icon">
+                        <attribute name="desktop_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_desktop" source="width"/>
+                        <attribute name="icon_height_desktop" source="height"/>
+                    </element>
+                    <element name="mobile_icon">
+                        <attribute name="mobile_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_mobile" source="width"/>
+                        <attribute name="icon_height_mobile" source="height"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="desktop_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_desktop" source="width"/>
+                        <attribute name="image_height_desktop" source="height"/>
+                    </element>
+                    <element name="mob_image">
+                        <attribute name="mob_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_mobile" source="width"/>
+                        <attribute name="image_height_mobile" source="height"/>
+                    </element>
+                    <element name="desktop_image_sec">
+                        <attribute name="desktop_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                        <attribute name="image_width_desktop_sec" source="width"/>
+                        <attribute name="image_height_desktop_sec" source="height"/>
+                    </element>
+                    <element name="mob_image_sec">
+                        <attribute name="mob_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                        <attribute name="image_width_mobile_sec" source="width"/>
+                        <attribute name="image_height_mobile_sec" source="height"/>
+                    </element>
+                    <element name="video"/>
+                </elements>
+            </appearance>
+            <appearance name="collage-left-extend"
+                        preview_template="Astound_ContentTypes/content-type/slide-item/collage-left-extend/preview"
+                        master_template="Astound_ContentTypes/content-type/slide-item/collage-left-extend/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="slide_name" source="data-slide-name"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="link_second">
+                        <attribute name="link_second_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_second_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_second_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_second_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="empty_link"/>
+                    <element name="overlay">
+                        <css name="content_style">
+                            <filter>
+                                <class source="pagebuilder-slide-overlay"/>
+                            </filter>
+                        </css>
+                        <style name="overlay_color" source="background_color" persistence_mode="write"/>
+                        <attribute name="overlay_color_attribute" storage_key="overlay_color" source="data-overlay-color" converter="Magento_PageBuilder/js/content-type/slide/converter/attribute/overlay-color"/>
+                    </element>
+                    <element name="wrapper">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_image" source="background_image" converter="Magento_PageBuilder/js/converter/style/background-image" preview_converter="Magento_PageBuilder/js/converter/style/preview/background-image" persistence_mode="write"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                    </element>
+                    <element name="intro">
+                        <html name="intro" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title_html">
+                        <html name="title_html" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="content">
+                        <html name="content" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="desc">
+                        <html name="description_content" converter="Magento_PageBuilder/js/converter/html/decode"/>
+                    </element>
+                    <element name="desktop_icon">
+                        <attribute name="desktop_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_desktop" source="width"/>
+                        <attribute name="icon_height_desktop" source="height"/>
+                    </element>
+                    <element name="mobile_icon">
+                        <attribute name="mobile_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_mobile" source="width"/>
+                        <attribute name="icon_height_mobile" source="height"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="button_second">
+                        <html name="button_second_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="desktop_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_desktop" source="width"/>
+                        <attribute name="image_height_desktop" source="height"/>
+                    </element>
+                    <element name="mob_image">
+                        <attribute name="mob_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_mobile" source="width"/>
+                        <attribute name="image_height_mobile" source="height"/>
+                    </element>
+                    <element name="desktop_image_sec">
+                        <attribute name="desktop_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                        <attribute name="image_width_desktop_sec" source="width"/>
+                        <attribute name="image_height_desktop_sec" source="height"/>
+                    </element>
+                    <element name="mob_image_sec">
+                        <attribute name="mob_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                        <attribute name="image_width_mobile_sec" source="width"/>
+                        <attribute name="image_height_mobile_sec" source="height"/>
+                    </element>
+                    <element name="video"/>
+                </elements>
+            </appearance>
+            <appearance name="collage-left-extend-icon-donated"
+                        preview_template="Astound_ContentTypes/content-type/slide-item/collage-left-extend-icon-donated/preview"
+                        master_template="Astound_ContentTypes/content-type/slide-item/collage-left-extend-icon-donated/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="slide_name" source="data-slide-name"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="link_second">
+                        <attribute name="link_second_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_second_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_second_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_second_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="empty_link"/>
+                    <element name="overlay">
+                        <css name="content_style">
+                            <filter>
+                                <class source="pagebuilder-slide-overlay"/>
+                            </filter>
+                        </css>
+                        <style name="overlay_color" source="background_color" persistence_mode="write"/>
+                        <attribute name="overlay_color_attribute" storage_key="overlay_color" source="data-overlay-color" converter="Magento_PageBuilder/js/content-type/slide/converter/attribute/overlay-color"/>
+                    </element>
+                    <element name="wrapper">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_image" source="background_image" converter="Magento_PageBuilder/js/converter/style/background-image" preview_converter="Magento_PageBuilder/js/converter/style/preview/background-image" persistence_mode="write"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                    </element>
+                    <element name="intro">
+                        <html name="intro" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title_html">
+                        <html name="title_html" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="content">
+                        <html name="content" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="desc">
+                        <html name="description_content" converter="Magento_PageBuilder/js/converter/html/decode"/>
+                    </element>
+                    <element name="desktop_icon">
+                        <attribute name="desktop_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_desktop" source="width"/>
+                        <attribute name="icon_height_desktop" source="height"/>
+                    </element>
+                    <element name="mobile_icon">
+                        <attribute name="mobile_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_mobile" source="width"/>
+                        <attribute name="icon_height_mobile" source="height"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="button_second">
+                        <html name="button_second_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="desktop_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_desktop" source="width"/>
+                        <attribute name="image_height_desktop" source="height"/>
+                    </element>
+                    <element name="mob_image">
+                        <attribute name="mob_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_mobile" source="width"/>
+                        <attribute name="image_height_mobile" source="height"/>
+                    </element>
+                    <element name="desktop_image_sec">
+                        <attribute name="desktop_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                        <attribute name="image_width_desktop_sec" source="width"/>
+                        <attribute name="image_height_desktop_sec" source="height"/>
+                    </element>
+                    <element name="mob_image_sec">
+                        <attribute name="mob_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                        <attribute name="image_width_mobile_sec" source="width"/>
+                        <attribute name="image_height_mobile_sec" source="height"/>
+                    </element>
+                    <element name="video"/>
+                </elements>
+            </appearance>
+            <appearance name="collage-centered"
+                        preview_template="Astound_ContentTypes/content-type/slide-item/collage-centered/preview"
+                        master_template="Astound_ContentTypes/content-type/slide-item/collage-centered/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="slide_name" source="data-slide-name"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="empty_link"/>
+                    <element name="overlay">
+                        <css name="content_style">
+                            <filter>
+                                <class source="pagebuilder-slide-overlay"/>
+                            </filter>
+                        </css>
+                        <style name="overlay_color" source="background_color" persistence_mode="write"/>
+                        <attribute name="overlay_color_attribute" storage_key="overlay_color" source="data-overlay-color" converter="Magento_PageBuilder/js/content-type/slide/converter/attribute/overlay-color"/>
+                    </element>
+                    <element name="wrapper">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_image" source="background_image" converter="Magento_PageBuilder/js/converter/style/background-image" preview_converter="Magento_PageBuilder/js/converter/style/preview/background-image" persistence_mode="write"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                    </element>
+                    <element name="intro">
+                        <html name="intro" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title_html">
+                        <html name="title_html" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="desc">
+                        <html name="description_content" preview_converter="Magento_PageBuilder/js/converter/html/directive" converter="Magento_PageBuilder/js/converter/html/decode"/>
+                    </element>
+                    <element name="desktop_icon">
+                        <attribute name="desktop_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_desktop" source="width"/>
+                        <attribute name="icon_height_desktop" source="height"/>
+                    </element>
+                    <element name="mobile_icon">
+                        <attribute name="mobile_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_mobile" source="width"/>
+                        <attribute name="icon_height_mobile" source="height"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="desktop_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_desktop" source="width"/>
+                        <attribute name="image_height_desktop" source="height"/>
+                    </element>
+                    <element name="mob_image">
+                        <attribute name="mob_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_mobile" source="width"/>
+                        <attribute name="image_height_mobile" source="height"/>
+                    </element>
+                    <element name="desktop_image_sec">
+                        <attribute name="desktop_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                        <attribute name="image_width_desktop_sec" source="width"/>
+                        <attribute name="image_height_desktop_sec" source="height"/>
+                    </element>
+                    <element name="mob_image_sec">
+                        <attribute name="mob_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                        <attribute name="image_width_mobile_sec" source="width"/>
+                        <attribute name="image_height_mobile_sec" source="height"/>
+                    </element>
+                    <element name="video"/>
+                </elements>
+            </appearance>
+            <appearance name="collage-right"
+                        preview_template="Astound_ContentTypes/content-type/slide-item/collage-right/preview"
+                        master_template="Astound_ContentTypes/content-type/slide-item/collage-right/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="slide_name" source="data-slide-name"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="empty_link"/>
+                    <element name="overlay">
+                        <css name="content_style">
+                            <filter>
+                                <class source="pagebuilder-slide-overlay"/>
+                            </filter>
+                        </css>
+                        <style name="overlay_color" source="background_color" persistence_mode="write"/>
+                        <attribute name="overlay_color_attribute" storage_key="overlay_color" source="data-overlay-color" converter="Magento_PageBuilder/js/content-type/slide/converter/attribute/overlay-color"/>
+                    </element>
+                    <element name="wrapper">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_image" source="background_image" converter="Magento_PageBuilder/js/converter/style/background-image" preview_converter="Magento_PageBuilder/js/converter/style/preview/background-image" persistence_mode="write"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                    </element>
+                    <element name="intro">
+                        <html name="intro" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title_html">
+                        <html name="title_html" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="content">
+                        <html name="content" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="desc">
+                        <html name="description_content" converter="Magento_PageBuilder/js/converter/html/decode"/>
+                    </element>
+                    <element name="desktop_icon">
+                        <attribute name="desktop_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                    </element>
+                    <element name="mobile_icon">
+                        <attribute name="mobile_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="desktop_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                    <element name="mob_image">
+                        <attribute name="mob_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                    <element name="desktop_image_sec">
+                        <attribute name="desktop_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                    </element>
+                    <element name="mob_image_sec">
+                        <attribute name="mob_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_sec" source="alt"/>
+                        <attribute name="title_attribute_sec" source="title"/>
+                    </element>
+                    <element name="video"/>
+                </elements>
+            </appearance>
+            <appearance name="two-icons-text-right"
+                        preview_template="Astound_ContentTypes/content-type/slide-item/two-icons-text-right/preview"
+                        master_template="Astound_ContentTypes/content-type/slide-item/two-icons-text-right/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="slide_name" source="data-slide-name"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="empty_link"/>
+                    <element name="overlay">
+                        <css name="content_style">
+                            <filter>
+                                <class source="pagebuilder-slide-overlay"/>
+                            </filter>
+                        </css>
+                        <style name="overlay_color" source="background_color" converter="Magento_PageBuilder/js/content-type/slide/converter/style/overlay-background-color" persistence_mode="write"/>
+                        <attribute name="overlay_color_attribute" storage_key="overlay_color" source="data-overlay-color" converter="Magento_PageBuilder/js/content-type/slide/converter/attribute/overlay-color"/>
+                    </element>
+                    <element name="intro">
+                        <html name="intro" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title_html">
+                        <html name="title_html" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="desc">
+                        <html name="description_content" converter="Magento_PageBuilder/js/converter/html/decode"/>
+                    </element>
+                    <element name="desktop_icon">
+                        <attribute name="desktop_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_desktop" source="width"/>
+                        <attribute name="icon_height_desktop" source="height"/>
+                    </element>
+                    <element name="mobile_icon">
+                        <attribute name="mobile_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_mobile" source="width"/>
+                        <attribute name="icon_height_mobile" source="height"/>
+                    </element>
+                    <element name="wrapper">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_image" source="background_image" converter="Magento_PageBuilder/js/converter/style/background-image" preview_converter="Magento_PageBuilder/js/converter/style/preview/background-image" persistence_mode="write"/>
+                        <style name="background_repeat" source="background_repeat"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="desktop_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_desktop" source="width"/>
+                        <attribute name="image_height_desktop" source="height"/>
+                    </element>
+                    <element name="mob_image">
+                        <attribute name="mob_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_mobile" source="width"/>
+                        <attribute name="image_height_mobile" source="height"/>
+                    </element>
+                    <element name="desktop_image_sec">
+                        <attribute name="desktop_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                    </element>
+                    <element name="mob_image_sec">
+                        <attribute name="mob_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                    </element>
+                    <element name="video"/>
+                </elements>
+            </appearance>
+            <appearance default="true"
+                        name="poster"
+                        preview_template="Astound_ContentTypes/content-type/slide-item/poster/preview"
+                        master_template="Astound_ContentTypes/content-type/slide-item/poster/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="slide_name" source="data-slide-name"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="empty_link"/>
+                    <element name="overlay">
+                        <css name="content_style">
+                            <filter>
+                                <class source="pagebuilder-slide-overlay"/>
+                            </filter>
+                        </css>
+                        <style name="overlay_color" source="background_color" converter="Magento_PageBuilder/js/content-type/slide/converter/style/overlay-background-color" persistence_mode="write"/>
+                        <attribute name="overlay_color_attribute" storage_key="overlay_color" source="data-overlay-color" converter="Magento_PageBuilder/js/content-type/slide/converter/attribute/overlay-color"/>
+                    </element>
+                    <element name="intro">
+                        <html name="intro" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title_html">
+                        <html name="title_html" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="desc">
+                        <html name="description_content" converter="Magento_PageBuilder/js/converter/html/decode"/>
+                    </element>
+                    <element name="desktop_icon">
+                        <attribute name="desktop_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_desktop" source="width"/>
+                        <attribute name="icon_height_desktop" source="height"/>
+                    </element>
+                    <element name="mobile_icon">
+                        <attribute name="mobile_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_mobile" source="width"/>
+                        <attribute name="icon_height_mobile" source="height"/>
+                    </element>
+                    <element name="wrapper">
+                        <style name="background_color" source="background_color"/>
+                        <style name="background_image" source="background_image" converter="Magento_PageBuilder/js/converter/style/background-image" preview_converter="Magento_PageBuilder/js/converter/style/preview/background-image" persistence_mode="write"/>
+                        <style name="background_repeat" source="background_repeat"/>
+                        <attribute name="background_images" source="data-background-images"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="desktop_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_desktop" source="width"/>
+                        <attribute name="image_height_desktop" source="height"/>
+                    </element>
+                    <element name="mob_image">
+                        <attribute name="mob_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_mobile" source="width"/>
+                        <attribute name="image_height_mobile" source="height"/>
+                    </element>
+                    <element name="desktop_image_sec">
+                        <attribute name="desktop_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                    </element>
+                    <element name="mob_image_sec">
+                        <attribute name="mob_image_sec" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                    </element>
+                    <element name="video"/>
+                </elements>
+            </appearance>
+            <appearance default="false"
+                        name="description"
+                        preview_template="Astound_ContentTypes/content-type/slide-item/description/preview"
+                        master_template="Astound_ContentTypes/content-type/slide-item/description/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="slide_name" source="data-slide-name"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="empty_link"/>
+                    <element name="title">
+                        <html name="title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="title_html">
+                        <html name="title_html" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="desc">
+                        <html name="description_content" converter="Magento_PageBuilder/js/converter/html/decode"/>
+                    </element>
+                    <element name="desktop_icon">
+                        <attribute name="desktop_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_desktop" source="width"/>
+                        <attribute name="icon_height_desktop" source="height"/>
+                    </element>
+                    <element name="mobile_icon">
+                        <attribute name="mobile_icon" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_icon" source="alt"/>
+                        <attribute name="title_attribute_icon" source="title"/>
+                        <attribute name="icon_width_mobile" source="width"/>
+                        <attribute name="icon_height_mobile" source="height"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="desktop_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_desktop" source="width"/>
+                        <attribute name="image_height_desktop" source="height"/>
+                    </element>
+                    <element name="mob_image">
+                        <attribute name="mob_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="image_width_mobile" source="width"/>
+                        <attribute name="image_height_mobile" source="height"/>
+                    </element>
+                    <element name="button">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="video">
+                        <attribute name="video_src" source="src"
+                                   converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                        <attribute name="video_width" source="width"/>
+                        <attribute name="video_height" source="height"/>
+                    </element>
+                    <element name="intro"/>
+                    <element name="wrapper"/>
+                    <element name="desktop_image_sec"/>
+                    <element name="mob_image_sec"/>
+                </elements>
+            </appearance>
+        </appearances>
+        <is_system>false</is_system>
+        <additional_data>
+            <item name="uploaderConfig" xsi:type="array">
+                <item name="isShowImageUploadInstructions" xsi:type="boolean">false</item>
+                <item name="isShowImageUploadOptions" xsi:type="boolean">true</item>
+                <item name="maxFileSize" xsi:type="object">ImageMaxFileSizeDesktop</item>
+                <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png svg</item>
+                <item name="component" xsi:type="string">Magento_PageBuilder/js/form/element/image-uploader</item>
+                <item name="componentType" xsi:type="string">imageUploader</item>
+                <item name="dataScope" xsi:type="string">desktop_image</item>
+                <item name="formElement" xsi:type="string">imageUploader</item>
+                <item name="uploaderConfig" xsi:type="array">
+                    <item name="url" xsi:type="object">Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\Uploader\SaveUrl</item>
+                </item>
+                <item name="previewTmpl" xsi:type="string">Magento_PageBuilder/form/element/uploader/preview</item>
+                <item name="template" xsi:type="string">Magento_PageBuilder/form/element/uploader/preview/image</item>
+                <item name="mediaGallery" xsi:type="array">
+                    <item name="openDialogUrl" xsi:type="object">Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\Uploader\OpenDialogUrl</item>
+                    <item name="openDialogTitle" xsi:type="string" translate="true">Insert Images...</item>
+                    <item name="initialOpenSubpath" xsi:type="string">slides</item>
+                    <item name="storeId" xsi:type="object">Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\StoreId</item>
+                </item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">true</item>
+                </item>
+            </item>
+        </additional_data>
+    </type>
+</config>

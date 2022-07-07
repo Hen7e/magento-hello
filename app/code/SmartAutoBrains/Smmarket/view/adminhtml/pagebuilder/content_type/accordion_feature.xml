@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="accordion_feature"
+          label="Accordion Feature"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Astound_ContentTypes/js/content-type/accordion_feature/preview"
+          master_component="Magento_PageBuilder/js/content-type/master"
+          form="pagebuilder_accordion_feature_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-add"
+          sortOrder="12"
+          translate="label">
+        <children default_policy="deny"/>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/accordion_feature/default/preview"
+                        master_template="Astound_ContentTypes/content-type/accordion_feature/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                    <element name="title">
+                        <html name="accordion_feature_title" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="subtitle">
+                        <html name="accordion_feature_subtitle" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="header_content">
+                        <html name="header_content" converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="button_label">
+                        <html name="button_label" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="button_label_closed">
+                        <html name="button_label_closed" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="background">
+                        <style name="background_color" source="background_color"/>
+                    </element>
+                    <element name="header_image">
+                        <attribute name="header_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="header_image_alt" source="alt"/>
+                        <attribute name="header_image_title" source="title"/>
+                    </element>
+                    <element name="details_content">
+                        <html name="accordion_feature_content" converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="details_subcontent">
+                        <html name="accordion_feature_subcontent" converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="details_image_desktop">
+                        <attribute name="details_image_desktop" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="details_image_alt" source="alt"/>
+                        <attribute name="details_image_title" source="title"/>
+                    </element>
+                    <element name="details_image_mobile">
+                        <attribute name="details_image_mobile" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="details_image_alt" source="alt"/>
+                        <attribute name="details_image_title" source="title"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

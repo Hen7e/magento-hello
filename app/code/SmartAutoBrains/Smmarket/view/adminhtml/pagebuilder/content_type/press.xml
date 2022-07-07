@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="press"
+          label="Press"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="Astound_ContentTypes/js/content-type/press/preview"
+          master_component="Magento_PageBuilder/js/content-type/master-collection"
+          form="pagebuilder_press_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-block"
+          sortOrder="22"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="collapsible_tab_item" policy="allow"/>
+            <parent name="root-container" policy="allow"/>
+        </parents>
+        <children default_policy="deny">
+            <child name="press_item" policy="allow"/>
+        </children>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/press/default/preview"
+                        master_template="Astound_ContentTypes/content-type/press/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <is_system>true</is_system>
+    </type>
+</config>

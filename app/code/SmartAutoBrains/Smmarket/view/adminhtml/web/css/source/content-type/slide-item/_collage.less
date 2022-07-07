@@ -1,0 +1,805 @@
+.pagebuilder-slide-collage-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  .pagebuilder-slide-overlay {
+    align-items: flex-start;
+    box-sizing: border-box;
+    display: flex;
+    flex: 25% 0 0;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 30px;
+    @media only screen and (min-width: @mobile-point) {
+      min-width: 265px;
+    }
+  }
+}
+
+.pagebuilder-slide-image {
+  @media only screen and (min-width: @mobile-point) {
+    width: ~"calc(50% - 140px)";
+    height: 100%;
+    flex: ~"calc(50% - 140px)" 0 0;
+    &.mobile {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 1050px) {
+    width: 37.25%;
+    flex: 37.5% 0 0;
+  }
+  @media only screen and (max-width: @mobile-point) {
+    display: none;
+    &.mobile {
+      display: none;
+    }
+  }
+}
+
+.collage-left {
+  .pagebuilder-slide-overlay {
+    position: absolute;
+    max-width: 510px;
+    left: 170px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .pagebuilder-slide-image {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+div[data-slide-name="love-a-park"] {
+  .collage-left {
+    .pagebuilder-slide-overlay {
+      left: 0;
+      max-width: 25%;
+    }
+    .pagebuilder-slide-intro,
+    .pagebuilder-slide-title {
+      display: none;
+    }
+    .pagebuilder-slide-icon {
+      margin-bottom: 1.5vw;
+      height: 4vw;
+    }
+    .pagebuilder-slide-description-content {
+      p {
+        @media only screen and (min-width: 1200px) {
+          font-size: 1vw;
+        }
+        @media only screen and (min-width: @mobile-point) {
+          padding-bottom: 1.2vw;
+        }
+      }
+    }
+  }
+}
+div[data-slide-name="climb-higher"],
+div[data-slide-name="let-it-ride"] {
+    .pagebuilder-poster-content {
+        padding: 0 2.25vw;
+        max-width: 31.9vw;
+        text-align: left;
+    }
+    .pagebuilder-slide-intro,
+    .pagebuilder-slide-description { display: none; }
+    .pagebuilder-slide-title {
+        font-size: 2.875vw;
+        margin: 0 0 2.25vw;
+    }
+    .pagebuilder-slide-description-content {
+        padding-bottom: 2.25vw;
+        svg {
+            height: 1.25vw;
+            min-height: 20px;
+            max-width: 11.875vw;
+            min-width: 130px;
+        }
+    }
+    .pagebuilder-slide-button {
+        margin: 0;
+        font-size: 1.25vw;
+        padding: 1vw 1.5vw;
+        line-height: 1;
+    }
+}
+div[data-slide-name="insulated-lunch-box"] {
+    .pagebuilder-slide-title,
+    .pagebuilder-slide-description,
+    .pagebuilder-slide-intro,
+    .pagebuilder-slide-description-content {
+        color: #33373F;
+    }
+    .pagebuilder-slide-overlay {
+        left: 4.427vw;
+        top: 52%;
+    }
+    .pagebuilder-slide-intro {
+        font-size: 2.083vw;
+        margin-bottom: 0;
+    }
+    .pagebuilder-slide-title {
+        font-size: 2.083vw;
+    }
+    .pagebuilder-slide-description  {
+        font-weight: 800;
+        font-size: 1.302vw;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .pagebuilder-slide-description-content {
+        font-size: 1.302vw;
+        line-height: 1;
+        text-transform: uppercase;
+        margin-bottom: 1.822vw;
+    }
+    .pagebuilder-slide-button {
+        border: none;
+        color: #EBCB4C;
+        background-color: #33373F;
+        margin-top: 0;
+        min-width: 5.729vw;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 5px;
+        &:after {
+            color: inherit;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: #EBCB4C;
+            color: #33373F;
+        }
+    }
+}
+.pagebuilder-slide[data-slide-name="timberline-collection"] {
+  .pagebuilder-slide-overlay{
+    top: 25%;
+    left: 50px;
+      max-width: 620px;
+  }
+  .pagebuilder-collage-content {
+    align-items: flex-start;
+  }
+  .pagebuilder-slide-title,
+  .pagebuilder-slide-intro {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .pagebuilder-slide-intro {
+    order: 1;
+    margin-bottom: 0;
+    margin-left: -5px;
+  }
+  .pagebuilder-slide-title {
+    color: #32372b;
+    order: 3;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+  .pagebuilder-slide-description {
+      order: 4;
+      margin-left: 10px;
+      padding-bottom: 0;
+      font-size: 14px;
+      max-width: 490px;
+  }
+  .pagebuilder-html {
+    order: 2;
+    svg {
+      width: 520px;
+        height: 49px;
+    }
+  }
+  .pagebuilder-slide-button {
+    font-size: 14px;
+    font-weight: 600;
+    color: #d6cfbd;
+    border: none;
+    border-radius: 5px;
+    background-color: #32372b;
+    padding: 5px 10px;
+    min-width: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    order: 4;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #d6cfbd;
+      color: #32372b;
+    }
+  }
+}
+/* Gift of go slide */
+.pagebuilder-slide[data-slide-name="gift-of-go"]{
+    .pagebuilder-slide-overlay {
+        justify-content: flex-start;
+        top: 12px;
+        left: 22px;
+        bottom: 55px;
+        max-width: 380px;
+        transform: none;
+    }
+    .pagebuilder-slide-intro,
+    .pagebuilder-slide-title {
+        font-size: 26px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    .pagebuilder-slide-intro {
+        margin-bottom: 7px;
+    }
+    .pagebuilder-slide-title {
+        margin-left: 46px;
+    }
+    .placeholder-text {
+        display: none;
+    }
+    .pagebuilder-slide-button {
+        margin-top: auto;
+        margin-left: auto;
+        padding: 7px 15px;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #2f4560;
+        background-color: #efbe54;
+        border: none;
+        border-radius: 5px;
+        &:hover,
+        &:active,
+        &:focus {
+            color: #2f4560;
+            background-color: #efbe54;
+        }
+    }
+}
+/* EO Gift of go slide */
+
+/* Accessories slide */
+.pagebuilder-slide[data-slide-name="accessories-marquee"] {
+    .pagebuilder-slide-title {
+        color: #4c4b4c;
+        max-width: 5em;
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+    .pagebuilder-slide-description {
+        display: none;
+    }
+    .pagebuilder-slide-intro {
+        display: none;
+    }
+    .pagebuilder-slide-description-content {
+        color: #4c4b4c;
+        font-size: 22px;
+        text-transform: uppercase;
+        max-width: 9em;
+    }
+    .pagebuilder-slide-button {
+        background-color: #4c4b4c;
+        border-color: #4c4b4c;
+        border-radius: 2.5px;
+        text-align: center;
+        min-width: 120px;
+        padding: 5px 10px;
+        &:hover,
+        &:active,
+        &:focus {
+            color: #4c4b4c;
+            background-color: transparent;
+            border-width: 2px;
+        }
+    }
+}
+/* EO Accessories slide */
+
+/* Color Retirement Marquee */
+.pagebuilder-slide[data-slide-name="color-retirement"] {
+    .pagebuilder-slide-overlay {
+        left: 10px;
+    }
+    .placeholder-text {
+        display: none;
+    }
+    .color-retirement-text {
+        font-size: 45px;
+        font-weight: 700;
+        line-height: 1.1;
+        text-transform: uppercase;
+        &:nth-child(1) {
+            color: #56B56E;
+        }
+        &:nth-child(2) {
+            color: #DD615E;
+        }
+        &:nth-child(3) {
+            color: #E2BF00;
+        }
+        &:nth-child(4) {
+            color: #BF4E71;
+        }
+    }
+    .color-retirement-subtext {
+        font-size: 18px;
+        max-width: 13em;
+        color: @color-base;
+        text-transform: uppercase;
+    }
+    .pagebuilder-slide-button {
+        min-width: auto;
+        padding: 6px 14px;
+        margin-top: 10px;
+        font-size: 14px;
+        color: @color-main;
+        background-color: @color-base;
+        border-radius: unset;
+    }
+}
+/* EO Color Retirement Marquee */
+
+/* PFA marquee */
+.pagebuilder-slide[data-slide-name="parks-for-all-marquee"] {
+    .placeholder-text {
+        display: none;
+    }
+    .pagebuilder-slide-overlay {
+        left: 0;
+    }
+    .pagebuilder-slide-title {
+        max-width: 12em;
+        font-size: 28px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    .pagebuilder-slide-description {
+        font-size: 20px;
+        max-width: 14em;
+        padding-bottom: 10px;
+    }
+    .pagebuilder-slide-description-content {
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .pagebuilder-slide-icon {
+        max-height: 124px;
+        max-width: 105px;
+    }
+    .pagebuilder-slide-button {
+        border: none;
+        border-radius: 5px;
+        padding: 7px 16px;
+        min-width: auto;
+        margin-top: 5px;
+        background: #094438;
+        &:hover,
+        &:active,
+        &:focus {
+            background: #094438;
+            color: @color-main;
+        }
+    }
+}
+/* EO  PFA marquee */
+
+/* Trail Series marquee */
+div[data-slide-name="trail-series-marquee"] {
+    .placeholder-text {
+        display: none;
+    }
+    .pagebuilder-slide-intro {
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+    .pagebuilder-slide-title {
+        font-weight: 700;
+    }
+    .pagebuilder-slide-intro,
+    .pagebuilder-slide-title {
+        font-size: 30px;
+    }
+    .pagebuilder-content-type {
+        margin-bottom: 10px;
+    }
+    .pagebuilder-slide-description {
+        padding-bottom: 15px;
+    }
+    .pagebuilder-slide-button {
+        margin-top: 0;
+    }
+}
+/* EO Trail Series marquee */
+
+/* Mother's Day Marquee */
+.pagebuilder-slide[data-slide-name="mathers-day-marquee"] {
+    .pagebuilder-slide-overlay {
+        left: 380px;
+    }
+    .placeholder-text {
+        display: none;
+    }
+    .pagebuilder-slide-title {
+        font-size: 20px;
+    }
+    .pagebuilder-slide-description-content {
+        max-width: 9.5em;
+        font-size: 17px;
+    }
+    .pagebuilder-slide-button {
+        padding: 5px;
+        border-radius: 4px;
+        background-color: @color-main;
+        color: @color-base;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+/* EO Mother's Day Marquee */
+
+/* LTE Scenic Trails Marquee */
+.pagebuilder-slide[data-slide-name="scenic-trails-marquee"] {
+    .placeholder-text {
+        display: none;
+    }
+    .pagebuilder-slide-overlay {
+        padding: 0;
+        left: 495px;
+        top: 305px;
+        transform: none;
+    }
+    .pagebuilder-slide-title {
+        margin: 0;
+        max-width: 18em;
+        font-size: 16px;
+        color: #B3CC33;
+    }
+    .pagebuilder-slide-button {
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        color: #B3CC33;
+        &:hover,
+        &:active,
+        &:focus {
+            background: transparent;
+            color: #B3CC33;
+        }
+    }
+}
+/* EO LTE Scenic Trails Marquee */
+
+/* Refill For Good/LTE Homepage Marquee */
+.pagebuilder-slide[data-slide-name="refill-for-good"] {
+    .placeholder-text {
+        display: none;
+    }
+
+    .pagebuilder-slide-overlay {
+        left: 20px;
+    }
+
+    .pagebuilder-slide-title[data-element="title"] {
+        background-color: #3b57a6;
+        width: 50%;
+        padding-left: 20px;
+    }
+
+    .pagebuilder-slide-title.pagebuilder-slide-title-html {
+        width: 60%;
+        font-weight: 400;
+    }
+
+    .pagebuilder-slide-title,
+    .pagebuilder-slide-title.pagebuilder-slide-title-html {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .pagebuilder-slide-description-content,
+    .pagebuilder-slide-title,
+    .pagebuilder-slide-title.pagebuilder-slide-title-html {
+        color: @color-white;
+    }
+
+    .links-wrapper {
+        .pagebuilder-slide-button {
+            border-color: @color-white;
+            background-color: @color-white;
+            color: #3b57a6;
+            border-radius: 0;
+            font-weight: 600;
+
+            &.second {
+                color: @color-white;
+                background-color: #3b57a6;
+                border-color: #3b57a6;
+                border-radius: 0;
+                font-weight: 600;
+                margin-left: 15px;
+            }
+        }
+    }
+}
+/* EO Refill For Good/LTE Homepage Marquee */
+
+/* Coffee Mug Homepage Marquee */
+.homepage_marquee_slider {
+    [data-slide-name="coffee-mug-marquee"] {
+        .collage-left {
+            .pagebuilder-slide-overlay {
+                top: 40%;
+                left: 2%;
+                padding: 0;
+
+                .pagebuilder-slide-title,
+                .pagebuilder-slide-description-content {
+                    color: @color-black;
+                }
+
+                .pagebuilder-slide-title {
+                    font-size: 50px;
+                    line-height: 50px;
+                    margin-bottom: 1.5625vw;
+                }
+
+                .pagebuilder-slide-description-content{
+                    font-family: @font-regular;
+                    font-size: 22px;
+                    line-height: 26px;
+                    margin-bottom: 1.5625vw;
+
+                    strong {
+                        font-family: @font-bold;
+                    }
+                }
+
+                .pagebuilder-slide-button {
+                    font-size: 14px;
+                    font-family: @font-bold;
+                    border: 0;
+                    background: @color-white;
+                    color: @color-coffee-mugs-marquee;
+                    padding: 6px 10px;
+                    min-width: 117px;
+
+                    &:hover {
+                        background: @color-coffee-mugs-marquee;
+                        color: @color-white;
+                    }
+                }
+            }
+
+            .content-mobile,
+            .placeholder-text {
+                display: none;
+            }
+        }
+    }
+}
+/* EO Coffee Mug Homepage Marquee */
+
+/* PFA Evergreen Marquee slide */
+.homepage_marquee_slider {
+    [data-slide-name="pfa-evergreen-marquee"] {
+        .pagebuilder-slide-overlay {
+            top: 40%;
+            left: 2%;
+            padding: 0;
+
+            .pagebuilder-slide-description-content {
+                color: @color-black;
+
+                .pfa-evergreen-marquee-container {
+                    margin-bottom: 1.25vw;
+
+                    .content-desktop,
+                    .content-mobile {
+                        font-family: @font-regular;
+
+                        strong {
+                            font-family: @font-bold;
+                        }
+                    }
+
+                    .content-desktop {
+                        font-size: 23px;
+                        line-height: 27px;
+                        margin-bottom: 1.5625vw;
+                    }
+
+                    .donated-span {
+                        font-family: @font-bold;
+                        font-size: 17px;
+                        line-height: 22px;
+                    }
+                }
+            }
+
+            .pagebuilder-slide-button {
+                background: @color-black;
+                border: 0;
+                color: @color-white;
+                font-size: 14px;
+                font-family: @font-bold;
+                min-width: 6.77083vw;
+
+                &:hover {
+                    background: @color-white;
+                    color: @color-black;
+                }
+            }
+
+
+            .pagebuilder-slide-icon {
+                display: block;
+                max-width: 4.01042vw;
+                max-height: 5.26042vw;
+                margin-bottom: 1.25vw;
+
+                &.mobile {
+                    display: none;
+                }
+            }
+        }
+
+        .content-mobile {
+            display: none;
+        }
+
+        .placeholder-text {
+            display: none;
+        }
+    }
+}
+/* EO PFA Evergreen Marquee slide */
+
+/* Gift of Go Homepage Marquee */
+.pagebuilder-slide[data-slide-name="gift-of-go-marquee"] {
+    .collage-left .pagebuilder-slide-overlay {
+        .lib-vendor-prefix-display();
+        .lib-vendor-prefix-flex-direction(column);
+        .lib-vendor-box-align(flex-start);
+        top: 12.625vw;
+        left: 0;
+        max-width: 395px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 0;
+        margin-left: 4.698vw;
+
+        .pagebuilder-slide-icon {
+            .lib-vendor-prefix-order(0);
+        }
+
+        .pagebuilder-content-type.pagebuilder-html,
+        .pagebuilder-slide-button {
+            .lib-vendor-prefix-order(1);
+        }
+
+        .pagebuilder-content-type.pagebuilder-html {
+            .lib-css(align-self, center, 1);
+        }
+
+        .pagebuilder-slide-button {
+            .lib-vendor-prefix-display();
+            .lib-css(justify-content, center, 1);
+            .lib-vendor-box-align(center);
+            background: @color-white;
+            color: @color-gog-text-color;
+            min-width: 120px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+
+            &:hover {
+                background: @color-gog-text-color;
+                color: @color-white;
+                border-color: @color-gog-text-color;
+            }
+        }
+
+        .pagebuilder-slide-description-content {
+            color: @color-black;
+            margin-top: 1.563vw;
+            margin-bottom: 2.083vw;
+        }
+
+        .placeholder-text,
+        .gog-mobile {
+            display: none;
+        }
+    }
+}
+/* EO Gift of Go Homepage Marquee */
+
+/* PFA 2022 Grantee Marquee */
+.pagebuilder-slide[data-slide-name="pfa-2022-marquee-grantee"] {
+    .collage-left {
+        .pagebuilder-slide-overlay {
+            left: 60px;
+            padding: 0;
+
+            .pagebuilder-slide-description-content {
+                font-size: 18px;
+            }
+
+            .pagebuilder-slide-button {
+                background: @color-white;
+                color: @color-pfa-2022-btn-text-color;
+            }
+
+            .pagebuilder-donated-data-icon {
+                .lib-vendor-prefix-display();
+                margin-top: 30px;
+
+                .pagebuilder-slide-icon {
+                    margin-right: 25px;
+                }
+
+                .pagebuilder-slide-description {
+                    .lib-css(align-self, center, 1);
+                    font-size: 16px;
+                    padding: 0;
+                }
+            }
+
+            .placeholder-text {
+                display: none;
+            }
+        }
+    }
+}
+/* EO PFA 2022 Grantee Marquee */
+
+/* Let's Go Episode 6/7 Homepage Marquee */
+.pagebuilder-slide[data-slide-name="lets-go-episode-6-marquee"],
+.pagebuilder-slide[data-slide-name="lets-go-episode-7-marquee"] {
+    .pagebuilder-slide-overlay {
+        left: 50%;
+        width: 28%;
+        padding: 0;
+        margin-left: -13%;
+
+        .placeholder-text {
+            display: none;
+        }
+    }
+
+    .pagebuilder-slide-title {
+        font-size: 2.604vw;
+        font-weight: 400;
+        margin-bottom: 12px;
+    }
+
+    .pagebuilder-slide-icon {
+        margin: 0 0 12px 2px;
+    }
+
+    .pagebuilder-slide-button {
+        border-radius: 7px;
+        font-size: 1.27vw;
+        padding: 12px 27px;
+
+        &:after {
+            display: none;
+        }
+
+        &:hover {
+            background-color: @color-white;
+            color: @color-black;
+        }
+    }
+}
+/* EO Let's Go Episode 6/7 Homepage Marquee */

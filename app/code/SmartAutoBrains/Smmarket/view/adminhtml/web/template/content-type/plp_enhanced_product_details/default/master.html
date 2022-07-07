@@ -1,0 +1,47 @@
+<div attr="data.main.attributes" ko-style="data.main.style"
+     class="pagebuilder-content-type pagebuilder-plp-enhanced-product-details"
+     css="Object.assign({'is_reversed': data.main.attributes()['data-reversed'] == 'reversed'}, data.main.css())">
+
+    <render args="masterTemplate"/>
+
+    <div class="image-description-section">
+        <ifnot args="data.main.attributes()['data-reversed'] == 'reversed'">
+            <div class="description-wrapper" ko-style="data.description.style">
+                <div ko-style="data.description.style"
+                     attr="data.description.attributes"
+                     html="data.description.html"
+                     class="description wysiwyg-content bypass-html-filter"></div>
+            </div>
+            <div class="images-wrapper">
+                <img if="data.product_description_image_desktop.attributes().src"
+                     class="hero-banner-img-desktop"
+                     attr="data.product_description_image_desktop.attributes"
+                     css="'pagebuilder-mobile-hidden': !!data.product_description_image_mobile.attributes().src"
+                />
+
+                <img if="data.product_description_image_mobile.attributes().src"
+                     class="hero-banner-img-mobile pagebuilder-mobile-only"
+                     attr="data.product_description_image_mobile.attributes"/>
+            </div>
+        </ifnot>
+        <if args="data.main.attributes()['data-reversed'] == 'reversed'">
+            <div class="images-wrapper">
+                <img if="data.product_description_image_desktop.attributes().src"
+                     class="hero-banner-img-desktop"
+                     attr="data.product_description_image_desktop.attributes"
+                     css="'pagebuilder-mobile-hidden': !!data.product_description_image_mobile.attributes().src"
+                />
+
+                <img if="data.product_description_image_mobile.attributes().src"
+                     class="hero-banner-img-mobile pagebuilder-mobile-only"
+                     attr="data.product_description_image_mobile.attributes"/>
+            </div>
+            <div class="description-wrapper" ko-style="data.description.style">
+                <div ko-style="data.description.style"
+                     attr="data.description.attributes"
+                     html="data.description.html"
+                     class="description wysiwyg-content bypass-html-filter"></div>
+            </div>
+        </if>
+    </div>
+</div>

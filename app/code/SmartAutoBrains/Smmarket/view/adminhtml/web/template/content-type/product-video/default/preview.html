@@ -1,0 +1,27 @@
+<div class="pagebuilder-content-type pagebuilder-product-video-container"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <!-- ko if: data.product_video.html() -->
+    <div class="pagebuilder-product-video-player">
+        <span class="pagebuilder-product-video-url-placeholder"
+              attr="data.product_video.attributes"
+              html="data.product_video.html"></span>
+        <iframe title="video-player"
+                id="js-modal-video-frame"
+                class="pagebuilder-modal-video-frame"
+                data-bind="attr: { src: data.product_video.html() }">
+        </iframe>
+    </div>
+    <!-- /ko -->
+
+    <div class="pagebuilder-product-video-image">
+
+        <div if="!data.product_video_thumbnail.attributes().src" class="pagebuilder-product-video-thumbnail-placeholder"/>
+
+        <img if="data.product_video_thumbnail.attributes().src"
+             attr="data.product_video_thumbnail.attributes"/>
+    </div>
+</div>

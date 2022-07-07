@@ -1,0 +1,43 @@
+<div class="pagebuilder-content-type pagebuilder-content-type-plp-enhanced-description"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     css="data.main.css"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+>
+
+    <render args="getOptions().template"/>
+
+    <div class="plp-enhanced-description-container-inner">
+        <div class="plp-enhanced-description-content">
+            <div class="pagebuilder-content-type pagebuilder-html">
+                <h1 attr="data.description_title.attributes"
+                    ko-style="data.description_title.style"
+                    class="plp-enhanced-description-content-title"
+                    data-bind="liveEdit: { field: 'description_title', placeholder: 'Title', selectAll: true }"></h1>
+            </div>
+            <div class="pagebuilder-content-type pagebuilder-html">
+                <p attr="data.description_content.attributes"
+                   ko-style="data.description_content.style"
+                   class="plp-enhanced-description-content-content"
+                   data-bind="liveEdit: { field: 'description_content', placeholder: 'Description', selectAll: true }"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="plp-enhanced-description-image">
+        <img if="data.description_mobile_image.attributes().src"
+             attr="data.description_mobile_image.attributes"
+             class="plp-enhanced-description-mobile-image pagebuilder-mobile-only"/>
+
+        <div if="!data.description_image.attributes().src" class="plp-enhanced-description-image-placeholder"/>
+
+        <div if="data.description_image.attributes().src"
+             class="plp-enhanced-description-desktop-image"
+             css="'pagebuilder-mobile-hidden': !!data.description_mobile_image.attributes().src"
+             data-bind="style: { background: 'url(' + data.description_image.attributes().src + ') no-repeat center center/cover' }">
+        </div>
+    </div>
+
+    <div class="pagebuilder-display-label"
+         text="function () { return displayLabel().toUpperCase(); }()"></div>
+</div>

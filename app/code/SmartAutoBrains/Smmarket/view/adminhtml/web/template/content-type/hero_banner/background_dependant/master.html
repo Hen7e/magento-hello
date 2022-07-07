@@ -1,0 +1,25 @@
+<div class="pagebuilder-hero-banner background-dependant"
+     attr="Object.assign({}, data.wrapper.attributes())"
+     ko-style="Object.assign({}, data.wrapper.style())"
+     css="Object.assign({}, data.wrapper.css())">
+
+    <img if="data.desktop_image.attributes().src"
+         class="hero-banner-img-desktop"
+         attr="data.desktop_image.attributes" />
+
+    <img if="data.mobile_image.attributes().src"
+         class="hero-banner-img-mobile"
+         attr="data.mobile_image.attributes" />
+
+    <div if="data.overlay.attributes().use_overlay"
+         class="hero-banner-overlay"
+         attr="data.overlay.attributes"
+         ko-style="data.overlay.style"></div>
+
+    <div class="hero-banner-inner"
+         attr="data.inner.attributes"
+         ko-style="data.inner.style"
+         css="data.inner.css">
+        <render args="masterTemplate"/>
+    </div>
+</div>

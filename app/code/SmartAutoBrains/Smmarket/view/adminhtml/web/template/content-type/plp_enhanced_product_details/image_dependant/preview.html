@@ -1,0 +1,34 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     class="pagebuilder-content-type pagebuilder-plp-enhanced-product-details_image_dependant"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="plp-enhanced-product-details-container">
+            <div class="product-details-section" afterRender="(function(){window.t = getSortableOptions();})">
+                <div class="element-children content-type-container"
+                     each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+                     data-bind="sortable: getSortableOptions()"
+                     afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element, contentType); } }">
+
+                    <div class="pagebuilder-content-type-wrapper"
+                         template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                         attr="{ id: id }"
+                         css="{
+                             'pagebuilder-content-type-hidden': !preview.display(),
+                             'double-image': preview.config.name == 'plp_enhanced_product_detail_item_image' && preview.data.product_description_image_desktop.attributes()['data-image-type'] == 'double-image',
+                             'products-container': preview.config.name == 'plp_enhanced_product_detail_item'
+                         }">
+                    </div>
+                </div>
+            </div>
+
+        <div class="pagebuilder-empty-container" css="placeholderCss()"></div>
+    </div>
+
+    <button
+        data-bind="i18n: 'Add Product Image Description', event: { click: addProductImageDescription }, afterRender: function(element) { checkButtonVisibility(element, contentType) }"
+        class="product-image-description-btn"></button>
+</div>

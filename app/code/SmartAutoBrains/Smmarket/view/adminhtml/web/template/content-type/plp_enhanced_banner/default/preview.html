@@ -1,0 +1,76 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     class="pagebuilder-content-type pagebuilder-plp-enhanced-banner"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div if="data.description_image_left.attributes().src
+            || data.description_image_center.attributes().src
+            || data.description_image_right.attributes().src"
+         class="pagebuilder-plp-enhanced-banner-container">
+
+        <div class="image-wrapper left-side-image">
+            <img if="data.description_image_left.attributes().src"
+                 class="hero-banner-img-desktop"
+                 attr="data.description_image_left.attributes"
+                 css="{'pagebuilder-mobile-hidden': !!data.description_mobile_image_left.attributes().src}"
+            />
+
+            <img if="data.description_mobile_image_left.attributes().src"
+                 class="hero-banner-img-mobile pagebuilder-mobile-only"
+                 attr="data.description_mobile_image_left.attributes"/>
+        </div>
+        <div class="image-wrapper center-side-image">
+            <div class="title-wrapper">
+                <h1 class="banner-title" if="data.plp_banner_title.html" html="data.plp_banner_title.html"
+                    attr="data.plp_banner_title.attributes"
+                    ko-style="Object.assign({}, data.plp_banner_title.style())"></h1>
+                <h3 class="banner-subtitle" if="data.plp_banner_subtitle.html" html="data.plp_banner_subtitle.html"
+                    attr="data.plp_banner_subtitle.attributes"
+                    ko-style="Object.assign({}, data.plp_banner_subtitle.style())"></h3>
+            </div>
+            <img if="data.description_image_center.attributes().src"
+                 class="hero-banner-img-desktop"
+                 attr="data.description_image_center.attributes"
+                 css="{'pagebuilder-mobile-hidden': !!data.description_mobile_image_center.attributes().src}"
+            />
+
+            <img if="data.description_mobile_image_center.attributes().src"
+                 class="hero-banner-img-mobile pagebuilder-mobile-only"
+                 attr="data.description_mobile_image_center.attributes"/>
+        </div>
+        <img if="data.description_image_center_overlay.attributes().src"
+             class="hero-banner-img-desktop center-side-image-overlay"
+             attr="data.description_image_center_overlay.attributes"
+             css="{'pagebuilder-mobile-hidden': !!data.description_mobile_image_center_overlay.attributes().src,
+                       'overlapped': data.main.attributes()['data-overlapped'] == 'overlapped'}"
+        />
+
+        <img if="data.description_mobile_image_center_overlay.attributes().src"
+             class="hero-banner-img-mobile pagebuilder-mobile-only"
+             attr="data.description_mobile_image_center_overlay.attributes"
+             css="{'overlapped': data.main.attributes()['data-overlapped'] == 'overlapped'}"/>
+        <div class="image-wrapper right-side-image">
+            <img if="data.description_image_right.attributes().src"
+                 class="hero-banner-img-desktop"
+                 attr="data.description_image_right.attributes"
+                 css="{'pagebuilder-mobile-hidden': !!data.description_mobile_image_right.attributes().src}"/>
+
+            <img if="data.description_mobile_image_right.attributes().src"
+                 class="hero-banner-img-mobile pagebuilder-mobile-only"
+                 attr="data.description_mobile_image_right.attributes"/>
+        </div>
+    </div>
+
+    <!-- These conditions are intended to show empty preview image if there are no data specified -->
+    <div class="empty-placeholder-background"
+         if="!data.plp_banner_title.html()
+            && !data.plp_banner_subtitle.html()
+            && !(data.description_image_left.attributes().src || data.description_mobile_image_left.attributes().src)
+            && !(data.description_image_center.attributes().src || data.description_mobile_image_center.attributes().src)
+            && !(data.description_image_center_overlay.attributes().src || data.description_mobile_image_center_overlay.attributes().src)
+            && !(data.description_image_right.attributes().src || data.description_mobile_image_right.attributes().src)"
+    ></div>
+</div>

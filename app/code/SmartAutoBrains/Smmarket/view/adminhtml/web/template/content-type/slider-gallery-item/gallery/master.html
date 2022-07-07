@@ -1,0 +1,19 @@
+<div  class="gallery-item"
+      attr="data.main.attributes">
+    <div>
+        <div class="pagebuilder-slide-wrapper">
+            <div class="pagebuilder-slide-overlay">
+                <!-- ko if: data.desktop_image.attributes().src -->
+                    <img attr="data.desktop_image.attributes"
+                         class="preview-image pagebuilder-gallery-slide-image"
+                         loading="eager" />
+                <!-- /ko -->
+                <!-- ko if: data.mob_image.attributes().src -->
+                    <img attr="data.mob_image.attributes"
+                     class="preview-image pagebuilder-gallery-slide-image mobile"
+                     loading="eager" />
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>

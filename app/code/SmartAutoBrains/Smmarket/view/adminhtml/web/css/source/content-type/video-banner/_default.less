@@ -1,0 +1,110 @@
+.pagebuilder-video-banner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.pagebuilder-video-banner-placeholder {
+    .lib-vendor-prefix-display();
+    .lib-vendor-box-align(center);
+    .lib-vendor-prefix-justify-content(center);
+    background-color: @color-gray98;
+}
+
+.icon-pagebuilder-video-banner:before {
+    content: @icon-pagebuilder-video__content;
+    color: @color-gray65-lighten;
+    font-size: 80px;
+}
+
+div[data-content-type='video_banner'],
+.pagebuilder-video-banner {
+    &:not(.pagebuilder-video-only-banner) {
+    .pagebuilder-video-banner-row {
+        .lib-vendor-prefix-display();
+        .lib-vendor-box-align(center);
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1280px;
+    }
+
+    .pagebuilder-video-banner-column {
+        flex: 1 0 50%;
+        padding: 0 15px;
+        position: relative;
+    }
+
+    .pagebuilder-video-banner-container {
+        border-radius: inherit;
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;
+    }
+
+    iframe,
+    .pagebuilder-video-banner-placeholder {
+        height: 100%;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .pagebuilder-video-banner-title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1em;
+        letter-spacing: 1px;
+        color: #000;
+        margin-bottom: 35px;
+    }
+
+    .pagebuilder-video-banner-details {
+        font-size: 15px;
+        line-height: 1.4em;
+        color: #000;
+        margin-bottom: 50px;
+        p {
+            &:last-child { margin-bottom: 0; }
+        }
+    }
+
+    .pagebuilder-video-banner-modal-trigger {
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        overflow: hidden;
+        font-size: 14px;
+        line-height: 40px;
+        text-decoration: underline;
+        text-transform: uppercase;
+        &:hover { text-decoration: none; }
+        &:before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            float: left;
+            background: transparent scroll url('@{baseDir}Astound_ContentTypes/css/images/icons/play-icon.png') 50% 50% no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+    }
+}
+
+.video-banner-modal {
+    .modal-header { display: none; }
+    .modal-content { padding: 0; }
+    .video-banner-modal-iframe-wrapper {
+        position: relative;
+        padding-top: 56.25%;
+        iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

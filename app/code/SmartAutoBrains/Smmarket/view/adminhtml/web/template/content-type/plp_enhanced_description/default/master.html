@@ -1,0 +1,58 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="data.main.css"
+     class="plp-enhanced-description-container">
+
+    <div class="plp-enhanced-description-container-inner">
+        <div class="plp-enhanced-description-content">
+            <div if="data.description_title.html()" class="pagebuilder-content-type pagebuilder-html">
+                <h1 attr="data.description_title.attributes"
+                    html="data.description_title.html"
+                    ko-style="data.description_title.style"
+                    class="plp-enhanced-description-content-title"></h1>
+            </div>
+            <div if="data.description_content.html()" class="pagebuilder-content-type pagebuilder-html">
+                <p attr="data.description_content.attributes"
+                   html="data.description_content.html"
+                   ko-style="data.description_content.style"
+                   class="plp-enhanced-description-content-content"></p>
+            </div>
+        </div>
+    </div>
+
+    <div if="data.description_image.attributes().src"
+         class="plp-enhanced-description-desktop-image"
+         attr="{'data-bg': data.description_image.attributes().src }">
+
+        <!-- ko if: data.description_mobile_image.attributes().src -->
+        <div class="pagebuilder-attributes-placeholder"
+             if="data.description_mobile_image.attributes().src"
+             attr="data.description_mobile_image.attributes"></div>
+        <img if="data.description_mobile_image.attributes().src"
+             attr="{
+                'data-src': data.description_mobile_image.attributes().src,
+                'title':  data.description_mobile_image.attributes().title,
+                'alt':  data.description_mobile_image.attributes().alt,
+                'height': data.description_mobile_image.attributes().height,
+                'width': data.description_mobile_image.attributes().width,
+             }"
+             class="plp-enhanced-description-image plp-enhanced-description-image--mobile pagebuilder-mobile-only"/>
+        <!-- /ko -->
+
+        <!-- ko if: data.description_image.attributes().src -->
+        <div class="pagebuilder-attributes-placeholder"
+             if="data.description_image.attributes().src"
+             attr="data.description_image.attributes"></div>
+        <img if="data.description_image.attributes().src"
+             attr="{
+                'data-src': data.description_image.attributes().src,
+                'title':  data.description_image.attributes().title,
+                'alt':  data.description_image.attributes().alt,
+                'height': data.description_image.attributes().height,
+                'width': data.description_image.attributes().width,
+             }"
+             css="'pagebuilder-mobile-hidden': !!data.description_mobile_image.attributes().src"
+             class="plp-enhanced-description-image plp-enhanced-description-image--desktop"/>
+        <!-- /ko -->
+    </div>
+</div>

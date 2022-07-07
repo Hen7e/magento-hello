@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 Helen of Troy. (https://www.helenoftroy.com/)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="hockey_card"
+          label="Hockey Card"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Magento_PageBuilder/js/content-type/preview"
+          master_component="Magento_PageBuilder/js/content-type/master"
+          form="pagebuilder_hockey_card_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-row"
+          sortOrder="21"
+          translate="label">
+        <parents default_policy="allow">
+            <parent name="root-container" policy="allow"/>
+        </parents>
+        <children default_policy="allow"/>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/hockey_card/default/preview"
+                        master_template="Astound_ContentTypes/content-type/hockey_card/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="hc_link_has_arrow" source="data-arrow"/>
+                        <style name="hc_wrapper_background_color" source="background_color" />
+                        <css name="css_classes"/>
+                    </element>
+
+                    <!-- Background Elements -->
+                    <element name="hc_desktop_image_element">
+                        <attribute name="hc_desktop_image" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="hc_desktop_image_alt" source="alt"/>
+                    </element>
+                    <element name="hc_tablet_image_element">
+                        <attribute name="hc_tablet_image" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="hc_tablet_image_alt" source="alt"/>
+                    </element>
+                    <element name="hc_mobile_image_element">
+                        <attribute name="hc_mobile_image" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="hc_mobile_image_alt" source="alt"/>
+                    </element>
+
+                    <!-- Content Elements -->
+                    <element name="hc_desktop_content_element">
+                        <html name="hc_desktop_content" preview_converter="Magento_PageBuilder/js/converter/html/directive" />
+                        <style name="hc_desktop_content_color" source="color" />
+                        <style name="hc_desktop_content_font_size" source="font_size" />
+                        <style name="hc_desktop_content_line_height" source="line_height" />
+                        <css name="hc_css_classes_desktop_content" />
+                    </element>
+                    <element name="hc_tablet_content_element">
+                        <html name="hc_tablet_content" preview_converter="Magento_PageBuilder/js/converter/html/directive" />
+                        <style name="hc_tablet_content_color" source="color" />
+                        <style name="hc_tablet_content_font_size" source="font_size" />
+                        <style name="hc_tablet_content_line_height" source="line_height" />
+                        <css name="hc_css_classes_tablet_content" />
+                    </element>
+                    <element name="hc_mobile_content_element">
+                        <html name="hc_mobile_content" preview_converter="Magento_PageBuilder/js/converter/html/directive" />
+                        <style name="hc_mobile_content_color" source="color" />
+                        <style name="hc_mobile_content_font_size" source="font_size" />
+                        <style name="hc_mobile_content_line_height" source="line_height" />
+                        <css name="hc_css_classes_mobile_content" />
+                    </element>
+
+                    <!-- Additional Content Element -->
+                    <element name="hc_content_additional_desktop_content_element">
+                        <html name="hc_content_additional_desktop_content" preview_converter="Magento_PageBuilder/js/converter/html/directive" />
+                        <style name="hc_content_additional_desktop_content_color" source="color" />
+                        <style name="hc_content_additional_desktop_content_font_size" source="font_size" />
+                        <style name="hc_content_additional_desktop_content_line_height" source="line_height" />
+                        <css name="hc_css_classes_desktop_content_additional" />
+                    </element>
+                    <element name="hc_content_additional_tablet_content_element">
+                        <html name="hc_content_additional_tablet_content" preview_converter="Magento_PageBuilder/js/converter/html/directive" />
+                        <style name="hc_content_additional_tablet_content_color" source="color" />
+                        <style name="hc_content_additional_tablet_content_font_size" source="font_size" />
+                        <style name="hc_content_additional_tablet_content_line_height" source="line_height" />
+                        <css name="hc_css_classes_tablet_content_additional" />
+                    </element>
+                    <element name="hc_content_additional_mobile_content_element">
+                        <html name="hc_content_additional_mobile_content" preview_converter="Magento_PageBuilder/js/converter/html/directive" />
+                        <style name="hc_content_additional_mobile_content_color" source="color" />
+                        <style name="hc_content_additional_mobile_content_font_size" source="font_size" />
+                        <style name="hc_content_additional_mobile_content_line_height" source="line_height" />
+                        <css name="hc_css_classes_mobile_content_additional" />
+                    </element>
+
+                    <!-- Icon Elements -->
+                    <element name="hc_desktop_icon_element">
+                        <attribute name="hc_desktop_icon" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="hc_desktop_icon_alt" source="alt"/>
+                        <style name="hc_desktop_icon_max_width" source="max_width" />
+                        <css name="hc_css_classes_desktop_icon" />
+                    </element>
+                    <element name="hc_tablet_icon_element">
+                        <attribute name="hc_tablet_icon" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="hc_tablet_icon_alt" source="alt"/>
+                        <style name="hc_tablet_icon_max_width" source="max_width" />
+                        <css name="hc_css_classes_tablet_icon" />
+                    </element>
+                    <element name="hc_mobile_icon_element">
+                        <attribute name="hc_mobile_icon" source="src"
+                                   converter="Magento_PageBuilder/js/converter/attribute/src"
+                                   preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="hc_mobile_icon_alt" source="alt"/>
+                        <style name="hc_mobile_icon_max_width" source="max_width" />
+                        <css name="hc_css_classes_mobile_icon" />
+                    </element>
+
+                    <!-- Link Elements -->
+                    <element name="hc_link_url_element">
+                        <attribute name="hc_link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="hc_link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="hc_link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="hc_link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="hc_link_color_hover" source="data-hover-color"/>
+                        <attribute name="hc_link_color_background_hover" source="data-hover-background-color"/>
+                        <html name="hc_link_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                        <style name="hc_link_color" source="color" />
+                        <style name="hc_link_color_background" source="background_color" />
+                        <css name="hc_link_css_classes"/>
+                    </element>
+                    <element name="hc_link_url_element_second">
+                        <attribute name="hc_link_url_second" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="hc_link_url_second" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="hc_link_url_second" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="hc_link_url_second" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                        <attribute name="title_attribute" source="title"/>
+                        <attribute name="hc_link_color_hover_second" source="data-hover-color"/>
+                        <attribute name="hc_link_color_background_hover_second" source="data-hover-background-color"/>
+                        <html name="hc_link_text_second" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                        <style name="hc_link_color_second" source="color" />
+                        <style name="hc_link_color_background_second" source="background_color" />
+                        <css name="hc_link_css_classes_second"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

@@ -1,0 +1,29 @@
+<div class="pagebuilder-content-type pagebuilder-cart-content-item"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+     css="data.main.css">
+
+    <render args="getOptions().template" />
+
+    <div if="!data.value.html()" class="cart-content-item-empty-placeholder " />
+
+    <div class="pagebuilder-cart-content-item-content">
+        <div class="pagebuilder-cart-content-item-texts">
+            <div if="data.value.html()"
+                class="pagebuilder-cart-content-item-value"
+                attr="data.value.attributes"
+                html="data.value.html">
+            </div>
+
+            <div if="data.label.html()"
+                 class="pagebuilder-cart-content-item-label"
+                 attr="data.label.attributes"
+                 html="data.label.html">
+            </div>
+
+            <!-- No visual representation. Just to force pagebuilder to save data. -->
+            <a if="data.link.attributes().href" attr="data.link.attributes"></a>
+        </div>
+    </div>
+</div>

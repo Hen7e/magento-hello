@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="accordion"
+          label="Accordion"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Astound_ContentTypes/js/content-type/accordion/preview"
+          master_component="Magento_PageBuilder/js/content-type/master"
+          form="pagebuilder_accordion_form"
+          menu_section="hydro"
+          icon="icon-pagebuilder-add"
+          sortOrder="11"
+          translate="label">
+        <children default_policy="deny"/>
+        <parents default_policy="deny">
+            <parent name="column" policy="allow"/>
+            <parent name="collapsible_tab_item" policy="allow"/>
+        </parents>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Astound_ContentTypes/content-type/accordion/default/preview"
+                        master_template="Astound_ContentTypes/content-type/accordion/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="show_on" source="data-show-on"/>
+                        <attribute name="opened_default" source="data-open-by-default"/>
+                        <css name="css_classes"/>
+                    </element>
+                    <element name="title">
+                        <attribute name="accordion_unique" source="data-unique"/>
+                        <html name="accordion_title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="content">
+                        <html name="accordion_content" converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

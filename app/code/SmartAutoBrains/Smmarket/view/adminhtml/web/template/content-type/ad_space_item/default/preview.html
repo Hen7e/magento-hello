@@ -1,0 +1,26 @@
+<div class="pagebuilder-content-type pagebuilder-ad-space-item"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+     css="data.main.css">
+
+    <render args="getOptions().template" />
+
+    <div if="!data.title.html()" class="ad-space-item-empty-placeholder" />
+
+    <div class="pagebuilder-ad-space-item-content">
+       <div class="pagebuilder-ad-space-item-inner">
+            <div if="data.label.html()"
+                 class="pagebuilder-ad-space-item-label"
+                 attr="data.label.attributes"
+                 html="data.label.html">
+            </div>
+
+            <h4 if="data.title.html()"
+                class="pagebuilder-ad-space-item-title"
+                attr="data.title.attributes"
+                html="data.title.html">
+            </h4>
+       </div>
+    </div>
+</div>

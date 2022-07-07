@@ -1,0 +1,21 @@
+<div class="pagebuilder-content-type pagebuilder-feature-content"
+     ko-style="data.main.style"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"/>
+
+    <div class="element-children content-type-container pagebuilder-feature-content-wrapper"
+         each="contentType.getChildren()" attr="{id: contentType.id + '-children'}"
+         data-bind="sortable: getSortableOptions()"
+         afterRender="function (element) { if (typeof afterChildrenRender === 'function') { afterChildrenRender(element); } }">
+
+        <div class="pagebuilder-content-type-wrapper pagebuilder-feature-content-item-wrapper"
+             template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+             attr="{ id: id }"
+             css="preview.data.main.css">
+        </div>
+    </div>
+
+    <div class="pagebuilder-empty-container" css="placeholderCss()"></div>
+</div>
