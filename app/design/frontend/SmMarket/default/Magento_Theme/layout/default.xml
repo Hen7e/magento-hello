@@ -23,12 +23,12 @@
             <block class="Magento\Framework\View\Element\Template" name="footer.elem" template="Magento_Theme::html/footer.phtml" />
         </referenceContainer>
 
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceBlock name="bugs" remove="true" />
+        <referenceContainer name="copyright" remove="true"/>
         <referenceBlock name="footer_links" remove="true" />
         <referenceBlock name="form.subscribe" remove="true"/>
         <referenceBlock name="footer.content" remove="true"/>
-        
-        
         <referenceBlock name="top.links" remove="true" />
-        <referenceBlock name="footer_links" remove="true"/>
     </body>
 </page>
